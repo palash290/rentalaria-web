@@ -7,6 +7,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { HttpInterceptorService } from './interceptors/http.interceptor';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from "@ngx-translate/http-loader"
+import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'top',
@@ -25,6 +26,7 @@ export const appConfig: ApplicationConfig = {
     useClass: HttpInterceptorService,
     multi: true,
   },
+  provideNzI18n(en_US),
   provideAnimationsAsync(),
   provideTranslateService({
     lang: 'en',

@@ -5,16 +5,20 @@ import { LogInComponent } from "../auth/log-in/log-in.component";
 import { SignUpComponent } from '../auth/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from '../auth/forgot-password/forgot-password.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, LogInComponent, SignUpComponent, ForgotPasswordComponent, TranslateModule, RouterLinkActive],
+  imports: [RouterLink, LogInComponent, SignUpComponent, ForgotPasswordComponent, TranslateModule, RouterLinkActive,
+    CommonModule
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
 
-  selectedLang: string = 'en'
+  selectedLang: string = 'en';
+  isMenuActive = false;
 
   constructor(private modalService: ModalService, private translate: TranslateService) { }
 
@@ -67,6 +71,14 @@ export class HeaderComponent {
       default:
         return 'img/USA.png';
     }
+  }
+
+  openMenu(isMenuActive: any) {
+    this.isMenuActive = isMenuActive; // Update menu active state
+  }
+
+  closeMenu(isMenuActive: any) {
+    this.isMenuActive = isMenuActive; // Update menu active state
   }
 
 

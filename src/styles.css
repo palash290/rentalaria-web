@@ -126,3 +126,12 @@ pagination-controls.ct_pagination_div {
       padding: 50px;
       border-radius: 4px;
 }
+
+nz-date-picker,
+nz-range-picker {
+      margin: 0 8px 12px 0;
+}
+
+.ct_cursor_pointer {
+      cursor: pointer;
+}

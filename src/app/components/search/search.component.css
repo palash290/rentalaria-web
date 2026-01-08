@@ -1,0 +1,32 @@
+.ct_date_wrapper {
+  display: flex;
+}
+
+.ct_date_item {
+  position: relative;
+  width: 260px;
+}
+
+.ct_date_item label {
+  font-size: 14px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Remove default picker border */
+.ct_date_item .ant-picker {
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Visually split inputs */
+.ct_date_item .ant-picker-input:first-child {
+  padding-right: 12px;
+}
+
+.ct_date_item .ant-picker-input:last-child {
+  padding-left: 12px;
+  border-left: 1px solid #e5e7eb;
+}

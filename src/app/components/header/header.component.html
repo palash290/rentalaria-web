@@ -1,17 +1,16 @@
 <header>
-    <div class="ct_navbar ct_flex_1">
-        <div class="ct_logo">
+    <div class="ct_navbar ct_flex_1" [ngClass]="{ 'show': isMenuActive }">
+        <div class="ct_logo ct_cursor_pointer">
             <img routerLink="/" src="img/logo.png" alt="">
         </div>
         <nav>
             <ul>
-                <div class="ct_close_menu">
+                <div class="ct_close_menu" (click)="closeMenu(false)">
                     <i class="fa-solid fa-xmark"></i>
                 </div>
                 <li>
                     <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{ 'Home' |
-                        translate
-                        }}</a>
+                        translate}}</a>
                 </li>
                 <li>
                     <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{
@@ -21,10 +20,8 @@
                 <li class="position-relative">
                     <a (click)="toggleCityDropdown()">{{ 'Cities' | translate
                         }}</a>
-
                     <div class="ct_dropdown_menu" [class.show]="isCityDropdownOpen">
                         <div class="ct_dropdown_grid">
-
                             <!-- Column 1 -->
                             <div class="ct_dropdown_col">
                                 <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Málaga</h6>
@@ -42,7 +39,6 @@
                                     </li>
                                 </ol>
                             </div>
-
                             <!-- Column 2 -->
                             <div class="ct_dropdown_col">
                                 <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Beach Areas</h6>
@@ -56,7 +52,6 @@
                                             Misericordia</a></li>
                                 </ol>
                             </div>
-
                             <!-- Column 3 -->
                             <div class="ct_dropdown_col">
                                 <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Coming Soon</h6>
@@ -65,11 +60,9 @@
                                     <li>(Coming soon)</li>
                                 </ol>
                             </div>
-
                         </div>
                     </div>
                 </li>
-
                 <li>
                     <a routerLink="/list-property" routerLinkActive="active"
                         [routerLinkActiveOptions]="{ exact: true }">{{ 'ListProperty' |
@@ -107,10 +100,11 @@
         </div>
         <div>
             <button (click)="openLoginModal()" class="ct_black_btn ct_white_nowrap">
-                <span>{{ 'LogIn' | translate }}</span>/<span>{{ 'SignUp' | translate}}</span>
+                <span>{{ 'LogIn' | translate }}</span>
+                <!-- /<span>{{ 'SignUp' | translate}}</span> -->
             </button>
         </div>
-        <div class="ct_menu_toggle">
+        <div class="ct_menu_toggle" (click)="openMenu(true)">
             <i class="fa-solid fa-bars"></i>
         </div>
     </div>
