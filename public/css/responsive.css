@@ -1,0 +1,391 @@
+@media screen and (max-width: 1199px) {
+    header {
+        gap: 30px;
+    }
+
+    .ct_login_main {
+        grid-template-columns: auto 400px;
+    }
+
+    .swiper-pagination-bullet img,
+    .swiper-pagination-bullet {
+        width: 90px;
+        height: 90px;
+    }
+
+    .ct_serach_filter_flex .form-group {
+        margin-right: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .ct_navbar nav ul {
+        position: fixed;
+        background-color: #000;
+        flex-direction: column;
+        display: flex;
+        top: 0px;
+        right: -100%;
+        max-width: 300px;
+        width: 1900%;
+        height: 100vh;
+        z-index: 999;
+        padding: 60px 20px;
+        align-items: flex-start;
+        overflow-y: auto;
+
+    }
+
+    .ct_apartment_detail_section_links {
+        justify-content: start;
+        gap: 30px;
+    }
+
+    .ct_smarter_hosting_right {
+        display: none;
+    }
+
+    .ct_w_100_991 {
+        width: 100%;
+    }
+
+    .ct_close_menu i {
+        font-size: 16px;
+    }
+
+    .ct_navbar nav ul li a {
+        color: #fff;
+    }
+
+    .ct_navbar.show nav ul {
+        right: 0px;
+    }
+
+    .ct_close_menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        cursor: pointer;
+        display: block;
+    }
+
+    .ct_menu_toggle {
+        display: block;
+    }
+
+    .ct_navbar {
+        background-color: transparent;
+        padding: 0px;
+    }
+
+    header {
+        padding: 17px 22px;
+        background-color: #fff;
+        border-radius: 13px;
+        max-width: calc(100% - 30px);
+    }
+
+    .ct_transparent_select {
+        color: #000;
+    }
+
+    .ct_login_main {
+        grid-template-columns: auto;
+    }
+
+    .ct_login_left_cnt {
+        display: none;
+    }
+
+    .swiper-pagination-bullet img,
+    .swiper-pagination-bullet {
+        width: 60px;
+        height: 60px;
+    }
+
+    .swiper-pagination-bullet img {
+        border-width: 5px;
+    }
+
+    .ct_serach_filter_flex {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ct_search_sections_filter {
+        grid-template-columns: auto;
+    }
+
+    .ct_serach_filter_flex .form-group {
+        margin-right: 0px;
+        padding-right: 0px;
+        border-right: none;
+    }
+
+    .ct_property_card_line {
+        padding-left: 0px;
+        margin-left: 0px;
+        border-left: 0px;
+    }
+
+    .ct_filter_side_bar {
+        position: fixed;
+        top: 0px;
+        left: -100%;
+        background-color: #fff;
+        z-index: 999;
+        border-radius: 0px;
+        max-width: 300px;
+        width: 100%;
+        height: 100%;
+        transition: 0.5s ease all;
+    }
+
+    .ct_filter_side_bar.active {
+        left: 0px;
+    }
+
+    .ct_filter_close {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+
+    }
+
+    .ct_filter_btn p {
+        background-color: #e6e6e6;
+        padding: 10px 30px;
+        border-radius: 5px;
+        width: fit-content;
+        cursor: pointer;
+        transition: 0.4s ease all;
+    }
+
+    .ct_filter_btn p:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .ct_filter_btn p:hover svg path {
+        stroke: #fff;
+
+    }
+
+    .ct_flex_col_991 {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ct_fs_55 {
+        font-size: 38px;
+    }
+
+    .ct_banner_title h2 {
+        line-height: 52px;
+    }
+
+    .ct_banner_title h2 img {
+        height: 38px;
+        object-fit: contain;
+        margin-inline: 10px;
+    }
+
+    .ct_fs_40 {
+        font-size: 26px;
+        line-height: 40px;
+    }
+
+    .ct_fs_48 {
+        font-size: 30px;
+    }
+
+    .ct_about_right_content ul {
+
+        gap: 15px;
+    }
+
+    .ct_about_right_content ul li+li {
+        padding-left: 15px;
+    }
+
+    .first-item-div:before {
+        width: 66px;
+        height: 66px;
+    }
+
+    .first-item-div:after {
+        left: 32px;
+    }
+
+    .third-col-div:before {
+        left: 30px;
+    }
+
+    .ct_broswe_collection_bg {
+        height: 400px;
+        padding: 0px 10px 10px;
+    }
+
+    .ct_broswe_collection_card {
+        width: 100%;
+    }
+
+    .swiper-pagination {
+        gap: 0px;
+    }
+
+    .ct_search_sections_filter {
+        padding-inline: 15px;
+    }
+
+    .ct_flex_col_767 {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .ct_w_100_767 {
+        width: 100%;
+    }
+
+    .ct_dont_miss_section:after {
+
+        max-width: 165px;
+        height: 165px;
+        background-size: contain;
+
+    }
+
+    .ct_stay_in_tuoch_grid_2 {
+        grid-template-columns: auto;
+    }
+
+    .ct_stay_in_tuoch_grid_2 iframe {
+        height: 400px;
+    }
+
+    .ct_stay_in_touch_bg {
+        padding: 40px 15px 40px;
+    }
+
+    .ct_amenties_list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ct_gallery_left {
+        display: none;
+    }
+
+    .ct_gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .ct_dont_miss_section:before {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 575px) {
+    header {
+        gap: 15px;
+        max-width: 100%;
+        border-radius: 0px;
+        margin-top: 0px;
+    }
+
+    .ct_black_btn {
+        padding-inline: 20px;
+        font-size: 14px;
+    }
+
+    .ct_transparent_select {
+        font-size: 14px;
+    }
+
+    .ct_right_menu_links {
+        gap: 10px;
+    }
+
+    .ct_fs_55 {
+        font-size: 32px;
+    }
+
+    .ct_about_img_2 {
+
+        height: 243px;
+
+        width: 84%;
+    }
+
+    .ct_about_img_2 img {
+        height: 100%;
+
+        object-fit: contain;
+        object-position: bottom;
+    }
+
+    .third-section-container {
+        padding-inline: 30px;
+    }
+
+    .first-item-div {
+        padding-left: 94px;
+
+    }
+
+    .swiper-pagination-bullet img,
+    .swiper-pagination-bullet {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ct_grid_2_col {
+        grid-template-columns: auto;
+    }
+
+    .ct_why_list_items li {
+        flex-direction: column;
+        align-items: start !important;
+    }
+
+    .ct_amenties_list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .ct_rent_deposit_cnt {
+        width: 100%;
+        margin-left: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .ct_flex_col_575 {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .ct_rent_deposit_img img {
+        transform: scale(1);
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .ct_rent_deposit_img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .ct_apartment_detail_section_links {
+
+        gap: 30px;
+    }
+
+    .ct_apartment_detail_section_links a {
+        padding-inline: 0px;
+    }
+}

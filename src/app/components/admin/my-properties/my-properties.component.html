@@ -1,0 +1,74 @@
+<!-- Table -->
+<div class="">
+    <div class="d-flex justify-content-between align-items-center mb-0">
+        <h5 class="mb-0 ct_fs_28">My Properties</h5>
+        <a routerLink="/admin/add-property" class=" ct_outline_btn ct_border_radius_5 d-flex align-items-center gap-2 ">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M10.9765 7.31911V14.6378M7.31716 10.9785H14.6359M20.1249 10.9785C20.1249 16.031 16.029 20.1269 10.9765 20.1269C5.924 20.1269 1.82812 16.031 1.82812 10.9785C1.82812 5.92595 5.924 1.83008 10.9765 1.83008C16.029 1.83008 20.1249 5.92595 20.1249 10.9785Z"
+                    stroke="#000" stroke-width="1.28077" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            List Property</a>
+    </div>
+
+    <div class="ct_search_wrap ct_mt_30">
+        <div class="ct_search_box">
+            <span class="ct_search_icon">
+                <i class="fa-solid fa-search"></i>
+            </span>
+            <input type="text" placeholder="Search by property name...."
+                class="ct_search_input ct_ff_ppneuemontreal-book" />
+        </div>
+
+        <button class="ct_black_btn ct_border_radius_10">Search</button>
+    </div>
+
+
+    <div class="table-responsive mt-3 ct_custom_table">
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th>Property Name</th>
+                    <th>Location</th>
+                    <th>Submitted On</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="ct_overlay_text">Casa Alameda</span>
+                    </td>
+                    <td><span class="ct_overlay_text">Malaga, Malaga</span></td>
+                    <td>31 Jan 25</td>
+                    <td><span style="color: #B69515;">Pending </span></td>
+                    <td>
+                        <a routerLink="/admin/my-property-details" class="text-dark"><i
+                                class="fa-regular fa-eye"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="ct_overlay_text">Casa Alameda</span>
+                    </td>
+                    <td><span class="ct_overlay_text">Malaga, Malaga</span></td>
+                    <td>31 Jan 25</td>
+                    <td><span style="color: #008000;">Approved</span></td>
+                    <td> <a routerLink="/admin/my-property-details" class="text-dark"><i
+                                class="fa-regular fa-eye"></i></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="ct_overlay_text">Casa Alameda</span>
+                    </td>
+                    <td><span class="ct_overlay_text">Malaga, Malaga</span></td>
+                    <td>31 Jan 25</td>
+                    <td><span style="color: #FF0000;">Rejected</span></td>
+                    <td> <a routerLink="/admin/my-property-details" class="text-dark"><i
+                                class="fa-regular fa-eye"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

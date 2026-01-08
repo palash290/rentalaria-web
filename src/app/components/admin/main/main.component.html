@@ -1,0 +1,8 @@
+<app-header (toggleEvent)="openMenu($event)" />
+
+<div class="ct_layout" [ngClass]="{ 'ct_active': isMenuActive }">
+    <app-sidebar (toggleEvent)="closeMenu($event)" />
+    <main class="ct_main">
+        <router-outlet />
+    </main>
+</div>

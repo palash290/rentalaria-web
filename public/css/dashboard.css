@@ -1,0 +1,894 @@
+.ct_header {
+    height: 64px;
+    background: #fff;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0px;
+    z-index: 9;
+}
+
+.ct_menu_btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    display: none;
+}
+
+.ct_profile_img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Layout */
+.ct_layout {
+    display: flex;
+    padding-inline: 60px;
+    padding-bottom: 20px;
+}
+
+/* Sidebar */
+.ct_sidebar {
+    width: 260px;
+    background: #F3F3F3;
+    min-height: calc(100vh - 64px);
+    padding: 78px 0px 30px 30px;
+    transition: all 0.3s;
+    margin-top: 40px;
+    border-radius: 20px;
+    /* flex-shrink: 0; */
+}
+
+.ct_sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ct_sidebar li a {
+    padding: 12px 0px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #4B5563;
+    margin-bottom: 6px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: ppneuemontreal-book;
+}
+
+.ct_sidebar li.active a,
+.ct_sidebar li:hover a {
+    font-family: ppneuemontreal-medium;
+    color: #000;
+}
+
+.ct_sidebar li.active a svg path,
+.ct_sidebar li:hover a svg path {
+    stroke: #000;
+}
+
+.ct_custom_dropdown .dropdown-menu {
+    /* border: 0px; */
+    padding-block: 0px;
+}
+
+.ct_custom_dropdown .dropdown-item {
+    font-family: ppneuemontreal-book;
+}
+
+.ct_custom_dropdown .dropdown-item:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Main */
+.ct_main {
+    /* flex: 1; */
+    padding: 50px 35px;
+    background-color: #F3F3F3;
+    border-radius: 20px;
+    margin: 40px 17px;
+    margin-bottom: 0px;
+    width: calc(100% - 260px);
+}
+
+/* Banner */
+.ct_banner {
+    background: linear-gradient(120deg, #111, #333);
+    color: #fff;
+    padding: 75px 0px 75px 75px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.ct_banner:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/building_right_img.png);
+    background-size: contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    max-width: 448px;
+}
+
+/* Card */
+.ct_card {
+    padding: 38px 32px;
+    border-radius: 20px;
+    border: 1px solid #E5E5E5;
+}
+
+.ct_view_all {
+    font-size: 16px;
+    text-decoration: none;
+    color: #4B5563;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    transition: 0.4s ease all;
+}
+
+.ct_view_all:hover {
+    color: #000;
+}
+
+
+
+.ct_outline_btn:hover svg path {
+    stroke: #fff;
+}
+
+
+.ct_grey_gradient_btn {
+    background-color: #FFFFFF1A;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    transition: 0.4s ease all;
+    position: relative;
+    z-index: 1;
+    font-family: ppneuemontreal-book;
+}
+
+
+
+
+.ct_custom_table table {
+    border-collapse: separate;
+    border-spacing: 0px 14px;
+}
+
+.ct_custom_table tr th,
+.ct_custom_table tr td {
+    background-color: transparent;
+    white-space: nowrap;
+}
+
+.ct_custom_table tr th {
+    border-bottom: 0px;
+    padding: 22px 68px;
+    font-weight: 500;
+    color: #0D0D0D;
+    background-color: #CCCCCC38;
+    font-family: ppneuemontreal-medium;
+
+}
+
+.ct_custom_table tbody tr td:first-child,
+.ct_custom_table tr th:first-child {
+    border-radius: 10px 0px 0px 10px;
+    border-left-width: 1px;
+}
+
+.ct_custom_table tbody tr td:last-child,
+.ct_custom_table tr th:last-child {
+    border-radius: 0px 10px 10px 0px;
+    border-right-width: 1px;
+}
+
+.ct_custom_table tbody tr td {
+    vertical-align: middle;
+    border: 0px;
+    padding: 22px 68px;
+    font-weight: 400;
+    /* border: 1px solid #B9B9B9; */
+    background-color: #CCCCCC1A;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    font-family: ppneuemontreal-book;
+}
+
+.ct_custom_table tbody tr td span {
+    font-family: ppneuemontreal-book;
+}
+
+.ct_action_icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6e6e6;
+    color: #000;
+    border-radius: 100px;
+    text-decoration: none;
+}
+
+.ct_action_delete {
+    background-color: #ff0000;
+}
+
+
+.ct_search_wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.ct_search_box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.ct_search_icon {
+    font-size: 16px;
+    color: #888;
+    margin-right: 10px;
+}
+
+.ct_search_input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #4B5563;
+}
+
+.ct_search_input::placeholder {
+    color: #aaa;
+}
+
+.ct_search_btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ct_search_btn:hover {
+    background: #222;
+}
+
+
+
+
+.ct_black_btn span {
+    font-family: ppneuemontreal-book;
+}
+
+.ct_black_btn img {
+    filter: invert(1);
+}
+
+.ct_black_btn:hover img {
+    filter: invert(0);
+}
+
+/* Responsive */
+
+
+
+
+
+.ct_property_img {
+    width: 283px;
+    height: 189px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.ct_badge_pending {
+    background: #B6951512;
+    color: #B69515;
+    font-size: 14px;
+    padding: 9px 15px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.ct_badge_closed {
+    background: #00800012;
+    color: #008000;
+    font-size: 14px;
+    padding: 9px 15px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.ct_badge_rejected {
+    background: #FF000012;
+    color: #FF0000;
+    font-size: 14px;
+    padding: 9px 15px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.ct_label {
+    color: #4B5563E0;
+}
+
+
+.ct_product_img {
+    position: relative;
+    z-index: 1;
+}
+
+.ct_product_img:before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+    border-radius: 20px;
+
+}
+
+.ct_product_img img {
+    height: 194px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 23px;
+}
+
+.ct_product_img span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.ct_product_card {
+    margin-bottom: 0px;
+    border: 1px solid #E5E7EB;
+    background-color: #fff;
+    background-color: #fff;
+    padding: 12px 12px 26px;
+    border-radius: 30px;
+}
+
+.ct_product_card ul li+li {
+    margin-top: 10px;
+}
+
+.ct_product_card figcaption a {
+    color: #000;
+    transition: 0.4s ease all;
+}
+
+.ct_product_card figcaption a:hover {
+    text-decoration: underline;
+}
+
+.ct_hear_like_icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    background-color: #FFFFFFA8;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.ct_amenties_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.ct_pe_30 {
+    padding-right: 30px;
+}
+
+.ct_amenties_list li {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: ppneuemontreal-book !important;
+}
+
+
+
+
+
+/* Header */
+.ct_notify_header {
+    background: #CCCCCC4D;
+    border-radius: 8px;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #CCCCCC;
+}
+
+.ct_filter {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ct_delete_btn {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Section label */
+.ct_day_label {
+    margin: 20px 0 10px;
+    font-size: 13px;
+    color: #808080;
+}
+
+/* Notification item */
+.ct_notify_item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.ct_notify_left h6 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.ct_notify_left p {
+    margin: 0;
+    font-size: 16px;
+    color: #808080;
+    line-height: 1.5;
+}
+
+.ct_time {
+    font-size: 14px;
+    color: #808080;
+    white-space: nowrap;
+    font-family: ppneuemontreal-book;
+
+}
+
+
+.ct_upload_user_profile_img {
+    width: fit-content;
+}
+
+.ct_upload_user_profile_img img {
+    width: 92px;
+    height: 92px;
+    border-radius: 100px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.ct_upload_user_profile_img .ct_authore_banner_upload_icon_12 {
+    bottom: 5px;
+}
+
+.ct_authore_banner_upload_icon_12 {
+    position: absolute;
+    bottom: -15px;
+    right: 0px;
+    width: 24px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    border-radius: 100px;
+}
+
+
+button.btn-close.ct_close {
+    background-image: unset;
+    width: 14px;
+    height: 14px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #282828;
+    opacity: 1;
+    color: #fff;
+
+}
+
+.ct_close:focus {
+    box-shadow: unset;
+}
+
+.ct_notification_icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    background-color: #000;
+}
+
+
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+#msform fieldset {
+    /* background: white;
+  border: 0 none;
+  border-radius: 0.5rem; */
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.ct_form-card {
+    text-align: left;
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+.ct_multistep_form_card {
+    z-index: 0;
+    border: none;
+    position: relative;
+    background-color: #F4F4F4;
+    padding: 50px 40px;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.ct_multistep_form_card:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/multistep_form_shape_bg.png);
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.1;
+    max-width: 600px;
+}
+
+.ct_multi_steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right;
+}
+
+.fieldlabels {
+    color: gray;
+    text-align: left;
+}
+
+#ct_form_progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-inline: auto;
+    gap: 20px;
+}
+
+#ct_form_progressbar .active {
+    color: #000;
+}
+
+#ct_form_progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    position: relative;
+    font-weight: 400;
+    flex: 1;
+    font-family: ppneuemontreal-book;
+    padding-bottom: 10px;
+}
+
+#ct_form_progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f15c";
+}
+
+#ct_form_progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f09d";
+}
+
+#ct_form_progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f030";
+}
+
+#ct_form_progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c";
+}
+
+/* #ct_form_progressbar li:before {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  font-size: 20px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  padding: 2px;
+  margin-inline: auto;
+} */
+#ct_form_progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    padding: 2px;
+    margin-inline: auto;
+    /* margin-left: 42px; */
+}
+
+#ct_form_progressbar li:after {
+    content: "";
+    width: calc(100% - 0%);
+    height: 4px;
+    background: lightgray;
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    z-index: -1;
+    max-width: 100%;
+    margin-inline: auto;
+    left: auto;
+}
+
+/* #ct_form_progressbar li#confirm {
+  flex: unset;
+} */
+
+#ct_form_progressbar li.active:before {
+    background: #000;
+}
+
+#ct_form_progressbar li.active:after {
+    background: #000;
+}
+
+#ct_form_progressbar li h5 {
+    text-align: center;
+    display: block;
+    font-size: 18px;
+    margin-top: 8px;
+    font-family: ppneuemontreal-book;
+    white-space: nowrap;
+}
+
+.ct_aprtment_summary_card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.ct_locations_tags {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.ct_locations_tags button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 30px;
+    padding: 6px 15px;
+    font-size: 14px;
+    font-family: ppneuemontreal-book;
+}
+
+.ct_locations_tags button span {
+    font-family: ppneuemontreal-book;
+    text-align: left;
+}
+
+.ct_increase_btn {
+    left: 0px;
+    border-right: 1px solid #dee2e6;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.ct_decrease_btn,
+.ct_increase_btn {
+    width: 51px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease all;
+    cursor: pointer;
+    outline: none;
+}
+
+.ct_input_px_60 {
+    padding-inline: 60px;
+}
+
+.ct_decrease_btn {
+    right: 0px;
+    border-left: 1px solid #dee2e6;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.ct_decrease_btn:hover,
+.ct_increase_btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.ct_upload_product_main {
+    border: 2px dashed #d1d5db;
+    border-radius: 5px;
+    background-color: transparent;
+    height: 165px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.ct_multiple_img_div {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    flex-wrap: wrap;
+    height: auto;
+    max-height: 225px;
+    overflow-y: auto;
+}
+
+.ct_uploaded_img123 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    width: 100px;
+}
+
+.ct_uploaded_img_w img,
+.ct_uploaded_img_w video {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.ct_uploaded_img_w i {
+    position: absolute;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0000;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 14px;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.ct_browse_btn {
+    background-color: #f3f4f6;
+    padding: 9px 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+#become_host_form_success .modal-content {
+    position: relative;
+    z-index: 1;
+}
+
+#become_host_form_success .modal-content:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/abstract_bg.jpg);
+    z-index: -1;
+    opacity: 0.1;
+    background-position: top;
+    background-size: contain;
+}
+
+.ct_img_100 {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+
+.ct_login_btn_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 99;
+}

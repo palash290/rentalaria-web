@@ -1,0 +1,454 @@
+<section class="ct_pt_150">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ct_multistep_form_card  pt-4  mt-3 mb-3 ct_host_process_bg">
+                    <form>
+                        <!-- progressbar -->
+                        <ul id="ct_form_progressbar" class="ct_host_process_multi_form mb-5">
+                            <li class="active ct_flex_1">
+                                <h5>Basic Info</h5>
+                            </li>
+                            <li class="ct_flex_1">
+                                <h5>Property Details</h5>
+                            </li>
+                            <li class="ct_flex_1">
+                                <h5>Amenities & Photos</h5>
+                            </li>
+                            <li id="ct_pricing">
+                                <h5>Pricing & Availability</h5>
+                            </li>
+                        </ul>
+
+                        <fieldset class="ct_mt_60 form-step">
+                            <div class="ct_form-card mb-5">
+                                <h2 class="ct_fs_32 ct_ff_ppneuemontreal-medium mb-2">Start With Your Basic Details</h2>
+                                <p class="ct_text_op_08 mb-0 ct_ff_ppneuemontreal-book">
+                                    Let’s begin with a few essential details so we can understand who’s submitting the
+                                    property and how we can assist you.
+                                </p>
+                                <div class="row mt-5">
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-4">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Full Name</label>
+                                            <input type="text" placeholder="Enter your full name"
+                                                class="form-control ct_input ct_input ct_input_h_50">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-4">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Email Address</label>
+                                            <input type="email" placeholder="Email Address"
+                                                class="form-control ct_input ct_input_h_50">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-4">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Phone Number</label>
+                                            <input type="number" placeholder="Phone Number"
+                                                class="form-control ct_input ct_input_h_50">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-4">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Property Type</label>
+                                            <select type="text" placeholder="Last Name"
+                                                class="form-control ct_input ct_input_h_50">
+                                                <option value="">Private Villa</option>
+                                                <option value="">House</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <input type="button" name="next" class="ct_form_next action-button" value="Next" /> -->
+                            <button type="button" (click)="nextStep()"
+                                class="ct_black_btn ct_border_radius_20 ct_form_next float-end px-5">Next</button>
+                            <!-- <a class="ct_outline_btn ct_border_radius_20 px-5 previous float-end me-3">Back</a> -->
+                        </fieldset>
+                        <fieldset class="ct_mt_60 form-step">
+                            <div class="ct_form-card">
+
+                                <h2 class="ct_fs_32 ct_ff_ppneuemontreal-medium mb-2">Add Your Property Details</h2>
+                                <p class="ct_text_op_08 mb-0 ct_ff_ppneuemontreal-book">
+                                    Tell us more about your home so we can present it accurately to renters exploring
+                                    Málaga.
+                                </p>
+                                <div class="row mt-5">
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-4">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Property Name</label>
+                                            <input type="text" placeholder="Enter Property Name"
+                                                class="form-control ct_input ct_input ct_input_h_50">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-4">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Property
+                                                Description</label>
+                                            <textarea type="text" placeholder="Mention About Your Property here..."
+                                                rows="4" class="form-control ct_input ct_input ct_input_h_50 h-auto"
+                                                aria-placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-4">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Property
+                                                Location</label>
+                                            <input type="text" placeholder="Enter Location"
+                                                class="form-control ct_input ct_input ct_input_h_50">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-4">
+                                        <div class="form-group mb-2">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Nearby Property
+                                                Location</label>
+                                            <input type="text" placeholder="Search a nearby location"
+                                                class="form-control ct_input ct_input ct_input_h_50">
+                                        </div>
+                                        <div>
+                                            <p class="mb-2 ct_ff_ppneuemontreal-book">Added Locations</p>
+                                            <ul class="ct_locations_tags ct_para_scroll ct_custom_scroll">
+                                                <li>
+                                                    <button><span>City Centre Mall</span> <span><i
+                                                                class="fa-solid fa-xmark"></i></span></button>
+                                                </li>
+                                                <li>
+                                                    <button><span>City Centre Mall</span> <span><i
+                                                                class="fa-solid fa-xmark"></i></span></button>
+                                                </li>
+                                                <li>
+                                                    <button><span>City Centre Mall</span> <span><i
+                                                                class="fa-solid fa-xmark"></i></span></button>
+                                                </li>
+                                                <li>
+                                                    <button><span>City Centre Mall</span> <span><i
+                                                                class="fa-solid fa-xmark"></i></span></button>
+                                                </li>
+                                                <li>
+                                                    <button><span>City Centre Mall</span> <span><i
+                                                                class="fa-solid fa-xmark"></i></span></button>
+                                                </li>
+                                                <li>
+                                                    <button><span>City Centre Mall</span> <span><i
+                                                                class="fa-solid fa-xmark"></i></span></button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-4">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Square
+                                                Footage</label>
+                                            <input type="text" placeholder="1500 sq"
+                                                class="form-control ct_input ct_input ct_input_h_50">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-4">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Total
+                                                Bedrooms</label>
+                                            <div class="position-relative ">
+                                                <div class="ct_increase_btn ct_input_icon_left">
+                                                    -
+                                                </div>
+
+                                                <input type="email" placeholder="0"
+                                                    class="form-control ct_input ct_input_h_50 ct_input_px_60 text-center">
+                                                <div class="ct_decrease_btn  ct_show_eye">
+                                                    +
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-4">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Total
+                                                Bathrooms</label>
+                                            <div class="position-relative overflow-hidden">
+                                                <div class="ct_increase_btn  ct_input_icon_left">
+                                                    -
+                                                </div>
+
+                                                <input type="email" placeholder="0"
+                                                    class="form-control ct_input ct_input_h_50 ct_input_px_60 text-center">
+                                                <div class="ct_decrease_btn ct_show_eye">
+                                                    +
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-4">
+                                            <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Upload Images &
+                                                Videos</label>
+                                            <div class="ct_upload_product_main">
+                                                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.87174 22.0167C4.26376 20.9403 3.20508 19.1073 3.20508 17.027C3.20508 13.9023 5.59376 11.3354 8.64473 11.0528C9.26883 7.25653 12.5654 4.36035 16.5384 4.36035C20.5114 4.36035 23.808 7.25653 24.4321 11.0528C27.4831 11.3354 29.8717 13.9023 29.8717 17.027C29.8717 19.1073 28.8131 20.9403 27.2051 22.0167M11.2051 21.6937L16.5384 16.3604M16.5384 16.3604L21.8717 21.6937M16.5384 16.3604V28.3604"
+                                                        stroke="#9CA3AF" stroke-width="2.66667" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                                <p
+                                                    class="text-center ct_fs_15 ct_ff_ppneuemontreal-book ct_text_op_6 mb-0">
+                                                    Upload Your
+                                                    Images & Videos
+                                                    here
+                                                </p>
+                                                <label for="ct_upload_product">
+                                                    <input type="file" name="" id="ct_upload_product" class="d-none">
+                                                    <div class="ct_browse_btn mt-3 ct_ff_ppneuemontreal-book">
+                                                        <span>Browse Files</span>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="ct_multiple_img_div ct_custom_scroll d-none">
+                                                <div class="ct_uploaded_img123 position-relative ">
+                                                    <div class="ct_uploaded_img_w">
+                                                        <img src="img/product_img_11.jpg" alt="">
+                                                        <i class="fa-solid fa-xmark"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="ct_uploaded_img123 position-relative ">
+                                                    <div class="ct_uploaded_img_w">
+                                                        <img src="img/product_img_11.jpg" alt="">
+                                                        <i class="fa-solid fa-xmark"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="ct_uploaded_img123 position-relative ">
+                                                    <div class="ct_uploaded_img_w">
+                                                        <img src="img/product_img_11.jpg" alt="">
+                                                        <i class="fa-solid fa-xmark"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="ct_uploaded_img123 position-relative ">
+                                                    <div class="ct_uploaded_img_w">
+                                                        <video width="100" height="100" controls>
+                                                            <source
+                                                                src="https://youtu.be/9xwazD5SyVg?si=FBRmGuM69BoRrXvp"
+                                                                type="video/mp4">
+                                                        </video>
+                                                        <i class="fa-solid fa-xmark"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="ct_uploaded_img123 position-relative ">
+                                                    <div class="ct_uploaded_img_w">
+                                                        <img src="img/product_img_11.jpg" alt="">
+                                                        <i class="fa-solid fa-xmark"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="ct_uploaded_img123 position-relative ">
+                                                    <div class="ct_uploaded_img_w">
+                                                        <img src="img/product_img_11.jpg" alt="">
+                                                        <i class="fa-solid fa-xmark"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <input type="button" name="previous" class="previous" value="Previous" />
+                                <input type="button" name="next" class="ct_form_next" value="Next" /> -->
+                            <br>
+                            <br>
+                            <button type="button" (click)="nextStep()"
+                                class="ct_black_btn px-5 ct_border_radius_20 ct_form_next float-end">Next</button>
+                            <button type="button" (click)="prevStep()"
+                                class="ct_outline_btn px-5 ct_border_radius_20 previous float-end me-3">Back</button>
+                        </fieldset>
+                        <fieldset class="ct_mt_60 form-step">
+                            <div class="ct_form-card">
+
+                                <h2 class="ct_fs_32 ct_ff_ppneuemontreal-medium mb-2">Amenities & House Rules</h2>
+                                <p class="ct_text_op_08 mb-0 ct_ff_ppneuemontreal-book">
+                                    Help renters understand what your property offers and any guidelines they should
+                                    keep in mind.
+                                </p>
+                                <div class="row mt-5">
+                                    <div class="col-md-12">
+                                        <div class="mb-4">
+                                            <p class="mb-2 ct_ff_ppneuemontreal-medium">Amenities</p>
+                                            <div class="d-flex align-items-center gap-3 flex-wrap">
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <div
+                                                        class="form-check ct_custom_check ct_flex_shrink_0 w-auto h-auto mt-0">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                    </div>
+                                                    <label for="" class="ct_ff_ppneuemontreal-book">Air
+                                                        Conditioned</label>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <div
+                                                        class="form-check ct_custom_check ct_flex_shrink_0 w-auto h-auto mt-0">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault2">
+                                                    </div>
+                                                    <label for="" class="ct_ff_ppneuemontreal-book">Wi-Fi</label>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <div
+                                                        class="form-check ct_custom_check ct_flex_shrink_0 w-auto h-auto mt-0">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault3">
+                                                    </div>
+                                                    <label for="" class="ct_ff_ppneuemontreal-book">Laundry</label>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <div
+                                                        class="form-check ct_custom_check ct_flex_shrink_0 w-auto h-auto mt-0">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault4">
+                                                    </div>
+                                                    <label for="" class="ct_ff_ppneuemontreal-book">Parking</label>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <div
+                                                        class="form-check ct_custom_check ct_flex_shrink_0 w-auto h-auto mt-0">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault5">
+                                                    </div>
+                                                    <label for="" class="ct_ff_ppneuemontreal-book">Kitchen
+                                                        Access</label>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <div
+                                                        class="form-check ct_custom_check ct_flex_shrink_0 w-auto h-auto mt-0">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault6">
+                                                    </div>
+                                                    <label for="" class="ct_ff_ppneuemontreal-book">CCTV</label>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <div
+                                                        class="form-check ct_custom_check ct_flex_shrink_0 w-auto h-auto mt-0">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault7">
+                                                    </div>
+                                                    <label for="" class="ct_ff_ppneuemontreal-book">Furnished</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-md-12 mb-4">
+                                                <div class="form-group">
+                                                    <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">House
+                                                        Rules</label>
+                                                    <textarea class="form-control ct_input ct_input_h_50 h-auto"
+                                                        rows="4"
+                                                        placeholder="Mention About Your House Rules here..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <input type="button" name="previous" class="previous" value="Previous" />
+                                <input type="button" name="next" class="ct_form_next" value="Next" /> -->
+                            <br>
+                            <br>
+                            <button type="button" (click)="nextStep()"
+                                class="ct_black_btn px-5 ct_border_radius_20 ct_form_next float-end ">Next</button>
+                            <button type="button" (click)="prevStep()"
+                                class="ct_outline_btn ct_border_radius_20 px-5 previous float-end me-3">Back</button>
+                        </fieldset>
+                        <fieldset class="ct_mt_60 form-step">
+                            <div class="ct_form-card">
+
+                                <h2 class="ct_fs_32 ct_ff_ppneuemontreal-medium mb-2">Rental Terms & Availability</h2>
+                                <p class="ct_text_op_08 mb-0 ct_ff_ppneuemontreal-book">
+                                    Define your monthly rate, deposit, minimum stay, and the date your property becomes
+                                    available.
+                                </p>
+                                <div class="row mt-5">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-12 mb-4">
+                                                <div class="form-group">
+                                                    <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Monthly
+                                                        Rent</label>
+                                                    <div class="position-relative">
+                                                        <input type="number" class="form-control ct_input ct_input_h_50"
+                                                            placeholder="0.00">
+                                                        <span class="ct_show_eye">€</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-4">
+                                                <div class="form-group">
+                                                    <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Security
+                                                        Deposit</label>
+                                                    <div class="position-relative">
+                                                        <input type="number" class="form-control ct_input ct_input_h_50"
+                                                            placeholder="0.00">
+                                                        <span class="ct_show_eye">€</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-4">
+                                                <div class="form-group">
+                                                    <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Available
+                                                        From</label>
+                                                    <input type="date" class="form-control ct_input ct_input_h_50">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <button type="button" class="ct_black_btn px-5 ct_border_radius_20  float-end"
+                                data-bs-target="#become_host_form_success" data-bs-toggle="modal">Submit
+                            </button>
+                            <button type="button" (click)="prevStep()"
+                                class="ct_outline_btn previous px-5 ct_border_radius_20 float-end me-3">Back</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+<!-- become_host_form_success S -->
+<div class="modal fade modal-lg" id="become_host_form_success" tabindex="-1"
+    aria-labelledby="become_host_form_successLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header py-0 border-0">
+                <button type="button" class="btn-close ct_login_btn_close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-5">
+                <div class="text-center">
+                    <img src="img/sucess_icon.png" alt="" class="ct_img_100 mb-4">
+                    <h4 class="ct_fs_22 ct_ff_ppneuemontreal-medium">Your listing has been submitted</h4>
+                    <p class="ct_ff_ppneuemontreal-book mx-auto" style="max-width: 439px;">Thank you for your interest.
+                        Our team will review within 48 hours. You’ll receive a confirmation email once your listing goes
+                        live.</p>
+                    <div class="mt-5 pb-4">
+                        <a routerLink="/" class="ct_black_btn ct_border_radius_100 ct_fit_content mx-auto">
+                            Go to homepage
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- become_host_form_success E -->

@@ -1,0 +1,69 @@
+<!-- Table -->
+<div class="">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center ct_mb_30 ct_flex_col_767 gap-3">
+        <h6 class="mb-0 ct_fs_28 ct_ff_PPEditorialNew_Regular">
+            Edit Profile
+        </h6>
+    </div>
+
+    <div>
+        <div class=" pt-4">
+            <div class="d-flex align-items-center justify-content-between gap-3 ct_flex_col_767">
+                <div class="d-flex align-items-center gap-4">
+                    <div class="ct_upload_user_profile_img">
+                        <img [src]="profileImg ? profileImg : 'img/no_pro.png'" alt="">
+                        <label for="ct_upload_user_profile2" class="position-relative d-block">
+                            <input type="file" class="d-none" id="ct_upload_user_profile2"
+                                (change)="onFileSelected($event)" accept="image/*">
+                            <div class="ct_authore_banner_upload_icon_12">
+                                <i class="fa-solid fa-pencil"></i>
+                            </div>
+                        </label>
+                    </div>
+                    <div>
+                        <h4 class="ct_fs_20 ct_ff_ppneuemontreal-medium mb-1">{{first_name}}</h4>
+                        <p class="mb-0  ct_fs_14 ct_text_clr_4B5563 ct_ff_ppneuemontreal-book">
+                            {{userEmail}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <form [formGroup]="profileForm" class="mt-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-4">
+                            <label for="" class="ct_ff_ppneuemontreal-book mb-2">Full Name</label>
+                            <div class="position-relative">
+                                <input type="text" class="form-control ct_input ct_border_op_10 ct_input_ps_50"
+                                    placeholder="Full Name" value="Alice " formControlName="name">
+                                <img src="img/user_outline_icon.svg" alt="" class="ct_input_icon_left">
+                            </div>
+                            <div *ngIf="profileForm.controls['name'].invalid && profileForm.controls['name'].touched"
+                                class="err_msg">
+                                <div *ngIf="profileForm.controls['name'].errors?.['required']">Please enter
+                                    your full name.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-4">
+                            <label for="" class="ct_ff_ppneuemontreal-book mb-2">Email Address (non editable)</label>
+                            <div class="position-relative">
+                                <input type="email" class="form-control ct_input ct_border_op_10 ct_input_ps_50"
+                                    placeholder="Email address" formControlName="email">
+                                <img src="img/mail_outline_icon.svg" alt="" class="ct_input_icon_left">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-5 d-flex align-items-center gap-3">
+                    <button class="ct_outline_btn px-4 ct_border_radius_5">Cancel</button>
+                    <button class="ct_black_btn ct_border_radius_5 px-4">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

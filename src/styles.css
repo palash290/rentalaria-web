@@ -1,0 +1,128 @@
+/* You can add global styles to this file, and also import other style files */
+.ct_text_red {
+      color: rgb(180, 0, 0);
+}
+
+.err_msg {
+      color: rgb(180, 0, 0);
+}
+
+.ant-select-selection-search-input {
+      height: 52px !important;
+      border: none !important;
+      background: transparent !important;
+}
+
+.ant-select-selector {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+}
+
+.ant-select-selection-placeholder {
+      font-size: 16px !important;
+      color: #666 !important;
+      margin-top: 12px !important;
+}
+
+.ant-select-selection-item {
+      margin-top: 12px !important;
+      font-size: 16px !important;
+}
+
+.multi_select .ant-select-selection-item,
+.multi_select .ant-select-selection-placeholder {
+      font-size: 16px !important;
+      margin-top: 0 !important;
+}
+
+.ant-select-selector {
+      height: 100% !important;
+}
+
+body {
+      background-color: #F9F9F9 !important;
+}
+
+/* Loader Start */
+.ct_loader_main {
+      position: fixed;
+      background: #f5f5f5;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.loader {
+      --color: #333;
+      --size: 40px;
+      width: var(--size);
+      height: var(--size);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+}
+
+.loader span {
+      width: 100%;
+      height: 100%;
+      background-color: var(--color);
+      animation: keyframes-blink .5s alternate infinite linear;
+}
+
+.loader span:nth-child(1) {
+      animation-delay: 0ms;
+}
+
+.loader span:nth-child(2) {
+      animation-delay: 150ms;
+}
+
+.loader span:nth-child(3) {
+      animation-delay: 150ms;
+}
+
+.loader span:nth-child(4) {
+      animation-delay: 280ms;
+}
+
+@keyframes keyframes-blink {
+      0% {
+            opacity: 0.5;
+            transform: scale(0.5) rotate(20deg);
+      }
+
+      50% {
+            opacity: 1;
+            transform: scale(1);
+      }
+}
+
+/* Loader End */
+
+pagination-controls.ct_pagination_div {
+      text-align: end;
+}
+
+.ct_pagination_div ul.ngx-pagination {
+      margin-top: 10px;
+}
+
+.ct_pagination_div .ngx-pagination .current {
+      background-color: #8050e9;
+}
+
+.cdk-overlay-container {
+      z-index: 9999999999999 !important;
+}
+
+.ct_no_recod_found_bg {
+      background-color: #fff;
+      padding: 50px;
+      border-radius: 4px;
+}

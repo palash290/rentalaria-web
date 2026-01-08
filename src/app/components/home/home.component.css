@@ -1,0 +1,28 @@
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.ct_hero_banner {
+  height: 546px;
+  position: relative;
+  z-index: 1;
+}
+
+.ct_hero_banner video {
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.7);
+}
+
+.ct_banner_title {
+  position: absolute;
+  z-index: 9999;
+  bottom: 0px;
+  left: 0px;
+  padding-bottom: 79px;
+  padding-inline: 20px;
+}
