@@ -135,3 +135,19 @@ nz-range-picker {
 .ct_cursor_pointer {
       cursor: pointer;
 }
+.ant-otp{
+      justify-content: center;
+}
+.ant-otp-input {
+    width: 48px;
+    height: 48px;
+    border-radius: 5px !important;
+}
+.ant-input:hover,.ant-input:focus{
+      border-color: #000 !important;
+      box-shadow: unset !important;
+}
+
+.ant-picker-input > input{
+       font-family: ppneuemontreal-book;
+}

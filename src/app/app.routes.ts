@@ -40,6 +40,16 @@ export const routes: Routes = [
                         loadComponent: () =>
                               import('./components/all-property-list/view-property/view-property.component').then(m => m.ViewPropertyComponent),
                   },
+                         {
+                        path: 'lifestyle',
+                        loadComponent: () =>
+                              import('./components/lifestyle/lifestyle.component').then(m => m.LifestyleComponent),
+                  },
+                  {
+                        path: 'view-lifestyle',
+                        loadComponent: () =>
+                              import('./components/lifestyle/view-lifestyle/view-lifestyle.component').then(m => m.ViewLifestyleComponent),
+                  },
             ]
       },
          {

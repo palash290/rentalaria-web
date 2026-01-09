@@ -1,0 +1,30 @@
+.ct_mt_130{
+    margin-top: 130px;
+}
+
+
+button.ct_filter_btn {
+    padding: 16px;
+    background-color: #fff;
+    border: 0px;
+    box-shadow: 0px 9.4px 37.61px 0px #181A2012;
+    border-radius: 10px;
+}
+
+.ct_num_count_22{
+    width: 22px;
+    height: 22px;
+    border-radius: 100px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    color: #000;
+    display: inline-flex;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.ct_h_44{
+    height: 44px;
+}
+

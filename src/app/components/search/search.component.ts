@@ -29,5 +29,11 @@ export class SearchComponent {
     console.log('Check-out:', checkOut);
   }
 
+    isCityDropdownOpen = false;
+
+  toggleCityDropdown() {
+    this.isCityDropdownOpen = !this.isCityDropdownOpen;
+  }
+
 
 }

@@ -4,11 +4,10 @@ body {
 
 .ct_navbar {
     padding: 17px 22px;
-    background-color: #fff;
     border-radius: 13px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     gap: 20px;
     padding-right: 50px;
 
@@ -18,8 +17,11 @@ body {
     max-width: 150px;
     width: 100%;
     object-fit: cover;
+    filter: invert(1);
 }
-
+.ct_navbar nav {
+    flex: 1;
+}
 .ct_navbar ul {
     display: flex;
     align-items: center;
@@ -27,17 +29,21 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
 }
 
 .ct_navbar ul li a {
-    color: #212529C4;
+    color: #fff !important;
     transition: 0.4s ease all;
     font-family: ppneuemontreal-book;
 }
 
+.ct_navbar ol li a{
+    color: #000 !important;
+}
 .ct_navbar ul li a:hover,
 .ct_navbar ul li a.active {
-    color: #212529;
+    color: #fff;
 }
 
 .ct_hero_banner {
@@ -45,7 +51,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 546px;
+    height: 621px;
     display: flex;
     align-items: end;
     padding-bottom: 79px;
@@ -62,7 +68,7 @@ header {
     width: 100%;
     z-index: 999;
     right: 0px;
-    margin-top: 40px;
+    padding-block: 16px;
     display: flex;
     align-items: center;
     gap: 65px;
@@ -261,7 +267,7 @@ footer {
     display: grid;
     grid-template-columns: auto 45%;
     align-items: center;
-    height: 81vh;
+    /* height: 81vh; */
 }
 
 .ct_login_left_cnt {
@@ -505,10 +511,9 @@ footer {
 }
 
 .ct_product_img img {
-    height: 194px;
+    height: 270px;
     width: 100%;
     object-fit: cover;
-    border-radius: 23px;
 }
 
 .ct_product_img span {
@@ -524,14 +529,14 @@ footer {
     border: 1px solid #E5E7EB;
     background-color: #fff;
     background-color: #fff;
-    padding: 12px 12px 26px;
-    border-radius: 30px;
 }
 
 .ct_product_card ul li+li {
     margin-top: 10px;
 }
-
+.ct_product_card figcaption{
+    padding: 13px;
+}
 .ct_product_card figcaption a {
     color: #000;
     transition: 0.4s ease all;
@@ -675,22 +680,24 @@ footer {
 
 .ct_serach_filter_flex {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 10px;
 }
 
 .ct_search_sections_filter {
     background-color: #fff;
-    padding: 36px 72px;
-    border-radius: 20px;
+    padding: 10px 30px;
+    border-radius: 10px;
     box-shadow: 0px 10px 40px 0px #181A2012;
     display: grid;
-    grid-template-columns: auto 143px;
+    grid-template-columns: auto 58px;
     gap: 40px;
-    margin-top: -66.5px;
+    /* margin-top: -66.5px; */
     position: relative;
     z-index: 9;
+    box-shadow: 0px 9.4px 37.61px 0px #181A2012;
+
 }
 
 .ct_serach_filter_flex .form-group {
@@ -1312,6 +1319,15 @@ button.ct_show_all_images_btn:hover {
     width: 100%;
     height: 350px;
     object-fit: cover;
+}
+
+.ct_product_btm_div {
+    padding: 10px 24px 0px;
+    border-top: 1px solid #C9C9C9;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .ct_product_gallary_slider .owl-nav {

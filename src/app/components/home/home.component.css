@@ -7,7 +7,7 @@
 }
 
 .ct_hero_banner {
-  height: 546px;
+  height: 621px;
   position: relative;
   z-index: 1;
 }
@@ -25,4 +25,10 @@
   left: 0px;
   padding-bottom: 79px;
   padding-inline: 20px;
+}
+
+.ct_aval_badge{
+  background-color: #F2F2F2;
+  padding: 5px;
+  border-radius: 5px;
 }

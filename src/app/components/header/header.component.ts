@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ModalService } from '../../services/modal.service';
 import { LogInComponent } from "../auth/log-in/log-in.component";
 import { SignUpComponent } from '../auth/sign-up/sign-up.component';
@@ -19,8 +19,15 @@ export class HeaderComponent {
 
   selectedLang: string = 'en';
   isMenuActive = false;
+  isHome = false;
 
-  constructor(private modalService: ModalService, private translate: TranslateService) { }
+  constructor(private modalService: ModalService, private translate: TranslateService, private router: Router) {
+     this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isHome = event.urlAfterRedirects === '/';
+      }
+    });
+   }
 
   openLoginModal() {
     this.modalService.openLoginModal();
@@ -54,7 +61,7 @@ export class HeaderComponent {
   getLanguage(langCode: string) {
     switch (langCode) {
       case 'es':
-        return 'German';
+        return 'Spanish';
       case 'en':
         return 'English';
       default:

@@ -117,6 +117,9 @@
     .ct_search_sections_filter {
         grid-template-columns: auto;
     }
+    .ct_search_sections_filter_767{
+        grid-template-columns: max-content;
+    }
 
     .ct_serach_filter_flex .form-group {
         margin-right: 0px;
@@ -287,7 +290,13 @@
     .ct_dont_miss_section:before {
         display: none;
     }
-
+    .ct_search_sections_filter_767{
+        grid-template-columns: auto;
+        max-width: auto;
+    }
+    .ct_filter_btn{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -387,5 +396,13 @@
 
     .ct_apartment_detail_section_links a {
         padding-inline: 0px;
+    }
+    .ct_serach_filter_flex_575{
+      display: flex;
+      flex-direction: column;
+      align-items: start !important;
+    }
+    .ct_w_100_575,.ct_serach_filter_flex .form-group ,.ct_date_item ,.ct_date_item .ant-picker ,.ct_date_wrapper{
+        width: 100% !important;
     }
 }
