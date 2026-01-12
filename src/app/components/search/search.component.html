@@ -3,137 +3,214 @@
         <!--add when listing page open ct_search_sections_filter_767 -->
         <div class="ct_grid_2 ct_search_sections_filter ct_search_sections_filter_767">
             <div class="ct_serach_filter_flex ct_serach_filter_flex_575 ">
-                <div class="form-group">
-                    <label class="ct_fs_16 ct_ff_ppneuemontreal-medium mb-2 ct_white_nowrap" (click)="toggleCityDropdown()">Location</label>
-                    <div class="position-relative" >
-                        <input type="search" class="form-control px-0 py-0 ct_input border-0 ct_ff_ppneuemontreal-book ct_text_op_08" placeholder="Location" readonly>
-                         <div class="ct_dropdown_menu d-none" [class.show]="isCityDropdownOpen">
-                        <div class="ct_dropdown_grid">
-                            <!-- Column 1 -->
-                            <div class="ct_dropdown_col">
-                                <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Málaga</h6>
-                                <ol>
-                                    <li>
-                                        <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">Centro
-                                            Histórico</label>
-                                    </div>
-                                       </li>
-                                    <li>
-                                        <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">La Malagueta</label>
-                                    </div>
-                                       
-                                    </li>
-                                    <li>
-                                        <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">El Limonar</label>
-                                    </div>
-                                     
-                                    </li>
-                                    <li>
-                                        <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">Soho</label>
-                                    </div>
-                                       </li>
-                                    <li>
-                                        <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">Pedregalejo</label>
-                                    </div>
-                                       
-                                    </li>
-                                    <li>
-                                        <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">Teatinos</label>
-                                    </div>
-                                      
-                                    </li>
-                                </ol>
-                            </div>
-                            <!-- Column 2 -->
-                            <div class="ct_dropdown_col">
-                                <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Beach Areas</h6>
-                                <ol>
-                                    <li>
-                                         <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">Centro
-                                            La Malagueta</label>
-                                    </div>
-                                      
-                                    </li>
-                                    <li>
-                                         <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">Centro
-                                           Pedregalejo</label>
-                                    </div>
-                                        
-                                    </li>
-                                    <li>
-                                         <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">Centro
-                                           El Palo</label>
-                                    </div>
+
+                <!-- <div class="form-group" #cityDropdown>
+                    <label class="ct_fs_16 ct_ff_ppneuemontreal-medium mb-2 ct_white_nowrap"
+                        (click)="toggleCityDropdown()">Location</label>
+                    <div class="position-relative">
+                        <input type="search"
+                            class="form-control px-0 py-0 ct_input border-0 ct_ff_ppneuemontreal-book ct_text_op_08"
+                            placeholder="Location" readonly [value]="selectedLocations.join(', ')"
+                            (click)="toggleCityDropdown()">
+                        <div class="ct_dropdown_menu" [class.d-block]="isCityDropdownOpen">
+                            <div class="ct_dropdown_grid">
+                                
+                                <div class="ct_dropdown_col">
+                                    <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Málaga</h6>
+                                    <ol>
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">Centro
+                                                    Histórico</label>
+                                            </div>
                                         </li>
-                                    <li>
-                                         <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">Centro
-                                           Playa de la
-                                            Misericordia</label>
-                                    </div>
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">La Malagueta</label>
+                                            </div>
+
                                         </li>
-                                </ol>
-                            </div>
-                            <!-- Column 3 -->
-                            <div class="ct_dropdown_col">
-                                <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Coming Soon</h6>
-                                <ol class="ct_disabled">
-                                    <li>
-                                         <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">
-                                          New neighborhoods</label>
-                                    </div>
-                                       </li>
-                                    <li>
-                                         <div class="form-check ct_custom_check2">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label for="" class="ct_ff_ppneuemontreal-book">
-                                          (Coming soon)</label>
-                                    </div>
-                                       </li>
-                                </ol>
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">El Limonar</label>
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">Soho</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">Pedregalejo</label>
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">Teatinos</label>
+                                            </div>
+
+                                        </li>
+                                    </ol>
+                                </div>
+                                
+                                <div class="ct_dropdown_col">
+                                    <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Beach Areas</h6>
+                                    <ol>
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">Centro
+                                                    La Malagueta</label>
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">Centro
+                                                    Pedregalejo</label>
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">Centro
+                                                    El Palo</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">Centro
+                                                    Playa de la
+                                                    Misericordia</label>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                                
+                                <div class="ct_dropdown_col">
+                                    <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Coming Soon</h6>
+                                    <ol class="ct_disabled">
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">
+                                                    New neighborhoods</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check ct_custom_check2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label for="" class="ct_ff_ppneuemontreal-book">
+                                                    (Coming soon)</label>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div> -->
+
+                <div class="form-group">
+                    <label class="ct_fs_16 ct_ff_ppneuemontreal-medium mb-2 ct_white_nowrap"
+                        (click)="toggleCityDropdown()">
+                        Location
+                    </label>
+
+                    <div class="position-relative">
+                        <input type="text"
+                            class="form-control px-0 py-0 ct_input border-0 ct_ff_ppneuemontreal-book ct_text_op_08"
+                            placeholder="Select Location" readonly [value]="selectedLocation"
+                            (click)="toggleCityDropdown()" />
+
+                        <div class="ct_dropdown_menu " [class.d-none]="isCityDropdownOpen">
+                            <div class="ct_dropdown_grid">
+                                <!-- Column 1 -->
+                                <div class="ct_dropdown_col">
+                                    <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Málaga</h6>
+                                    <ol>
+                                        <li *ngFor="let loc of malagaLocations">
+                                            <span class="ct_ff_ppneuemontreal-book ct_location_item"
+                                                (click)="selectLocation(loc)" (click)="toggleCityDropdown()">
+                                                {{ loc }}
+                                            </span>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <!-- Column 2 -->
+                                <div class="ct_dropdown_col">
+                                    <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Beach Areas</h6>
+                                    <ol>
+                                        <li *ngFor="let loc of beachLocations">
+                                            <span class="ct_ff_ppneuemontreal-book ct_location_item"
+                                                (click)="selectLocation(loc)" (click)="toggleCityDropdown()">
+                                                {{ loc }}
+                                            </span>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <!-- Column 3 -->
+                                <div class="ct_dropdown_col">
+                                    <h6 class="ct_fs_20 ct_ff_PPEditorialNew_Regular ct_fw_400">Coming Soon</h6>
+                                    <ol class="ct_disabled">
+                                        <li *ngFor="let loc of comingSoon">
+                                            <span class="ct_ff_ppneuemontreal-book ct_text_op_05">
+                                                {{ loc }}
+                                            </span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-              
 
-                <div class="ct_date_wrapper">
+                <div class="ct_date_wrapper" (click)="openCalendar()">
                     <div class="ct_date_item">
-                        <label class="ct_fs_16 ct_ff_ppneuemontreal-medium mb-2 ct_white_nowrap"><img src="img/calender_icon_11.svg" alt=""
-                            class="me-2">Check-in / Check-out</label>
-                        <nz-range-picker [(ngModel)]="selectedRange" [nzRanges]="ranges"
+                        <label class="ct_fs_16 ct_ff_ppneuemontreal-medium mb-2 ct_white_nowrap"><img
+                                src="img/calender_icon_11.svg" alt="" class="me-2">Check-in / Check-out</label>
+                        <!-- <nz-range-picker [(ngModel)]="selectedRange" [nzRanges]="ranges"
                             [nzPlaceHolder]="['When?', 'Until?']" (ngModelChange)="onChange($event)"
                             nzFormat="dd MMM yyyy">
+                        </nz-range-picker> -->
+
+                        <nz-range-picker [nzOpen]="isCalendarOpen" (nzOnOpenChange)="isCalendarOpen = $event"
+                            [(ngModel)]="selectedRange" [nzRanges]="ranges" [nzPlaceHolder]="['When?', 'Until?']"
+                            nzFormat="dd MMM yyyy" [nzDisabledDate]="disabledDate">
                         </nz-range-picker>
+
+
                     </div>
                 </div>
 
             </div>
             <div class="ct_w_100_991">
-                <button class="ct_black_btn ct_border_radius_5 ct_w_100_991 p-2"><img src="img/search_icon_12.svg" alt="" style="width: 32px; height: 32px;"
-                        class="me-2"></button>
+                <button class="ct_black_btn ct_border_radius_5 ct_w_100_991 p-2"><img src="img/search_icon_12.svg"
+                        alt="" style="width: 32px; height: 32px;" class="me-2"></button>
             </div>
         </div>
     </div>

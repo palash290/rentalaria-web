@@ -48,13 +48,10 @@ export class LogInComponent {
     this.modalService.openFpasswordModal();
   }
 
-  submit() {
-    this.closeModalAdd.nativeElement.click();
-    this.router.navigateByUrl('/admin/dashboard');
-  }
 
   login() {
     this.closeModalAdd.nativeElement.click();
+    this.router.navigateByUrl('/admin/my-profile')
     return;
     this.Form.markAllAsTouched();
 

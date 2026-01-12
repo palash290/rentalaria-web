@@ -22,12 +22,12 @@ export class HeaderComponent {
   isHome = false;
 
   constructor(private modalService: ModalService, private translate: TranslateService, private router: Router) {
-     this.router.events.subscribe(event => {
+    this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.isHome = event.urlAfterRedirects === '/';
+        this.isHome = event.urlAfterRedirects === '/view-property';
       }
     });
-   }
+  }
 
   openLoginModal() {
     this.modalService.openLoginModal();

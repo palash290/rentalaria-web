@@ -13,33 +13,47 @@
 }
 
 .logo_image {
-      max-width: 198px;
+    max-width: 198px;
 }
 
 
 .ct_language_select {
-      background-color: transparent;
-      border: 0px;
-      padding: 2px 6px;
-      border-radius: 6px;
-      width: 7rem;
-      color: #fff;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
+    background-color: transparent;
+    border: 0px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    width: 7rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .ct_language_select button.dropdown-toggle.py-2.mt-0 {
-      background-color: transparent;
-      border: 0;
+    background-color: transparent;
+    border: 0;
 }
-.ct_outline_btn_white{
+
+.ct_outline_btn_white {
     border-color: #fff;
     color: #fff;
     font-family: ppneuemontreal-book;
     height: 44px;
     border-radius: 5px;
 }
+
 /* .ct_logo img{
     filter: unset !important;
 } */
+
+.ct_change {
+    filter: unset !important;
+}
+
+.ct_change_color {
+    color: #000000 !important;
+}
+
+.ct_change_bg {
+    background-color: #000000 !important;
+}

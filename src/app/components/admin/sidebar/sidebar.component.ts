@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -10,6 +10,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class SidebarComponent {
 
+  @ViewChild('closeModalAdd') closeModalAdd!: ElementRef;
 
   constructor(private router: Router) { }
 
@@ -21,6 +22,11 @@ export class SidebarComponent {
 
   toggleMenu() {
     this.toggleEvent.emit(false);
+  }
+
+  logout() {
+    this.closeModalAdd.nativeElement.click();
+    this.router.navigateByUrl('/')
   }
 
 

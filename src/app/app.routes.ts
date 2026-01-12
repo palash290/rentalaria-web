@@ -30,11 +30,11 @@ export const routes: Routes = [
                         loadComponent: () =>
                               import('./components/contact-us/contact-us.component').then(m => m.ContactUsComponent),
                   },
-                  {
-                        path: 'property-listing',
-                        loadComponent: () =>
-                              import('./components/all-property-list/all-property-list.component').then(m => m.AllPropertyListComponent),
-                  },
+                  // {
+                  //       path: 'property-listing',
+                  //       loadComponent: () =>
+                  //             import('./components/all-property-list/all-property-list.component').then(m => m.AllPropertyListComponent),
+                  // },
                   {
                         path: 'view-property',
                         loadComponent: () =>

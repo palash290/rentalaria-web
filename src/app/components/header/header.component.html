@@ -1,31 +1,25 @@
 <header>
   <div class="ct_navbar ct_flex_1" [ngClass]="{ show: isMenuActive }">
     <div class="ct_cursor_pointer ct_logo">
-      <img routerLink="/" src="img/logo.png" alt="" />
+      <img routerLink="/" src="img/logo.png" alt="" [ngClass]="{ ct_change: isHome }" />
     </div>
-
     <nav>
       <ul>
         <div class="ct_close_menu" (click)="closeMenu(false)">
           <i class="fa-solid fa-xmark"></i>
         </div>
         <li>
-          <a
-            routerLink="/"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >{{ "Home" | translate }}</a
-          >
+          <a routerLink="/" [ngClass]="{ ct_change_color: isHome }" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">{{ "Home" | translate
+            }}</a>
         </li>
         <li>
-          <a
-            routerLink="/about"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >{{ "AboutUs" | translate }}</a>
+          <a routerLink="/about" [ngClass]="{ ct_change_color: isHome }" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">{{ "AboutUs" |
+            translate }}</a>
         </li>
         <li class="position-relative">
-          <a (click)="toggleCityDropdown()">{{ "Cities" | translate }}</a>
+          <a (click)="toggleCityDropdown()" [ngClass]="{ ct_change_color: isHome }">{{ "Cities" | translate }}</a>
           <div class="ct_dropdown_menu" [class.show]="isCityDropdownOpen">
             <div class="ct_dropdown_grid">
               <!-- Column 1 -->
@@ -35,46 +29,22 @@
                 </h6>
                 <ol>
                   <li>
-                    <a
-                      routerLink="/property-listing"
-                      (click)="closeCityDropdown()"
-                      >Centro Histórico</a
-                    >
+                    <a routerLink="/list-property" (click)="closeCityDropdown()">Centro Histórico</a>
                   </li>
                   <li>
-                    <a
-                      routerLink="/property-listing"
-                      (click)="closeCityDropdown()"
-                      >La Malagueta</a
-                    >
+                    <a routerLink="/list-property" (click)="closeCityDropdown()">La Malagueta</a>
                   </li>
                   <li>
-                    <a
-                      routerLink="/property-listing"
-                      (click)="closeCityDropdown()"
-                      >El Limonar</a
-                    >
+                    <a routerLink="/list-property" (click)="closeCityDropdown()">El Limonar</a>
                   </li>
                   <li>
-                    <a
-                      routerLink="/property-listing"
-                      (click)="closeCityDropdown()"
-                      >Soho</a
-                    >
+                    <a routerLink="/list-property" (click)="closeCityDropdown()">Soho</a>
                   </li>
                   <li>
-                    <a
-                      routerLink="/property-listing"
-                      (click)="closeCityDropdown()"
-                      >Pedregalejo</a
-                    >
+                    <a routerLink="/list-property" (click)="closeCityDropdown()">Pedregalejo</a>
                   </li>
                   <li>
-                    <a
-                      routerLink="/property-listing"
-                      (click)="closeCityDropdown()"
-                      >Teatinos</a
-                    >
+                    <a routerLink="/list-property" (click)="closeCityDropdown()">Teatinos</a>
                   </li>
                 </ol>
               </div>
@@ -85,32 +55,16 @@
                 </h6>
                 <ol>
                   <li>
-                    <a
-                      routerLink="/property-listing"
-                      (click)="closeCityDropdown()"
-                      >La Malagueta</a
-                    >
+                    <a routerLink="/list-property" (click)="closeCityDropdown()">La Malagueta</a>
                   </li>
                   <li>
-                    <a
-                      routerLink="/property-listing"
-                      (click)="closeCityDropdown()"
-                      >Pedregalejo</a
-                    >
+                    <a routerLink="/list-property" (click)="closeCityDropdown()">Pedregalejo</a>
                   </li>
                   <li>
-                    <a
-                      routerLink="/property-listing"
-                      (click)="closeCityDropdown()"
-                      >El Palo</a
-                    >
+                    <a routerLink="/list-property" (click)="closeCityDropdown()">El Palo</a>
                   </li>
                   <li>
-                    <a
-                      routerLink="/property-listing"
-                      (click)="closeCityDropdown()"
-                      >Playa de la Misericordia</a
-                    >
+                    <a routerLink="/list-property" (click)="closeCityDropdown()">Playa de la Misericordia</a>
                   </li>
                 </ol>
               </div>
@@ -128,73 +82,49 @@
           </div>
         </li>
         <li>
-          <a
-            routerLink="/list-property"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >Properties
+          <a routerLink="/list-property" [ngClass]="{ ct_change_color: isHome }" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Properties
           </a>
         </li>
         <li>
-          <a
-            routerLink="/lifestyle"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >{{ "Lifestyle" | translate }}
+          <a routerLink="/lifestyle" [ngClass]="{ ct_change_color: isHome }" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">{{
+            "Lifestyle" | translate }}
           </a>
         </li>
 
         <li>
-          <a
-            routerLink="/contact-us"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >{{ "ContactUs" | translate }}</a
-          >
+          <a routerLink="/contact-us" [ngClass]="{ ct_change_color: isHome }" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">{{
+            "ContactUs" | translate }}</a>
         </li>
       </ul>
     </nav>
   </div>
   <div class="ct_right_menu_links">
-    <div class="ct_language_select dropdown notranslate">
-      <img
-        [src]="getImage(selectedLang)"
-        alt=""
-        class="dropdown_img"
-        style="width: 20px; margin-right: 5px"
-      />
-      <button
-        class="dropdown-toggle py-2 mt-0"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        {{ getLanguage(selectedLang) }}
+    <div class="ct_language_select dropdown notranslate" [ngClass]="{ ct_change_bg: isHome }">
+      <img [src]="getImage(selectedLang)" alt="" class="dropdown_img" style="width: 20px; margin-right: 5px" />
+      <button class="dropdown-toggle py-2 mt-0" data-bs-toggle="dropdown" aria-expanded="false">
+        <!-- {{ getLanguage(selectedLang) }} -->
       </button>
       <ul class="dropdown-menu">
         <li>
           <a class="dropdown-item" (click)="onCustomLangChange('en')">
-            <img
-              src="img/USA.png"
-              alt=""
-              style="width: 20px; margin-right: 5px"
-            />
-            English
+            <img src="img/USA.png" alt="" style="width: 20px; margin-right: 5px" />
+            
           </a>
         </li>
         <li>
           <a class="dropdown-item" (click)="onCustomLangChange('es')">
-            <img
-              src="img/spanish.png"
-              alt=""
-              style="width: 20px; margin-right: 5px"
-            />
-            Spanish
+            <img src="img/spanish.png" alt="" style="width: 20px; margin-right: 5px" />
+            
           </a>
         </li>
       </ul>
     </div>
     <div>
-      <button (click)="openLoginModal()" class=" ct_white_nowrap ct_outline_btn ct_outline_btn_white">
+      <button (click)="openLoginModal()" [ngClass]="{ ct_change_bg: isHome }"
+        class="ct_white_nowrap ct_outline_btn ct_outline_btn_white">
         <span>{{ "LogIn" | translate }}</span>
         <!-- /<span>{{ 'SignUp' | translate}}</span> -->
       </button>
