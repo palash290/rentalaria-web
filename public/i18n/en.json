@@ -2,6 +2,8 @@
     "Home": "Home",
     "AboutUs": "About Us",
     "Cities": "Cities",
+    "Lifestyle": "Lifestyle",
+    "Properties1": "Properties",
     "ListProperty": "List Property",
     "ContactUs": "Contact Us",
     "LogIn": "Sign In",
@@ -57,6 +59,7 @@
     "EmailId": "Enter Your Email Id",
     "YourMessage": "Your Message",
     "Submit": "Submit",
+    "Send": "Send",
     "PremiumRentalHeading": "Don’t Miss Out on Premium Rentals. Secure Your Ideal Home in Málaga",
     "PremiumRentalDescription": "Be the first to explore our curated monthly rentals. Limited homes, premium locations, and dedicated support—reserve your spot now.",
     "PremiumRentalLine1": "Be the first to explore our curated monthly rentals. Limited homes, premium locations, and dedicated support—reserve your spot now.",
@@ -115,10 +118,13 @@
     "WelcomeBack": "Welcome Back!",
     "EmailLabel": "Email",
     "PasswordLabel": "Password",
-    "ForgotPassword": "Forgot Password?",
+    "ForgotPassword?": "Forgot Password?",
+    "ForgotPassword": "Forgot Password",
     "SignIn": "Sign In",
     "DontHaveAccount": "Don’t Have an Account?",
     "EmailRequired": "Email is required.",
     "EmailInvalid": "Invalid email format.",
-    "PasswordRequired": "Password is required."
+    "PasswordRequired": "Password is required.",
+    "RecoverPasswordDescription": "Don’t worry, happens to all of us. Enter your email below to recover your password",
+    "AlreadyHaveAccount": "Already have an account?"
 }

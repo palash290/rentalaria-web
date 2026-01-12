@@ -2,6 +2,8 @@
     "Home": "Hogar",
     "AboutUs": "Sobre nosotros",
     "Cities": "Ciudades",
+    "Lifestyle": "Estilo de vida",
+    "Properties1": "Propiedades",
     "ListProperty": "Listar propiedad",
     "ContactUs": "Contacta con nosotras",
     "LogIn": "Acceso",
@@ -57,6 +59,7 @@
     "EmailId": "Introduce tu correo electrónico",
     "YourMessage": "Tu mensaje",
     "Submit": "Entregar",
+    "Send": "Sentidos",
     "PremiumRentalHeading": "No te pierdas los alquileres premium. Asegura tu hogar ideal en Málaga",
     "PremiumRentalDescription": "Sé el primero en explorar nuestros alquileres mensuales cuidadosamente seleccionados. Viviendas limitadas, ubicaciones premium y atención personalizada: reserva tu lugar ahora.",
     "PremiumRentalLine1": "Sé el primero en explorar nuestros alquileres mensuales cuidadosamente seleccionados. Viviendas limitadas, ubicaciones premium y atención personalizada: reserva tu lugar ahora.",
@@ -115,10 +118,13 @@
     "WelcomeBack": "¡Bienvenido de nuevo!",
     "EmailLabel": "Correo electrónico",
     "PasswordLabel": "Contraseña",
-    "ForgotPassword": "¿Olvidaste tu contraseña?",
+    "ForgotPassword?": "¿Olvidaste tu contraseña?",
+    "ForgotPassword": "¿Olvidaste tu contraseña",
     "SignIn": "Iniciar sesión",
     "DontHaveAccount": "¿No tienes una cuenta?",
     "EmailRequired": "El correo electrónico es obligatorio.",
     "EmailInvalid": "Formato de correo electrónico no válido.",
-    "PasswordRequired": "La contraseña es obligatoria."
+    "PasswordRequired": "La contraseña es obligatoria.",
+    "RecoverPasswordDescription": "No te preocupes, a todos nos pasa. Introduce tu correo electrónico a continuación para recuperar tu contraseña",
+    "AlreadyHaveAccount": "¿Ya tienes una cuenta?"
 }

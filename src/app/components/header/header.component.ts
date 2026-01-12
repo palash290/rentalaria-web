@@ -10,8 +10,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-header',
   imports: [RouterLink, LogInComponent, SignUpComponent, ForgotPasswordComponent, TranslateModule, RouterLinkActive,
-    CommonModule
-  ],
+    CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

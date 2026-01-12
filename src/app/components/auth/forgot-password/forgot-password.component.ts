@@ -2,14 +2,15 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { CommonService } from '../../../services/common.service';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ModalService } from '../../../services/modal.service';
 import { VerifyOtpComponent } from '../verify-otp/verify-otp.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-forgot-password',
-  imports: [ReactiveFormsModule, CommonModule, FormsModule, VerifyOtpComponent],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, VerifyOtpComponent, TranslateModule],
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.css'
 })
@@ -23,7 +24,7 @@ export class ForgotPasswordComponent {
     private apiSrevice: CommonService,
     private toastr: NzMessageService,
     private router: Router,
-    private modalService: ModalService
+    private modalService: ModalService, private translate: TranslateService
   ) { }
 
   ngOnInit(): void {
