@@ -22,7 +22,7 @@
     border: 0px;
     padding: 2px 6px;
     border-radius: 6px;
-    width: 7rem;
+    /* width: 7rem; */
     color: #fff;
     display: flex;
     justify-content: space-evenly;
@@ -54,6 +54,25 @@
     color: #000000 !important;
 }
 
-.ct_change_bg {
+/* .ct_change_bg {
     background-color: #000000 !important;
+} */
+.ct_change_bg {
+    border: 1px solid #e6e6e6;
+    color: #000;
+}
+
+.ct_change_bg:hover {
+    color: #fff;
+}
+
+.ct_language_select ul.dropdown-menu.show {
+    background-color: #ffffff54;
+    width: fit-content;
+    min-width: fit-content;
+    padding-inline: 10px;
+    transform: translate3d(0px, 42px, 0px) !important;
+    inset: 0px;
+    left: 0px;
+    top: 5px !important;
 }

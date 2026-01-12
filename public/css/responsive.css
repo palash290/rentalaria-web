@@ -73,6 +73,7 @@
 
     .ct_menu_toggle {
         display: block;
+        color: #fff;
     }
 
     .ct_navbar {
@@ -82,7 +83,7 @@
 
     header {
         padding: 17px 22px;
-        background-color: #fff;
+        /* background-color: #fff; */
         border-radius: 13px;
         max-width: calc(100% - 30px);
     }
@@ -117,7 +118,8 @@
     .ct_search_sections_filter {
         grid-template-columns: auto;
     }
-    .ct_search_sections_filter_767{
+
+    .ct_search_sections_filter_767 {
         grid-template-columns: max-content;
     }
 
@@ -180,6 +182,14 @@
     .ct_flex_col_991 {
         flex-direction: column;
         align-items: start;
+    }
+
+
+
+
+
+    .ct_language_select {
+        justify-content: end;
     }
 }
 
@@ -290,11 +300,13 @@
     .ct_dont_miss_section:before {
         display: none;
     }
-    .ct_search_sections_filter_767{
+
+    .ct_search_sections_filter_767 {
         grid-template-columns: auto;
         max-width: auto;
     }
-    .ct_filter_btn{
+
+    .ct_filter_btn {
         width: 100%;
     }
 }
@@ -397,12 +409,18 @@
     .ct_apartment_detail_section_links a {
         padding-inline: 0px;
     }
-    .ct_serach_filter_flex_575{
-      display: flex;
-      flex-direction: column;
-      align-items: start !important;
+
+    .ct_serach_filter_flex_575 {
+        display: flex;
+        flex-direction: column;
+        align-items: start !important;
     }
-    .ct_w_100_575,.ct_serach_filter_flex .form-group ,.ct_date_item ,.ct_date_item .ant-picker ,.ct_date_wrapper{
+
+    .ct_w_100_575,
+    .ct_serach_filter_flex .form-group,
+    .ct_date_item,
+    .ct_date_item .ant-picker,
+    .ct_date_wrapper {
         width: 100% !important;
     }
 }
