@@ -44,15 +44,22 @@ export class ViewPropertyComponent {
     this.route.queryParams.subscribe(params => {
       this.propertyId = params['propertyId'];
     });
+
     if (this.service.getToken()) {
       this.isLogIn = true;
     }
+
+    // 🔥 instant updates
+    this.service.isLoggedIn$.subscribe(state => {
+      this.isLogIn = state;
+    });
 
     this.getPropertyDetail();
   }
 
   openLoginModal() {
     this.modalService.openLoginModal();
+    this.service.getToken()
   }
 
 
@@ -83,7 +90,7 @@ export class ViewPropertyComponent {
       });
     }
   }
-// getAllProperty/27'
+  // getAllProperty/27'
   getPropertyDetail() {
     this.service.get(`user/getAllProperty/${this.propertyId}`).subscribe({
       next: (resp: any) => {
@@ -145,20 +152,18 @@ export class ViewPropertyComponent {
   }
 
   toggleFavourite() {
-    // Optimistic UI update
-    this.isShortlisted = !this.isShortlisted;
     const formURlData = new URLSearchParams();
     formURlData.set('property_id', this.propertyId);
+
     this.service
       .post(`user/create-Whislist`, formURlData.toString())
       .subscribe({
         next: (resp: any) => {
+          this.isShortlisted = !this.isShortlisted; // toggle AFTER success
           this.toastr.success(resp.message);
-          this.getPropertyDetail();
         },
-        error: (error) => {
-          console.error(error);
-          this.isShortlisted = !this.isShortlisted;
+        error: () => {
+          this.toastr.error('Something went wrong');
         }
       });
   }

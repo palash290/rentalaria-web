@@ -31,6 +31,15 @@ export class SearchComponent {
     this.checkIn = localStorage.getItem('date');
     this.checkOut = localStorage.getItem('date2');
     this.selectedLocation = localStorage.getItem('locationName');
+
+    // instant updates
+    this.service.location$.subscribe(data => {
+      if (data) {
+        this.selectedLocationId = data.id;
+        this.selectedLocation = data.name;
+      }
+    });
+
     this.getCities();
 
     this.dateValidation();
@@ -127,36 +136,36 @@ export class SearchComponent {
   isCalendarOpen = false;
 
   malagaLocations: any[] = [
-      {
-        "id": 1,
-        "name": "Centro Histórico",
-        "status": "ACTIVE"
-      },
-      {
-        "id": 3,
-        "name": "El Limonar",
-        "status": "ACTIVE"
-      },
-      {
-        "id": 2,
-        "name": "La Malagueta",
-        "status": "ACTIVE"
-      },
-      {
-        "id": 5,
-        "name": "Pedregalejo",
-        "status": "ACTIVE"
-      },
-      {
-        "id": 4,
-        "name": "Soho",
-        "status": "ACTIVE"
-      },
-      {
-        "id": 6,
-        "name": "Teatinos",
-        "status": "ACTIVE"
-      }
+    {
+      "id": 1,
+      "name": "Centro Histórico",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 3,
+      "name": "El Limonar",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 2,
+      "name": "La Malagueta",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 5,
+      "name": "Pedregalejo",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 4,
+      "name": "Soho",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 6,
+      "name": "Teatinos",
+      "status": "ACTIVE"
+    }
   ];
 
   beachLocations: any[] = [

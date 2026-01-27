@@ -194,7 +194,8 @@ export class HeaderComponent {
     this.service.clearToken();
     // localStorage.clear();
     this.closeModalAdd.nativeElement.click();
-    // this.router.navigateByUrl('/')
+    // this.router.navigateByUrl('/');
+    this.service.setLoginState(false);
   }
 
   selectedLocation: any = '';
@@ -211,6 +212,13 @@ export class HeaderComponent {
 
     localStorage.setItem('location', location);
     localStorage.setItem('locationName', this.selectedLocation);
+
+    // 🔥 notify instantly
+    this.service.setLocation({
+      id: this.selectedLocationId,
+      name: this.selectedLocation
+      
+    });
 
     this.router.navigate(['/list-property'], {
       queryParams,

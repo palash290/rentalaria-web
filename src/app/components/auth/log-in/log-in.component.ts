@@ -68,6 +68,7 @@ export class LogInComponent {
             this.loading = false;
             this.toastr.success(resp.message);
             this.closeModalAdd.nativeElement.click();
+            this.service.setLoginState(true);
             // this.router.navigateByUrl('/admin/my-profile');
           } else {
             this.toastr.warning(resp.message);

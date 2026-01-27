@@ -4,16 +4,18 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LifestyleSidebarComponent } from './lifestyle-sidebar/lifestyle-sidebar.component';
 import { CommonService } from '../../services/common.service';
 import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-lifestyle',
-  imports: [RouterLink, TranslateModule, LifestyleSidebarComponent, CommonModule],
+  imports: [RouterLink, TranslateModule, NgxPaginationModule, CommonModule],
   templateUrl: './lifestyle.component.html',
   styleUrl: './lifestyle.component.css'
 })
 export class LifestyleComponent {
 
   allLifestiles: any;
+  p: any = 1;
 
   constructor(private service: CommonService, private translate: TranslateService) { }
 

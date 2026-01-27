@@ -66,5 +66,21 @@ export class CommonService {
   }
   // End //
 
+  private locationSource = new BehaviorSubject<any>(null);
+
+  location$ = this.locationSource.asObservable();
+
+  setLocation(data: { id: any; name: string }) {
+    this.locationSource.next(data);
+  }
+
+  
+  private loginSource = new BehaviorSubject<boolean>(false);
+  isLoggedIn$ = this.loginSource.asObservable();
+
+  setLoginState(state: boolean) {
+    this.loginSource.next(state);
+  }
+
 
 }
