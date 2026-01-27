@@ -14,7 +14,7 @@
                             <img src="img/logo.png" alt="" style="max-width: 276px;">
                         </div>
                         <h2 class="ct_fs_24 text-center  ct_ff_ppneuemontreal-medium ct_mb_56">Otp Verification</h2>
-                       
+
                         <nz-flex nzVertical [nzGap]="20">
                             <nz-flex nzVertical>
                                 <nz-input-otp formControlName="otp" [nzLength]="4" [nzSize]="'default'">
@@ -27,11 +27,14 @@
                         <div class="ct_mt_30" (click)="onSubmit()">
                             <a class="ct_black_btn w-100 ct_border_radius_5">Send</a>
                         </div>
+                        <button #closeModal type="button" hidden class="ct_outline_btn ct_ff_Matter_Medium"
+                            data-bs-dismiss="modal">
+                        </button>
                         <p class="mb-0 mt-2 text-center ct_ff_ppneuemontreal-book">
-                            Already have an account?
-                            <a href="javascript:void(0)" class=" text-dark ct_ff_ppneuemontreal-medium"
-                                data-bs-toggle="modal" data-bs-target="#ct_login_modal">
-                                Sign In
+                            Didn't get otp?
+                            <a href="javascript:void(0)" (click)="resendOtp()"
+                                class=" text-dark ct_ff_ppneuemontreal-medium">
+                                Re-Send
                             </a>
                         </p>
                     </form>
@@ -46,3 +49,12 @@
 <!-- Forgot Pasword modal E -->
 
 <app-reset-password></app-reset-password>
+
+<div class="ct_loader_main" *ngIf="isLoading || isLoadingResend">
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>

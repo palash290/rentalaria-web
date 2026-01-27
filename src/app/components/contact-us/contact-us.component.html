@@ -47,45 +47,63 @@
                 <div class="py-5">
                     <h4 class="ct_fs_28 ct_ff_PPEditorialNew_Regular ct_mb_35">{{'SupportSubtitle' | translate}}
                     </h4>
-                    <form action="">
+                    <form [formGroup]="Form">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group mb-4">
                                     <input type="text"
                                         class="form-control ct_input ct_tansparent_input ct_ff_ppneuemontreal-book"
-                                        placeholder="{{'FullName' | translate}}">
+                                        placeholder="{{'FullName' | translate}}" formControlName="fullName">
+                                    <div *ngIf="Form.controls['fullName'].invalid && Form.controls['fullName'].touched"
+                                        class="err_msg">
+                                        <div *ngIf="Form.controls['fullName'].errors?.['required']">Please enter
+                                            your full name.</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group mb-4">
                                     <input type="email"
                                         class="form-control ct_input ct_tansparent_input ct_ff_ppneuemontreal-book"
-                                        placeholder="{{'EmailId' | translate}}">
+                                        placeholder="{{'EmailId' | translate}}" formControlName="email">
+                                    <div *ngIf="Form.controls['email'].invalid && Form.controls['email'].touched"
+                                        class="err_msg">
+                                        <div *ngIf="Form.controls['email'].errors?.['required']" class="ct_fs_14 mt-1">
+                                            {{'EmailRequired' | translate}}
+                                        </div>
+                                        <div *ngIf="Form.controls['email'].errors?.['email'] && !Form.controls['email'].errors?.['required']"
+                                            class="ct_fs_14 mt-1">
+                                            {{'EmailInvalid' | translate}}</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group mb-4">
                                     <input type="number"
                                         class="form-control ct_input ct_tansparent_input ct_ff_ppneuemontreal-book"
-                                        placeholder="{{'PhoneNumberLabel' | translate}}">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group mb-4">
-                                    <input type="text"
-                                        class="form-control ct_input ct_tansparent_input ct_ff_ppneuemontreal-book"
-                                        placeholder="{{'SubjectLabel' | translate}}">
+                                        placeholder="{{'PhoneNumberLabel' | translate}}" formControlName="number">
+                                    <div *ngIf="Form.controls['number'].invalid && Form.controls['number'].touched"
+                                        class="err_msg">
+                                        <div *ngIf="Form.controls['number'].errors?.['required']">Please enter
+                                            your phone number.</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group mb-4">
                                     <textarea rows="4"
                                         class="form-control ct_input ct_tansparent_input h-auto ct_ff_ppneuemontreal-book"
-                                        placeholder="{{'YourMessage' | translate}}"></textarea>
+                                        placeholder="{{'YourMessage' | translate}}"
+                                        formControlName="message"></textarea>
+                                    <div *ngIf="Form.controls['message'].invalid && Form.controls['message'].touched"
+                                        class="err_msg">
+                                        <div *ngIf="Form.controls['message'].errors?.['required']">Please enter
+                                            message.</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="ct_mt_35">
-                                <button class="ct_black_btn ct_border_radius_5 px-5">{{'Submit' | translate}}</button>
+                            <div class="ct_mt_35" (click)="submit()">
+                                <a class="ct_black_btn ct_border_radius_5 px-5">{{'Submit' | translate}}</a>
                             </div>
                         </div>
                     </form>
@@ -128,3 +146,12 @@
         </div>
     </div>
 </section>
+
+<div class="ct_loader_main" *ngIf="loading">
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>

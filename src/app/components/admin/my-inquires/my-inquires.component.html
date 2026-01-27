@@ -10,7 +10,7 @@
                 <i class="fa-solid fa-search"></i>
             </span>
             <input type="text" placeholder="Search by property name..."
-                class="ct_search_input ct_ff_ppneuemontreal-book" />
+                class="ct_search_input ct_ff_ppneuemontreal-book" [(ngModel)]="searchText" (input)="getmyinquiries()" />
         </div>
 
         <button class="ct_black_btn ct_border_radius_10">Search</button>
@@ -21,50 +21,66 @@
         <table class="table align-middle">
             <thead>
                 <tr>
+                    <th>S No.</th>
                     <th>Property Name</th>
                     <th>Location</th>
                     <th>Date</th>
-                    <th>Reason</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let item of filteredData | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                    <td>{{(p - 1) * 10 + i + 1}}</td>
                     <td>
-                        <span class="ct_overlay_text">Casa Alameda</span>
+                        <span class="ct_overlay_text">{{item.property_name}}</span>
                     </td>
-                    <td><span class="ct_overlay_text">Malaga, Malaga</span></td>
-                    <td>31 Jan 25</td>
-                    <td>Remote Work Stay</td>
-                    <td><span style="color: #B69515;">Pending Review</span></td>
+                    <td><span class="ct_overlay_text">{{item.area_name}}</span></td>
+                    <td>{{item.created_at | date:'dd-MMM-yyyy'}}</td>
+                    <td><span style="color: #B69515;">{{item.status}}</span>
+                        <!-- <td><span style="color: #008000;">Closed</span></td> -->
+                    </td>
                     <td>
-                        <a routerLink="/admin/inquery-details" class="text-dark"><i class="fa-regular fa-eye"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span class="ct_overlay_text">Casa Alameda</span>
-                    </td>
-                    <td><span class="ct_overlay_text">Malaga, Malaga</span></td>
-                    <td>31 Jan 25</td>
-                    <td>Remote Work Stay</td>
-                    <td><span style="color: #008000;">Closed</span></td>
-                    <td> <a routerLink="/admin/inquery-details" class="text-dark"><i class="fa-regular fa-eye"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span class="ct_overlay_text">Casa Alameda</span>
-                    </td>
-                    <td><span class="ct_overlay_text">Malaga, Malaga</span></td>
-                    <td>31 Jan 25</td>
-                    <td>Remote Work Stay</td>
-                    <td><span style="color: #008000;">Closed</span></td>
-                    <td> <a routerLink="/admin/inquery-details" class="text-dark"><i class="fa-regular fa-eye"></i></a>
+                        <div class="d-flex align-items-center gap-3">
+                            <a [routerLink]="['/admin/inquery-details']" [queryParams]="{inqueryId: item.inquiry_id}"
+                                class="text-dark"><i class="fa-regular fa-eye"></i></a>
+                            <a (click)="getId(item.inquiry_id)" data-bs-toggle="modal"
+                                data-bs-target="#deletePropertyModal">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </div>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <div class="col-md-12">
+            <div class="ct_no_recod_found_bg" *ngIf="filteredData?.length == 0">
+                <p class="text-center mb-0 ct_fs_20">No inquiry found</p>
+            </div>
+        </div>
+    </div>
+
+    <pagination-controls class="ct_pagination_div" *ngIf="!(allInquiries?.length == 0)"
+        (pageChange)="p = $event"></pagination-controls>
+</div>
+
+<div class="modal fade" id="deletePropertyModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-4 p-4">
+            <!-- Close button -->
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
+            <h4 class="ct_fs_28 ct_fw_500 mt-2">Delete Inquery</h4>
+            <p class="text-muted mb-4 ct_fs_18">
+                Are you sure you delete this inquery ?
+            </p>
+            <div class="d-flex gap-3">
+                <button #closeModalDelete class="ct_black_btn" data-bs-dismiss="modal">
+                    No
+                </button>
+                <button (click)="deleteProperty()" class="btn btn-light px-4">
+                    Yes
+                </button>
+            </div>
+        </div>
     </div>
 </div>

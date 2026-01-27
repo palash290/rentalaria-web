@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { NzInputOtpComponent } from 'ng-zorro-antd/input';
@@ -25,33 +25,40 @@ export class VerifyOtpComponent {
   isLoadingResend: boolean = false;
   isPasswordVisible: boolean = false;
   userEmail: any;
+  @ViewChild('closeModal') closeModal!: ElementRef;
 
   constructor(private fb: FormBuilder, public validationErrorService: ValidationErrorService, private toastr: NzMessageService,
     private service: CommonService, private modalService: ModalService
   ) {
     this.Form = this.fb.group({
-      //email: ['', [Validators.required, Validators.email]],
+      // email: ['', [Validators.required, Validators.email]],
       otp: ['', Validators.required],
     });
   }
 
+  ngOnInit() {
+    this.userEmail = localStorage.getItem('userEmail');
+  }
+
   onSubmit() {
-    this.modalService.openResetModal();
-    return
+    // this.modalService.openResetModal();
+    // return
     this.Form.markAllAsTouched()
     if (this.Form.valid) {
       this.isLoading = true
       const formURlData = new URLSearchParams()
       formURlData.set('email', this.userEmail)
       formURlData.set('otp', this.Form.value.otp)
-      formURlData.set('newPassword', this.Form.value.password)
+      // formURlData.set('newPassword', this.Form.value.password)
       this.service
-        .post('user/reset-password', formURlData.toString())
+        .post('public/verify-otp', formURlData.toString())
         .subscribe({
           next: (resp: any) => {
             if (resp.success == true) {
               this.isLoading = false;
               this.toastr.success(resp.message);
+              this.closeModal.nativeElement.click();
+              this.modalService.openResetModal();
             } else {
               this.isLoading = false;
               this.toastr.warning(resp.message);
@@ -74,7 +81,7 @@ export class VerifyOtpComponent {
     const formURlData = new URLSearchParams()
     formURlData.set('email', this.userEmail)
     this.service
-      .post('user/resend-otp', formURlData.toString())
+      .post('public/resend-otp', formURlData.toString())
       .subscribe({
         next: (resp: any) => {
           if (resp.success == true) {

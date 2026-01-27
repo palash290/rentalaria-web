@@ -38,22 +38,24 @@ export class ForgotPasswordComponent {
   }
 
   onSubmit() {
-    this.modalService.openOtpModal();
-    return
+    // this.modalService.openOtpModal();
+    // return
     this.Form.markAllAsTouched()
     if (this.Form.valid) {
       this.loading = true
       const formURlData = new URLSearchParams()
       formURlData.set('email', this.Form.value.email)
       this.apiSrevice
-        .post('user/forgotPassword', formURlData.toString())
+        .post('public/forgot-password', formURlData.toString())
         .subscribe({
           next: (resp: any) => {
             if (resp.success == true) {
               this.loading = false;
-              this.router.navigateByUrl('/choose-login');
+              this.modalService.openOtpModal();
               this.toastr.success(resp.message);
-              this.Form.reset();
+              // this.Form.reset();
+              localStorage.setItem('userEmail', this.Form.value.email)
+              localStorage.setItem('forgot_code', resp.data)
               this.closeModal.nativeElement.click();
             } else {
               this.loading = false;

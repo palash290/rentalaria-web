@@ -81,4 +81,13 @@ export class HomeComponent {
       });
     }, 1000);
   }
+
+  clearStorage() {
+    localStorage.removeItem('location');
+    localStorage.removeItem('date');
+    localStorage.removeItem('date2');
+    localStorage.removeItem('locationName');
+  }
+
+
 }

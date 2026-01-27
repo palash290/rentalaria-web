@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CommonService } from '../../../services/common.service';
 
 @Component({
   selector: 'app-header',
@@ -10,15 +11,16 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent {
 
-  selectedLang: string = 'en'
+  selectedLang: string = 'en';
 
   @ViewChild('closeModalAdd') closeModalAdd!: ElementRef;
 
-  constructor(private router: Router, private translate: TranslateService) {
+  constructor(private router: Router, private translate: TranslateService, private service: CommonService) {
     this.translate.use(localStorage.getItem('lang') || 'en');
   }
 
   logout() {
+    localStorage.clear();
     this.closeModalAdd.nativeElement.click();
     this.router.navigateByUrl('/')
   }
@@ -28,5 +30,6 @@ export class HeaderComponent {
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
   }
+
 
 }

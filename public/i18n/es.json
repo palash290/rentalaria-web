@@ -13,6 +13,10 @@
     "HomeHeader": "Hogar, diseñado a la perfección.",
     "Search": "Buscar",
     "Location": "Ubicación",
+    "CheckIn": "Entrada",
+    "CheckOut": "Salida",
+    "When": "¿Cuándo?",
+    "Until": "¿Hasta cuándo?",
     "StartDate": "Fecha de inicio",
     "EndDate": "Fecha de finalización",
     "EnterKeyWords": "Ingrese palabras clave",
@@ -117,6 +121,7 @@
     "NewsletterEmailPlaceholder": "Introduce tu correo electrónico",
     "WelcomeBack": "¡Bienvenido de nuevo!",
     "EmailLabel": "Correo electrónico",
+    "FullNameLabel": "Nombre completo",
     "PasswordLabel": "Contraseña",
     "ForgotPassword?": "¿Olvidaste tu contraseña?",
     "ForgotPassword": "¿Olvidaste tu contraseña",
@@ -126,5 +131,9 @@
     "EmailInvalid": "Formato de correo electrónico no válido.",
     "PasswordRequired": "La contraseña es obligatoria.",
     "RecoverPasswordDescription": "No te preocupes, a todos nos pasa. Introduce tu correo electrónico a continuación para recuperar tu contraseña",
-    "AlreadyHaveAccount": "¿Ya tienes una cuenta?"
+    "AlreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "Discover": "Descubre",
+    "GuidesToSmarterRenting": "Guías para alquilar de forma inteligente",
+    "Explore": "Explorar",
+    "FeaturedExperiences": "Experiencias destacadas"
 }

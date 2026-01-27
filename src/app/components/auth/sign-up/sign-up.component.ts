@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { CommonService } from '../../../services/common.service';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [ReactiveFormsModule, CommonModule, FormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, TranslateModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
@@ -16,8 +17,11 @@ export class SignUpComponent {
   Form: FormGroup;
   loading: boolean = false;
   passwordMismatch = false;
+  @ViewChild('closeModalAdd') closeModalAdd!: ElementRef;
 
-  constructor(private service: CommonService, private router: Router, private fb: FormBuilder, private toastr: NzMessageService) {
+  constructor(private service: CommonService, private router: Router, private fb: FormBuilder, private toastr: NzMessageService,
+    private translate: TranslateService
+  ) {
     this.Form = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -38,36 +42,21 @@ export class SignUpComponent {
 
   sumbit() {
 
-    if (!this.type) {
-      console.warn("Type missing, redirecting to default...");
-      return;
-    }
-
     this.Form.markAllAsTouched();
     if (this.Form.valid) {
       this.loading = true;
       const formURlData = new URLSearchParams();
-      formURlData.set('fullName', this.Form.value.name);
-      if (this.type == 'individual') {
-        formURlData.set('role', '1');
-      }
-      if (this.type == 'team') {
-        formURlData.set('role', '2');
-      }
+      formURlData.set('full_name', this.Form.value.name);
       formURlData.set('password', this.Form.value.new_password);
       formURlData.set('email', this.Form.value.email);
-
-      this.service.post('signUp', formURlData.toString()).subscribe({
+      formURlData.set('language', 'en');
+      this.service.post('public/signup', formURlData.toString()).subscribe({
         next: (resp: any) => {
           if (resp.success == true) {
             this.service.setToken(resp.data);
             this.toastr.success(resp.message);
             this.loading = false;
-            // routerLink="/create-team"
-            this.router.navigate(['/verify-email'], {
-              queryParams: { email: this.Form.value.email, type: this.type }
-            });
-
+            this.closeModalAdd.nativeElement.click();
           } else {
             this.toastr.warning(resp.message);
             this.loading = false;

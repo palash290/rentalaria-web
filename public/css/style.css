@@ -3,7 +3,7 @@ body {
 }
 
 .ct_navbar {
-    padding: 17px 22px;
+    padding: 17px 0px;
     border-radius: 13px;
     display: flex;
     align-items: center;
@@ -19,9 +19,11 @@ body {
     object-fit: cover;
     filter: invert(1);
 }
+
 .ct_navbar nav {
     flex: 1;
 }
+
 .ct_navbar ul {
     display: flex;
     align-items: center;
@@ -38,9 +40,10 @@ body {
     font-family: ppneuemontreal-book;
 }
 
-.ct_navbar ol li a{
+.ct_navbar ol li a {
     color: #000 !important;
 }
+
 .ct_navbar ul li a:hover,
 .ct_navbar ul li a.active {
     color: #fff;
@@ -75,8 +78,8 @@ header {
     max-width: 1320px;
     margin-inline: auto;
     width: 100%;
-    padding-right: calc(1.5rem* .5);
-    padding-left: calc(1.5rem * .5);
+    padding-right: 30px;
+    padding-left: 30px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -534,9 +537,11 @@ footer {
 .ct_product_card ul li+li {
     margin-top: 10px;
 }
-.ct_product_card figcaption{
+
+.ct_product_card figcaption {
     padding: 13px;
 }
+
 .ct_product_card figcaption a {
     color: #000;
     transition: 0.4s ease all;
@@ -1153,8 +1158,21 @@ footer {
     border-radius: 6px;
 }
 
+.slider-popup-img {
+    height: 400px;
+    object-fit: contain;
+    background-color: #919191;
+}
+
+.ct_gallery_right video {
+    width: 100%;
+    height: 272px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
 button.ct_show_all_images_btn {
-    position: absolute;
+    /* position: absolute; */
     bottom: 5px;
     right: 5px;
     z-index: 999;
@@ -1882,4 +1900,12 @@ button.ct_show_all_images_btn:hover {
     .ct_navbar nav ul li {
         width: 100%;
     }
+}
+
+
+
+.video-cloe-btn {
+    top: 10px;
+    right: 10px;
+    z-index: 999;
 }

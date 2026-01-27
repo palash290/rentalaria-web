@@ -135,19 +135,49 @@ nz-range-picker {
 .ct_cursor_pointer {
       cursor: pointer;
 }
-.ant-otp{
+
+.ant-otp {
       justify-content: center;
 }
+
 .ant-otp-input {
-    width: 48px;
-    height: 48px;
-    border-radius: 5px !important;
+      width: 48px;
+      height: 48px;
+      border-radius: 5px !important;
 }
-.ant-input:hover,.ant-input:focus{
+
+.ant-input:hover,
+.ant-input:focus {
       border-color: #000 !important;
       box-shadow: unset !important;
 }
 
-.ant-picker-input > input{
-       font-family: ppneuemontreal-book;
+.ant-picker-input>input {
+      font-family: ppneuemontreal-book;
+}
+
+/* Image preview background */
+.ant-image-preview-wrap {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Optional: change mask color */
+.ant-image-preview-mask {
+      background-color: rgba(20, 20, 20, 0.95) !important;
+}
+
+pagination-controls.ct_pagination_div {
+      text-align: end;
+}
+
+.ct_pagination_div ul.ngx-pagination {
+      margin-top: 10px;
+}
+
+.ct_pagination_div .ngx-pagination .current {
+      background-color: #282828;
+}
+
+.cdk-overlay-container {
+      z-index: 9999999999999 !important;
 }

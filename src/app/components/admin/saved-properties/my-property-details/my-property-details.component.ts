@@ -1,12 +1,70 @@
 import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { ActivatedRoute, RouterLink } from "@angular/router";
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { CommonService } from '../../../../services/common.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-my-property-details',
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './my-property-details.component.html',
   styleUrl: './my-property-details.component.css'
 })
 export class MyPropertyDetailsComponent {
+
+  property_id: any;
+  propertyDetails: any;
+  houseRules: any;
+  nearbyLocation: any;
+  mediaList: string[] = [];
+
+  constructor(private service: CommonService, private route: ActivatedRoute, private toastr: NzMessageService) { }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.property_id = params['property_id'];
+    });
+
+    this.getPropertyDetail();
+  }
+
+
+  getPropertyDetail() {
+    this.service.get(`user/getProperty/${this.property_id}`).subscribe({
+      next: (resp: any) => {
+        this.propertyDetails = resp.data;
+
+        // ✅ Parse house rules safely
+        this.houseRules = [];
+
+        if (resp.data.house_rules) {
+          try {
+            this.houseRules = JSON.parse(resp.data.house_rules);
+          } catch (e) {
+            console.error('Invalid house_rules format');
+          }
+        }
+
+        // ✅ Parse house rules safely
+        this.nearbyLocation = [];
+
+        if (resp.data.house_rules) {
+          try {
+            this.nearbyLocation = JSON.parse(resp.data.nearby_property_location);
+          } catch (e) {
+            console.error('Invalid house_rules format');
+          }
+        }
+
+        // ✅ Merge images first, then videos
+        this.mediaList = resp.data.images;
+
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
+  }
+
 
 }

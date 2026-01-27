@@ -1,12 +1,78 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CommonService } from '../../../services/common.service';
+import { CommonModule } from '@angular/common';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-my-inquires',
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule, NgxPaginationModule, FormsModule],
   templateUrl: './my-inquires.component.html',
   styleUrl: './my-inquires.component.css'
 })
 export class MyInquiresComponent {
+
+  allInquiries: any;
+  loading: boolean = false;
+  p: any = 1;
+  filteredData: any[] = [];
+  searchText: string = '';
+  @ViewChild('closeModalDelete') closeModalDelete!: ElementRef;
+
+  constructor(private service: CommonService, private toastr: NzMessageService) { }
+
+  ngOnInit() {
+    this.getmyinquiries();
+  }
+
+  getmyinquiries() {
+    this.service.get('user/my-inquiries').subscribe({
+      next: (resp: any) => {
+        this.allInquiries = resp.data;
+        this.filterTable();
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
+  }
+
+  filterTable() {
+    this.p = 1;
+    let filtered = this.allInquiries;
+
+    if (this.searchText.trim()) {
+      const keyword = this.searchText.trim().toLowerCase();
+      filtered = filtered.filter((item: { property_name: any; }) =>
+        (item.property_name?.toLowerCase().includes(keyword))
+      );
+    }
+    this.filteredData = filtered;
+  }
+
+  deleteId: any;
+
+  getId(id: any) {
+    this.deleteId = id;
+  }
+
+  deleteProperty() {
+    this.loading = true;
+    this.service.delete(`user/delete-inquiries/${this.deleteId}`).subscribe({
+      next: (resp: any) => {
+        this.closeModalDelete.nativeElement.click();
+        this.toastr.success(resp.message);
+        this.getmyinquiries();
+        this.loading = false;
+      },
+      error: error => {
+        this.loading = false;
+        console.log(error.message);
+      }
+    });
+  }
+
 
 }

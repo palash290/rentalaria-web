@@ -40,7 +40,12 @@ export const routes: Routes = [
                         loadComponent: () =>
                               import('./components/all-property-list/view-property/view-property.component').then(m => m.ViewPropertyComponent),
                   },
-                         {
+                  {
+                        path: 'send-inquery',
+                        loadComponent: () =>
+                              import('./components/all-property-list/send-inquery/send-inquery.component').then(m => m.SendInqueryComponent),
+                  },
+                  {
                         path: 'lifestyle',
                         loadComponent: () =>
                               import('./components/lifestyle/lifestyle.component').then(m => m.LifestyleComponent),
@@ -52,7 +57,7 @@ export const routes: Routes = [
                   },
             ]
       },
-         {
+      {
             path: 'admin',
             loadChildren: () => import('./components/admin/admin.routes').then(m => m.adminRoutes),
             // canActivate: [authGuard]

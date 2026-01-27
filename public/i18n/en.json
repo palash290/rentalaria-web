@@ -13,6 +13,10 @@
     "HomeHeader": "Home, Curated to Perfection",
     "Search": "Search",
     "Location": "Location",
+    "CheckIn": "Check-in",
+    "CheckOut": "Check-out",
+    "When": "When?",
+    "Until": "Until?",
     "StartDate": "Start Date",
     "EndDate": "End Date",
     "EnterKeyWords": "Enter KeyWords",
@@ -117,6 +121,7 @@
     "NewsletterEmailPlaceholder": "Enter your email Id",
     "WelcomeBack": "Welcome Back!",
     "EmailLabel": "Email",
+    "FullNameLabel": "Full Name",
     "PasswordLabel": "Password",
     "ForgotPassword?": "Forgot Password?",
     "ForgotPassword": "Forgot Password",
@@ -126,5 +131,9 @@
     "EmailInvalid": "Invalid email format.",
     "PasswordRequired": "Password is required.",
     "RecoverPasswordDescription": "Don’t worry, happens to all of us. Enter your email below to recover your password",
-    "AlreadyHaveAccount": "Already have an account?"
+    "AlreadyHaveAccount": "Already have an account?",
+    "Discover": "Discover",
+    "GuidesToSmarterRenting": "Guides to Smarter Renting",
+    "Explore": "Explore",
+    "FeaturedExperiences": "Featured Experiences"
 }

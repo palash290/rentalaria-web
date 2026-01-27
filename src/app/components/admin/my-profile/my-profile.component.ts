@@ -39,10 +39,10 @@ export class MyProfileComponent {
   }
 
   loadUserProfile() {
-    this.service.get('user/getUserProfile').subscribe({
+    this.service.get('user/profile').subscribe({
       next: (resp: any) => {
         this.userEmail = resp.data.email;
-        this.first_name = resp.data.name;
+        this.first_name = resp.data.full_name;
         this.profileImg = resp.data.profile_image;
         this.profileForm.patchValue({
           name: this.first_name,
@@ -67,13 +67,13 @@ export class MyProfileComponent {
     if (this.profileForm.valid) {
       this.loading = true;
       const formURlData = new FormData();
-      formURlData.append('name', this.profileForm.value.name);
+      formURlData.append('full_name', this.profileForm.value.name);
 
       if (this.selectedFile) {
         formURlData.append('profile_image', this.selectedFile);
       }
 
-      this.service.post('user/editProfile', formURlData).subscribe({
+      this.service.patch('user/profile', formURlData).subscribe({
         next: (resp: any) => {
           if (resp.success == true) {
             this.toastr.success(resp.message);

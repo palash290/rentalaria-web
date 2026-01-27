@@ -8,8 +8,8 @@ import { environment } from '../../environments/environment';
 })
 
 export class CommonService {
-  
-  baseUrl = environment.apiUrl
+
+  baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -21,6 +21,10 @@ export class CommonService {
     return this.http.post<T>(this.baseUrl + url, data)
   };
 
+  patch<T, U>(url: string, data: U): Observable<T> {
+    return this.http.patch<T>(this.baseUrl + url, data)
+  };
+
   update<T, U>(url: string, data: U): Observable<T> {
     return this.http.post<T>(this.baseUrl + url, data)
   };
@@ -29,9 +33,9 @@ export class CommonService {
     return this.http.delete<T>(this.baseUrl + url);
   };
 
-  setToken(token: string) {
-    localStorage.setItem('tactylToken', token)
-  }
+  // setToken(token: string) {
+  //   localStorage.setItem('rentalToken', token)
+  // }
 
   private refreshSidebarSource = new BehaviorSubject<void | null>(null);
   refreshSidebar$ = this.refreshSidebarSource.asObservable();
@@ -39,6 +43,28 @@ export class CommonService {
   triggerHeaderRefresh() {
     this.refreshSidebarSource.next(null);
   }
+
+  // Start //
+  private tokenSubject = new BehaviorSubject<string | null>(
+    localStorage.getItem('rentalToken')
+  );
+
+  token$ = this.tokenSubject.asObservable();
+
+  setToken(token: string) {
+    localStorage.setItem('rentalToken', token);
+    this.tokenSubject.next(token);
+  }
+
+  getToken() {
+    return localStorage.getItem('rentalToken')
+  };
+
+  clearToken() {
+    localStorage.removeItem('rentalToken');
+    this.tokenSubject.next(null);
+  }
+  // End //
 
 
 }

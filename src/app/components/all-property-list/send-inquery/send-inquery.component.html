@@ -1,0 +1,195 @@
+<section class="ct_pt_150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <div class="ct_contact_white_bg">
+                    <h4 class="ct_fs_28 ct_ff_PPEditorialNew_Regular">Submit Your Inquiry</h4>
+                    <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">Fill out the form below and
+                        we'll get back to you within 24 hours</p>
+                    <form [formGroup]="Form" class="ct_mt_35">
+                        <div>
+                            <h4 class="ct_fs_20 ct_ff_ppneuemontreal-medium mb-3">
+                                <svg class="me-1" width="18" height="18" viewBox="0 0 18 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_388_3840)">
+                                        <path
+                                            d="M8.98202 10.2652C10.3433 10.2652 11.6488 9.72442 12.6113 8.76187C13.5739 7.79932 14.1146 6.49383 14.1146 5.13258C14.1146 3.77134 13.5739 2.46585 12.6113 1.5033C11.6488 0.540753 10.3433 0 8.98202 0C7.62078 0 6.31528 0.540753 5.35274 1.5033C4.39019 2.46585 3.84944 3.77134 3.84944 5.13258C3.84944 6.49383 4.39019 7.79932 5.35274 8.76187C6.31528 9.72442 7.62078 10.2652 8.98202 10.2652ZM7.14953 12.1899C3.19985 12.1899 0 15.3897 0 19.3394C0 19.997 0.533308 20.5303 1.19092 20.5303H16.7731C17.4307 20.5303 17.964 19.997 17.964 19.3394C17.964 15.3897 14.7642 12.1899 10.8145 12.1899H7.14953Z"
+                                            fill="#2A2529" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_388_3840">
+                                            <path d="M0 0H17.964V20.5303H0V0Z" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                Personal Information
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                        <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Full Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" class="form-control ct_input ct_border_radius_10"
+                                            placeholder="Enter your full name" formControlName="fullName">
+                                        <div *ngIf="Form.controls['fullName'].invalid && Form.controls['fullName'].touched"
+                                            class="err_msg">
+                                            <div *ngIf="Form.controls['fullName'].errors?.['required']">Please enter
+                                                your full name.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                        <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Email Address<span
+                                                class="text-danger">*</span></label>
+                                        <input type="email" class="form-control ct_input ct_border_radius_10"
+                                            placeholder="Enter your email" formControlName="email">
+                                        <div *ngIf="Form.controls['email'].invalid && Form.controls['email'].touched"
+                                            class="err_msg">
+                                            <div *ngIf="Form.controls['email'].errors?.['required']"
+                                                class="ct_fs_14 mt-1">
+                                                {{'EmailRequired' | translate}}
+                                            </div>
+                                            <div *ngIf="Form.controls['email'].errors?.['email'] && !Form.controls['email'].errors?.['required']"
+                                                class="ct_fs_14 mt-1">
+                                                {{'EmailInvalid' | translate}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group mb-4">
+                                        <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Phone Number<span
+                                                class="text-danger">*</span></label>
+                                        <input type="numbera" class="form-control ct_input ct_border_radius_10"
+                                            placeholder="Enter your phone number" formControlName="number">
+                                        <div *ngIf="Form.controls['number'].invalid && Form.controls['number'].touched"
+                                            class="err_msg">
+                                            <div *ngIf="Form.controls['number'].errors?.['required']">Please enter
+                                                your phone number.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <h4 class="ct_fs_20 ct_ff_ppneuemontreal-medium mb-3">
+                                <svg width="18" height="18" viewBox="0 0 18 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_388_3861)">
+                                        <g clip-path="url(#clip1_388_3861)">
+                                            <path
+                                                d="M3.84944 1.28315V2.56629H1.92472C0.862114 2.56629 0 3.42841 0 4.49101V6.41573H17.964V4.49101C17.964 3.42841 17.1019 2.56629 16.0393 2.56629H14.1146V1.28315C14.1146 0.573406 13.5412 0 12.8315 0C12.1217 0 11.5483 0.573406 11.5483 1.28315V2.56629H6.41573V1.28315C6.41573 0.573406 5.84232 0 5.13258 0C4.42284 0 3.84944 0.573406 3.84944 1.28315ZM17.964 7.69888H0V18.6056C0 19.6682 0.862114 20.5303 1.92472 20.5303H16.0393C17.1019 20.5303 17.964 19.6682 17.964 18.6056V7.69888Z"
+                                                fill="#2A2529" />
+                                        </g>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_388_3861">
+                                            <rect width="17.964" height="20.5303" fill="white" />
+                                        </clipPath>
+                                        <clipPath id="clip1_388_3861">
+                                            <path d="M0 0H17.964V20.5303H0V0Z" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                Stay Information
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                        <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Move-in Date <span
+                                                class="text-danger">*</span></label>
+                                        <input type="date" class="form-control ct_input ct_border_radius_10"
+                                            formControlName="moveInDate">
+                                        <div *ngIf="Form.controls['moveInDate'].invalid && Form.controls['moveInDate'].touched"
+                                            class="err_msg">
+                                            <div *ngIf="Form.controls['moveInDate'].errors?.['required']">Please enter
+                                                move in date.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                        <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Move-out Date <span
+                                                class="text-danger">*</span></label>
+                                        <input type="date" class="form-control ct_input ct_border_radius_10"
+                                            formControlName="moveOutDate">
+                                        <div *ngIf="Form.controls['moveOutDate'].invalid && Form.controls['moveOutDate'].touched"
+                                            class="err_msg">
+                                            <div *ngIf="Form.controls['moveOutDate'].errors?.['required']">Please enter
+                                                move out date.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group mb-4">
+                                        <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Additional Message
+                                            (Optional)</label>
+                                        <textarea name="" class="form-control ct_input ct_border_radius_10 h-auto"
+                                            rows="4"
+                                            placeholder="Tell us more about your rental needs, preferences, or any specific requirements..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ct_mt_35">
+                            <a (click)="submit()" class="ct_black_btn w-100 ct_border_radius_10">Submit Inquiry</a>
+                            <p class="ct_text_clr_6B7280 ct_fs_14 ct_ff_ppneuemontreal-book mt-3 text-center">You'll
+                                receive a confirmation email shortly after submission</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <figure class="ct_single_product_card">
+                    <div class="ct_product_img">
+                        <img [src]="propertyDetails?.images[0]" alt="" style="border-radius: 0px;">
+                    </div>
+                    <figcaption>
+                        <a>
+                            <h4 class="ct_fs_18 ct_ff_ppneuemontreal-medium mb-2 text-truncate">
+                                {{propertyDetails?.property_name}}
+                            </h4>
+                        </a>
+                        <ul>
+                            <li>
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="img/location_icon.png" alt="">
+                                    <p class="ct_fs_15 mb-0 ct_ff_ppneuemontreal-book">{{propertyDetails?.address}}
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="img/house_icon.png" alt="">
+                                    <p class="ct_fs_15 mb-0 ct_ff_ppneuemontreal-book">
+                                        {{propertyDetails?.property_type}}</p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center gap-3">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="img/bed_icon.png" alt="">
+                                    <p class="ct_fs_15 mb-0 ct_ff_ppneuemontreal-book">
+                                        {{propertyDetails?.total_bedrooms}} Bed</p>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="img/bath_tub_icon.png" alt="">
+                                    <p class="ct_fs_15 mb-0 ct_ff_ppneuemontreal-book">
+                                        {{propertyDetails?.total_bathrooms}} Bath</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="ct_loader_main" *ngIf="loading">
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>

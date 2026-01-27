@@ -50,9 +50,9 @@ export class LogInComponent {
 
 
   login() {
-    this.closeModalAdd.nativeElement.click();
-    this.router.navigateByUrl('/admin/my-profile')
-    return;
+    // this.closeModalAdd.nativeElement.click();
+    // this.router.navigateByUrl('/admin/my-profile')
+    // return;
     this.Form.markAllAsTouched();
 
     if (this.Form.valid) {
@@ -61,14 +61,14 @@ export class LogInComponent {
       formURlData.set('email', this.Form.value.email);
       formURlData.set('password', this.Form.value.password);
       formURlData.set('language', 'en');
-      this.service.post('login', formURlData.toString()).subscribe({
+      this.service.post('public/login', formURlData.toString()).subscribe({
         next: (resp: any) => {
           if (resp.success == true) {
             this.service.setToken(resp.data.token);
             this.loading = false;
             this.toastr.success(resp.message);
             this.closeModalAdd.nativeElement.click();
-            this.router.navigateByUrl('/admin/dashboard');
+            // this.router.navigateByUrl('/admin/my-profile');
           } else {
             this.toastr.warning(resp.message);
             this.loading = false;

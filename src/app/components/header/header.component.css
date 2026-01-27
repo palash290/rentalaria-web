@@ -54,9 +54,10 @@
     color: #000000 !important;
 }
 
-/* .ct_change_bg {
-    background-color: #000000 !important;
-} */
+.ct_change_clr {
+    color: #000000 !important;
+}
+
 .ct_change_bg {
     border: 1px solid #e6e6e6;
     color: #000;

@@ -25,6 +25,7 @@ export class SidebarComponent {
   }
 
   logout() {
+    localStorage.clear();
     this.closeModalAdd.nativeElement.click();
     this.router.navigateByUrl('/')
   }

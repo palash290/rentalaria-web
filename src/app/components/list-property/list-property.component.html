@@ -37,186 +37,37 @@
 
 <section class="mt-5">
   <div class="container">
-    <h2 class="ct_fs_26 ct_ff_ppneuemontreal-medium ct_mb_30">
+    <!-- <h2 class="ct_fs_26 ct_ff_ppneuemontreal-medium ct_mb_30">
       Premium apartments in Málaga
-    </h2>
+    </h2> -->
     <div class="row">
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let item of propertyList">
         <figure class="ct_product_card">
           <div class="ct_product_img">
-            <img src="img/product_img_11.jpg" alt="" />
+            <img [src]="item?.image ? item?.image : 'img/product_img_11.jpg'" alt="" />
           </div>
           <figcaption>
-            <a routerLink="/view-property">
+            <a [routerLink]="['/view-property']" [queryParams]="{propertyId: item.property_id}">
               <h4 class="ct_fs_20 ct_ff_PPEditorialNew_Regular mb-2 text-truncate">
-                Sunset View Apartment
+                {{item?.property_name}}
               </h4>
             </a>
             <p class="ct_fs_14 ct_ff_ppneuemontreal-book mb-1">
-              From €230/month
+              From €{{item?.monthly_rent}}/month
             </p>
             <div class="d-flex align-items-center justify-content-between gap-2">
-              <p class="mb-0 ct_fs_14 ct_ff_ppneuemontreal-book">
-                Av. del Puerto 18, Valencia, Spain
+              <p class="mb-0 ct_fs_14 ct_ff_ppneuemontreal-book ct_overlay_text d-inline-block">
+                {{item?.address}}
               </p>
-              <span class="ct_aval_badge ct_ff_ppneuemontreal-book ct_white_nowrap">Avail. Feb 20, 2026</span>
+              <span class="ct_aval_badge ct_ff_ppneuemontreal-book ct_white_nowrap">Avail. {{item?.available_from |
+                date:'dd-MMM-yyyy'}}</span>
             </div>
             <div class="ct_product_btm_div">
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 beds.</p>
+              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">{{item?.total_bedrooms}} beds.</p>
               <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">
-                Sea-View Condo
+                {{item?.property_type}}
               </p>
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 baths.</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <figure class="ct_product_card">
-          <div class="ct_product_img">
-            <img src="img/product_img_11.jpg" alt="" />
-          </div>
-          <figcaption>
-            <a routerLink="/view-property">
-              <h4 class="ct_fs_20 ct_ff_PPEditorialNew_Regular mb-2 text-truncate">
-                Sunset View Apartment
-              </h4>
-            </a>
-            <p class="ct_fs_14 ct_ff_ppneuemontreal-book mb-1">
-              From €230/month
-            </p>
-            <div class="d-flex align-items-center justify-content-between gap-2">
-              <p class="mb-0 ct_fs_14 ct_ff_ppneuemontreal-book">
-                Av. del Puerto 18, Valencia, Spain
-              </p>
-              <span class="ct_aval_badge ct_ff_ppneuemontreal-book ct_white_nowrap">Avail. Feb 20, 2026</span>
-            </div>
-            <div class="ct_product_btm_div">
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 beds.</p>
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">
-                Sea-View Condo
-              </p>
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 baths.</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <figure class="ct_product_card">
-          <div class="ct_product_img">
-            <img src="img/product_img_11.jpg" alt="" />
-          </div>
-          <figcaption>
-            <a routerLink="/view-property">
-              <h4 class="ct_fs_20 ct_ff_PPEditorialNew_Regular mb-2 text-truncate">
-                Sunset View Apartment
-              </h4>
-            </a>
-            <p class="ct_fs_14 ct_ff_ppneuemontreal-book mb-1">
-              From €230/month
-            </p>
-            <div class="d-flex align-items-center justify-content-between gap-2">
-              <p class="mb-0 ct_fs_14 ct_ff_ppneuemontreal-book">
-                Av. del Puerto 18, Valencia, Spain
-              </p>
-              <span class="ct_aval_badge ct_ff_ppneuemontreal-book ct_white_nowrap">Avail. Feb 20, 2026</span>
-            </div>
-            <div class="ct_product_btm_div">
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 beds.</p>
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">
-                Sea-View Condo
-              </p>
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 baths.</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <figure class="ct_product_card">
-          <div class="ct_product_img">
-            <img src="img/product_img_11.jpg" alt="" />
-          </div>
-          <figcaption>
-            <a routerLink="/view-property">
-              <h4 class="ct_fs_20 ct_ff_PPEditorialNew_Regular mb-2 text-truncate">
-                Sunset View Apartment
-              </h4>
-            </a>
-            <p class="ct_fs_14 ct_ff_ppneuemontreal-book mb-1">
-              From €230/month
-            </p>
-            <div class="d-flex align-items-center justify-content-between gap-2">
-              <p class="mb-0 ct_fs_14 ct_ff_ppneuemontreal-book">
-                Av. del Puerto 18, Valencia, Spain
-              </p>
-              <span class="ct_aval_badge ct_ff_ppneuemontreal-book ct_white_nowrap">Avail. Feb 20, 2026</span>
-            </div>
-            <div class="ct_product_btm_div">
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 beds.</p>
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">
-                Sea-View Condo
-              </p>
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 baths.</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <figure class="ct_product_card">
-          <div class="ct_product_img">
-            <img src="img/product_img_11.jpg" alt="" />
-          </div>
-          <figcaption>
-            <a routerLink="/view-property">
-              <h4 class="ct_fs_20 ct_ff_PPEditorialNew_Regular mb-2 text-truncate">
-                Sunset View Apartment
-              </h4>
-            </a>
-            <p class="ct_fs_14 ct_ff_ppneuemontreal-book mb-1">
-              From €230/month
-            </p>
-            <div class="d-flex align-items-center justify-content-between gap-2">
-              <p class="mb-0 ct_fs_14 ct_ff_ppneuemontreal-book">
-                Av. del Puerto 18, Valencia, Spain
-              </p>
-              <span class="ct_aval_badge ct_ff_ppneuemontreal-book ct_white_nowrap">Avail. Feb 20, 2026</span>
-            </div>
-            <div class="ct_product_btm_div">
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 beds.</p>
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">
-                Sea-View Condo
-              </p>
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 baths.</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <figure class="ct_product_card">
-          <div class="ct_product_img">
-            <img src="img/product_img_11.jpg" alt="" />
-          </div>
-          <figcaption>
-            <a routerLink="/view-property">
-              <h4 class="ct_fs_20 ct_ff_PPEditorialNew_Regular mb-2 text-truncate">
-                Sunset View Apartment
-              </h4>
-            </a>
-            <p class="ct_fs_14 ct_ff_ppneuemontreal-book mb-1">
-              From €230/month
-            </p>
-            <div class="d-flex align-items-center justify-content-between gap-2">
-              <p class="mb-0 ct_fs_14 ct_ff_ppneuemontreal-book">
-                Av. del Puerto 18, Valencia, Spain
-              </p>
-              <span class="ct_aval_badge ct_ff_ppneuemontreal-book ct_white_nowrap">Avail. Feb 20, 2026</span>
-            </div>
-            <div class="ct_product_btm_div">
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 beds.</p>
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">
-                Sea-View Condo
-              </p>
-              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">2 baths.</p>
+              <p class="mb-0 ct_ff_ppneuemontreal-book ct_fs_14">{{item?.total_bathrooms}} baths.</p>
             </div>
           </figcaption>
         </figure>
@@ -242,19 +93,18 @@
               <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_22 d-flex align-items-center">
                 <span class="ct_num_count_22">1</span>Price Range</label>
               <div class="slider-container">
-                <input type="range" min="240" max="550" value="460" class="ct_range_slider" id="myRange" />
-
+                <nz-slider [nzTooltipVisible]="'never'" nzRange [nzStep]="1000" [nzMin]="0" [nzMax]="100000"
+                  [(ngModel)]="priceRange" [ngModelOptions]="{standalone: true}"></nz-slider>
                 <div class="d-flex align-items-center justify-content-between mt-1 gap-3 mt-4">
                   <div class="form-group w-100">
                     <label for="" class="ct_fs_14 ct_text_929292 ct_ff_ppneuemontreal-book mb-1">Minimum Price</label>
-                    <input type="nunber" class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book"
-                      placeholder="Minimum Price" />
+                    <input type="number" class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book"
+                      placeholder="Min" [(ngModel)]="priceRange[0]" [ngModelOptions]="{standalone: true}" />
                   </div>
-
                   <div class="form-group w-100">
-                    <label for="" class="ct_fs_14 ct_text_929292 ct_ff_ppneuemontreal-book mb-1">Minimum Price</label>
-                    <input type="nunber" class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book"
-                      placeholder="Minimum Price" />
+                    <label for="" class="ct_fs_14 ct_text_929292 ct_ff_ppneuemontreal-book mb-1">Maximum Price</label>
+                    <input type="number" class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book"
+                      placeholder="Max" [(ngModel)]="priceRange[1]" [ngModelOptions]="{standalone: true}" />
                   </div>
                 </div>
               </div>
@@ -264,35 +114,34 @@
             <div class="form-group mb-4">
               <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_22 d-flex align-items-center">
                 <span class="ct_num_count_22">2</span>Property Type</label>
-              <select class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book">
-                <option value="">Private Villa</option>
+              <select class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book" [(ngModel)]="propertyId">
+                <option value="" disabled>Select Type</option>
+                <option value="">All</option>
+                <option *ngFor="let member of propertyTypes" [value]="member.property_type_id">
+                  {{ member.name }}
+                </option>
               </select>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group mb-4">
               <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_22 d-flex align-items-center">
-                <span class="ct_num_count_22">3</span>Min. Stay Duration</label>
-              <select class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book">
-                <option value="">1 Month</option>
+                <span class="ct_num_count_22">3</span>Bedrooms</label>
+              <select class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book" [(ngModel)]="noOfBedrooms">
+                <option value="1">1+</option>
+                <option value="2">2+</option>
+                <option value="3">3+</option>
               </select>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group mb-4">
               <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_22 d-flex align-items-center">
-                <span class="ct_num_count_22">4</span>Bedrooms</label>
-              <select class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book">
-                <option value="">3+</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group mb-4">
-              <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_22 d-flex align-items-center">
-                <span class="ct_num_count_22">5</span>Bathrooms</label>
-              <select class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book">
-                <option value="">2+</option>
+                <span class="ct_num_count_22">4</span>Bathrooms</label>
+              <select class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book" [(ngModel)]="noOfBathrooms">
+                <option value="1">1+</option>
+                <option value="2">2+</option>
+                <option value="3">3+</option>
               </select>
             </div>
           </div>
@@ -300,54 +149,17 @@
           <div class="col-md-12">
             <div class="form-group mb-4">
               <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_22 d-flex align-items-center">
-                <span class="ct_num_count_22">6</span>Ameneties</label>
+                <span class="ct_num_count_22">5</span>Ameneties</label>
               <ul class="ct_para_scroll ct_custom_scroll d-flex align-items-center flex-wrap" style="gap: 0px 20px">
-                <li class="ct_mt_15">
+                <li class="ct_mt_15" *ngFor="let item of allAmenity;">
                   <div class="form-check ct_custom_check2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label for="" class="ct_ff_ppneuemontreal-book ms-1">Air Conditioned</label>
-                  </div>
-                </li>
-                <li class="ct_mt_15">
-                  <div class="form-check ct_custom_check2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label for="" class="ct_ff_ppneuemontreal-book ms-1">Air Conditioned</label>
-                  </div>
-                </li>
-                <li class="ct_mt_15">
-                  <div class="form-check ct_custom_check2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label for="" class="ct_ff_ppneuemontreal-book ms-1">Air Conditioned</label>
-                  </div>
-                </li>
-                <li class="ct_mt_15">
-                  <div class="form-check ct_custom_check2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label for="" class="ct_ff_ppneuemontreal-book ms-1">Air Conditioned</label>
-                  </div>
-                </li>
-                <li class="ct_mt_15">
-                  <div class="form-check ct_custom_check2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label for="" class="ct_ff_ppneuemontreal-book ms-1">Air Conditioned</label>
-                  </div>
-                </li>
-                <li class="ct_mt_15">
-                  <div class="form-check ct_custom_check2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label for="" class="ct_ff_ppneuemontreal-book ms-1">Air Conditioned</label>
-                  </div>
-                </li>
-                <li class="ct_mt_15">
-                  <div class="form-check ct_custom_check2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label for="" class="ct_ff_ppneuemontreal-book ms-1">Air Conditioned</label>
-                  </div>
-                </li>
-                <li class="ct_mt_15">
-                  <div class="form-check ct_custom_check2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <label for="" class="ct_ff_ppneuemontreal-book ms-1">Air Conditioned</label>
+                    <!-- <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" /> -->
+                    <input class="form-check-input" type="checkbox"
+                      [checked]="selectedAmenityIds.includes(item.amenity_id)" [id]="'amenity_' + item.amenity_id"
+                      (change)="onAmenityChange($event, item.amenity_id)" />
+                    <label class="ct_ff_ppneuemontreal-book ms-1" [for]="'amenity_' + item.amenity_id">
+                      {{ item.name }}
+                    </label>
                   </div>
                 </li>
               </ul>
@@ -356,11 +168,11 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="ct_outline_btn ct_border_radius_5 ct_h_44" data-bs-dismiss="modal">
+        <button #closeModal type="button" class="ct_outline_btn ct_border_radius_5 ct_h_44" data-bs-dismiss="modal">
           Close
         </button>
-        <button type="button" class="ct_black_btn ct_border_radius_5 ct_h_44">
-          Save changes
+        <button (click)="applyFilter()" type="button" class="ct_black_btn ct_border_radius_5 ct_h_44">
+          Apply Filters
         </button>
       </div>
     </div>
