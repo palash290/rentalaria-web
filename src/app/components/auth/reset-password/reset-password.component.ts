@@ -21,11 +21,22 @@ export class ResetPasswordComponent {
   forgot_code: any;
   @ViewChild('closeModal') closeModal!: ElementRef;
 
-  constructor(private service: CommonService, private toastr: NzMessageService) { }
+  constructor(private service: CommonService, private toastr: NzMessageService) {
+  }
 
   ngOnInit() {
     this.initForm();
-    this.forgot_code = localStorage.getItem('forgot_code');
+    this.service.forgot$.subscribe(data => {
+      if (data) {
+        // this.email = data.email;
+        this.forgot_code = data.code;
+      }
+    });
+
+    if (!this.forgot_code) {
+      // this.email = localStorage.getItem('userEmail') || '';
+      this.forgot_code = localStorage.getItem('forgot_code');
+    }
   }
 
   initForm() {
@@ -40,7 +51,7 @@ export class ResetPasswordComponent {
     ]);
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     localStorage.setItem('forgot_code', '')
   }
 

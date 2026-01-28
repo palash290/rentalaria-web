@@ -13,34 +13,43 @@
 
 <section class="mt-5 pt-4">
   <div class="container">
+    <div class="d-flex ct_flex_col_767 gap-3 justify-content-end mb-3">
+      <div class="search-box ct_w_100_767">
+        <div class="input-group position-relative ct_w_100_767"><input type="text"
+            placeholder="Search by lifestyle name..."
+            class="form-control ct_input pe-5 ng-untouched ng-pristine ng-valid" [(ngModel)]="searchText"
+            (input)="getPropertyDetail()"><i class="fas fa-search ct_show_eye"></i></div>
+      </div>
+    </div>
     <div class="row">
-      <div class="col-xxl-2 col-xl-8 col-lg-8 mb-4 mb-lg-0">
-        <div class="row">
-          <div class="col-lg-6 mb-4"
-            *ngFor="let item of allLifestiles | paginate: { itemsPerPage: 10, currentPage: p }">
-            <figure class="ct_life_style_card">
-              <div class="ct_life_style_img">
-                <img [src]="item.cover_image" alt="">
-              </div>
-              <figcaption class="ct_mt_18">
-                <small class="ct_text_clr_35383C ct_ff_ppneuemontreal-medium">{{item.created_at |
-                  date:'dd-MMM-yyyy'}}</small>
-                <h6 class="ct_fs_18 ct_ff_ppneuemontreal-medium mt-1">{{item.title}}</h6>
-                <p class="ct_minimise_cnt ct_text_44525E ct_ff_ppneuemontreal-book ct_fs_14">{{item.short_description}}
-                </p>
-                <a [routerLink]="['/view-lifestyle']" [queryParams]="{blog_id: item.blog_id}"
-                  class="text-dark ct_ff_ppneuemontreal-medium ct_fs_14 d-flex align-items-center gap-2">Explore <i
-                    class="fa-solid fa-arrow-right"></i></a>
-              </figcaption>
-            </figure>
+      <div class="col-lg-4 mb-4" *ngFor="let item of filteredData | paginate: { itemsPerPage: 10, currentPage: p }">
+        <figure class="ct_life_style_card">
+          <div class="ct_life_style_img">
+            <img [src]="item.cover_image" alt="">
           </div>
-          <pagination-controls class="ct_pagination_div" *ngIf="!(allLifestiles?.length == 0)"
-            (pageChange)="p = $event"></pagination-controls>
+          <figcaption class="ct_mt_18">
+            <small class="ct_text_clr_35383C ct_ff_ppneuemontreal-medium">{{item.created_at |
+              date:'dd-MMM-yyyy'}}</small>
+            <h6 class="ct_fs_18 ct_ff_ppneuemontreal-medium mt-1">{{item.title}}</h6>
+            <p class="ct_minimise_cnt ct_text_44525E ct_ff_ppneuemontreal-book ct_fs_14">{{item.short_description}}
+            </p>
+            <a [routerLink]="['/view-lifestyle']" [queryParams]="{blog_id: item.blog_id}"
+              class="text-dark ct_ff_ppneuemontreal-medium ct_fs_14 d-flex align-items-center gap-2">Explore <i
+                class="fa-solid fa-arrow-right"></i></a>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-md-12">
+        <div class="ct_no_recod_found_bg" *ngIf="filteredData?.length == 0">
+          <p class="text-center mb-0 ct_fs_20">No blog found</p>
         </div>
       </div>
-      <!-- <div class="col-xxl-3 col-xl-4 col-lg-4 mb-4 mb-lg-0">
-        <app-lifestyle-sidebar></app-lifestyle-sidebar>
-      </div> -->
+      <pagination-controls class="ct_pagination_div" *ngIf="!(allLifestiles?.length == 0)"
+        (pageChange)="p = $event"></pagination-controls>
     </div>
   </div>
+  <!-- <div class="col-xxl-3 col-xl-4 col-lg-4 mb-4 mb-lg-0">
+        <app-lifestyle-sidebar></app-lifestyle-sidebar>
+      </div> -->
+
 </section>

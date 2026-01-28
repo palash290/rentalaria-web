@@ -46,7 +46,7 @@ body {
 
 .ct_navbar ul li a:hover,
 .ct_navbar ul li a.active {
-    color: #fff;
+    color: #000000 !important;
 }
 
 .ct_hero_banner {
@@ -266,11 +266,17 @@ footer {
 }
 
 
-.ct_login_main {
+/* .ct_login_main {
     display: grid;
     grid-template-columns: auto 45%;
     align-items: center;
-    /* height: 81vh; */
+ 
+} */
+.ct_forgot_modal {
+    display: grid;
+    grid-template-columns: auto 45%;
+    align-items: center;
+
 }
 
 .ct_login_left_cnt {
@@ -299,6 +305,7 @@ footer {
     flex-direction: column;
     justify-content: center;
 }
+
 
 .ct_login_modal .modal-content {
     overflow-y: auto;
@@ -685,7 +692,7 @@ footer {
 
 .ct_serach_filter_flex {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 10px;
 }
@@ -697,11 +704,12 @@ footer {
     box-shadow: 0px 10px 40px 0px #181A2012;
     display: grid;
     grid-template-columns: auto 58px;
-    gap: 40px;
+    gap: 0px;
     /* margin-top: -66.5px; */
     position: relative;
     z-index: 9;
     box-shadow: 0px 9.4px 37.61px 0px #181A2012;
+    align-items: center;
 
 }
 
@@ -1908,4 +1916,35 @@ button.ct_show_all_images_btn:hover {
     top: 10px;
     right: 10px;
     z-index: 999;
+}
+
+
+
+/* new css */
+.login-signupu-modal {
+    width: 650px !important;
+}
+
+.login-signup-tabs li button {
+    color: #929292;
+    font-weight: 400;
+    font-style: Italic;
+    font-size: 31px;
+}
+
+.login-signup-tabs li button.active {
+    color: #111;
+    border: none;
+}
+
+.login-signup-tabs li button:hover,
+.login-signup-tabs li button:focus {
+    color: #111;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.login-signup-tabs {
+    border: none;
 }

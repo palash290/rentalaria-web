@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+declare const window: any;
 
 @Component({
   selector: 'app-sign-up',
@@ -34,14 +35,7 @@ export class SignUpComponent {
     ]);
   }
 
-  type: string = '';
-
-  ngOnInit() {
-
-  }
-
   sumbit() {
-
     this.Form.markAllAsTouched();
     if (this.Form.valid) {
       this.loading = true;
@@ -53,10 +47,16 @@ export class SignUpComponent {
       this.service.post('public/signup', formURlData.toString()).subscribe({
         next: (resp: any) => {
           if (resp.success == true) {
-            this.service.setToken(resp.data);
+            // this.service.setToken(resp.data);
             this.toastr.success(resp.message);
             this.loading = false;
             this.closeModalAdd.nativeElement.click();
+            const signinTab = document.getElementById('signin-tab');
+            if (signinTab) {
+              const tab = new window.bootstrap.Tab(signinTab);
+              tab.show();
+            }
+
           } else {
             this.toastr.warning(resp.message);
             this.loading = false;

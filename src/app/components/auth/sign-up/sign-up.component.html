@@ -1,120 +1,92 @@
-<!-- Sing as guest up modal S -->
-<div class="modal fade modal-xl ct_login_modal " id="ct_signup_modal" tabindex="-1"
-    aria-labelledby="ct_signup_modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header border-0 py-0">
-                <button type="button" class="btn-close ct_login_btn_close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+<div class="ct_login_main">
+    <form [formGroup]="Form">
+        <div class="form-group ct_mb_30">
+            <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'FullNameLabel' |
+                translate}}</label>
+            <input type="text" placeholder="{{'FullNameLabel' | translate}}" class="form-control ct_input"
+                formControlName="name">
+            <div *ngIf="Form.controls['name'].invalid && Form.controls['name'].touched" class="err_msg">
+                <div *ngIf="Form.controls['name'].errors?.['required']" class="ct_fs_14 mt-1">
+                    Full name is required.
+                </div>
             </div>
-            <div class="modal-body p-0">
-                <div class="ct_login_main">
-                    <form [formGroup]="Form">
-                        <div class="ct_logo mx-auto mb-2">
-                            <img src="img/logo.png" alt="" style="max-width: 276px;">
+        </div>
+        <div class="form-group ct_mb_30">
+            <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'Email' |
+                translate}}</label>
+            <input type="email" placeholder="{{'Email' | translate}}" class="form-control ct_input"
+                formControlName="email">
+            <div *ngIf="Form.controls['email'].invalid && Form.controls['email'].touched" class="err_msg">
+                <div *ngIf="Form.controls['email'].errors?.['required']" class="ct_fs_14 mt-1">
+                    {{'EmailRequired' | translate}}
+                </div>
+                <div *ngIf="Form.controls['email'].errors?.['email'] && !Form.controls['email'].errors?.['required']"
+                    class="ct_fs_14 mt-1">
+                    {{'EmailInvalid' | translate}}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group ct_mb_30">
+                    <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">
+                        {{'PasswordLabel' | translate}}</label>
+                    <div class="position-relative">
+                        <input type="{{ isPasswordVisible2 ? 'text' : 'password' }}"
+                            class="form-control ct_input ct_input_pe_50 " placeholder="Enter password"
+                            formControlName="new_password">
+                        <i class="fa-regular ct_show_eye" [ngClass]="isPasswordVisible2 ? 'fa-eye' : 'fa-eye-slash' "
+                            (click)="togglePasswordVisibility2()"></i>
+                    </div>
+                    <div class="err_msg"
+                        *ngIf="Form.controls['new_password']?.invalid && Form.controls['new_password']?.touched">
+                        <div *ngIf="Form.controls['new_password'].errors?.['required']; else checkMinLength">
+                            {{'PasswordRequired' | translate}}
                         </div>
-                        <h2 class="ct_fs_24 text-center mb-4 ct_ff_ppneuemontreal-medium ct_mb_56">Create
-                            Account</h2>
-                        <div class="form-group ct_mb_30">
-                            <label for=""
-                                class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'FullNameLabel' |
-                                translate}}</label>
-                            <input type="text" placeholder="{{'FullNameLabel' | translate}}"
-                                class="form-control ct_input" formControlName="name">
-                            <div *ngIf="Form.controls['name'].invalid && Form.controls['name'].touched" class="err_msg">
-                                <div *ngIf="Form.controls['name'].errors?.['required']" class="ct_fs_14 mt-1">
-                                    Full name is required.
-                                </div>
+                        <ng-template #checkMinLength>
+                            <div *ngIf="Form.controls['new_password'].errors?.['minlength'];">
+                                Password must be at least 8 characters long.
                             </div>
-                        </div>
-                        <div class="form-group ct_mb_30">
-                            <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'Email' |
-                                translate}}</label>
-                            <input type="email" placeholder="{{'Email' | translate}}" class="form-control ct_input"
-                                formControlName="email">
-                            <div *ngIf="Form.controls['email'].invalid && Form.controls['email'].touched"
-                                class="err_msg">
-                                <div *ngIf="Form.controls['email'].errors?.['required']" class="ct_fs_14 mt-1">
-                                    {{'EmailRequired' | translate}}
-                                </div>
-                                <div *ngIf="Form.controls['email'].errors?.['email'] && !Form.controls['email'].errors?.['required']"
-                                    class="ct_fs_14 mt-1">
-                                    {{'EmailInvalid' | translate}}</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group ct_mb_30">
-                                    <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">
-                                        {{'PasswordLabel' | translate}}</label>
-                                    <div class="position-relative">
-                                        <input type="{{ isPasswordVisible2 ? 'text' : 'password' }}"
-                                            class="form-control ct_input ct_input_pe_50 " placeholder="Enter password"
-                                            formControlName="new_password">
-                                        <i class="fa-regular ct_show_eye"
-                                            [ngClass]="isPasswordVisible2 ? 'fa-eye' : 'fa-eye-slash' "
-                                            (click)="togglePasswordVisibility2()"></i>
-                                    </div>
-                                    <div class="err_msg"
-                                        *ngIf="Form.controls['new_password']?.invalid && Form.controls['new_password']?.touched">
-                                        <div
-                                            *ngIf="Form.controls['new_password'].errors?.['required']; else checkMinLength">
-                                            {{'PasswordRequired' | translate}}
-                                        </div>
-                                        <ng-template #checkMinLength>
-                                            <div *ngIf="Form.controls['new_password'].errors?.['minlength'];">
-                                                Password must be at least 8 characters long.
-                                            </div>
-                                        </ng-template>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label for=""
-                                        class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">Confirm
-                                        Password</label>
-                                    <div class="position-relative">
-                                        <input type="{{ isPasswordVisible3 ? 'text' : 'password' }}"
-                                            class="form-control  ct_input  ct_input_pe_50 "
-                                            placeholder="Enter confirm password" formControlName="confirm_password">
-                                        <i class="fa-regular ct_show_eye"
-                                            [ngClass]="isPasswordVisible3 ? 'fa-eye' : 'fa-eye-slash' "
-                                            (click)="togglePasswordVisibility3()"></i>
-                                    </div>
-                                    <div *ngIf="Form.controls['confirm_password']?.invalid && Form.controls['confirm_password'].touched"
-                                        class="err_msg">
-                                        <div *ngIf="Form.controls['confirm_password'].errors?.['required']">
-                                            Confirm password is required.</div>
-                                        <div
-                                            *ngIf="passwordMismatch && !Form.controls['confirm_password'].errors?.['required']">
-                                            Passwords do not match.</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ct_mt_30" (click)="sumbit()">
-                            <a class="ct_black_btn w-100 ct_border_radius_5">{{'SignUp' | translate}}</a>
-                        </div>
-                        <p class="mb-0 mt-2 text-center ct_ff_ppneuemontreal-book">
-                            {{'AlreadyHaveAccount' | translate}}
-                            <a href="javascript:void(0)" class=" text-dark ct_ff_ppneuemontreal-medium"
-                                data-bs-toggle="modal" data-bs-target="#ct_login_modal">
-                                {{'SignIn' | translate}}
-                            </a>
-                            <button #closeModalAdd type="button" hidden class="ct_outline_btn ct_ff_Matter_Medium"
-                                data-bs-dismiss="modal">
-                            </button>
-                        </p>
-                    </form>
-                    <div class="ct_login_left_cnt">
-                        <img src="img/login_right_img.png" alt="">
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group mb-3">
+                    <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">Confirm
+                        Password</label>
+                    <div class="position-relative">
+                        <input type="{{ isPasswordVisible3 ? 'text' : 'password' }}"
+                            class="form-control  ct_input  ct_input_pe_50 " placeholder="Enter confirm password"
+                            formControlName="confirm_password">
+                        <i class="fa-regular ct_show_eye" [ngClass]="isPasswordVisible3 ? 'fa-eye' : 'fa-eye-slash' "
+                            (click)="togglePasswordVisibility3()"></i>
+                    </div>
+                    <div *ngIf="Form.controls['confirm_password']?.invalid && Form.controls['confirm_password'].touched"
+                        class="err_msg">
+                        <div *ngIf="Form.controls['confirm_password'].errors?.['required']">
+                            Confirm password is required.</div>
+                        <div *ngIf="passwordMismatch && !Form.controls['confirm_password'].errors?.['required']">
+                            Passwords do not match.</div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="ct_mt_30" (click)="sumbit()">
+            <a class="ct_black_btn w-100 ct_border_radius_5">{{'SignUp' | translate}}</a>
+        </div>
+        <p class="mb-0 mt-2 text-center ct_ff_ppneuemontreal-book">
+            {{'AlreadyHaveAccount' | translate}}
+            <a href="javascript:void(0)" class=" text-dark ct_ff_ppneuemontreal-medium" data-bs-toggle="modal"
+                data-bs-target="#ct_login_modal">
+                {{'SignIn' | translate}}
+            </a>
+            <!-- <button #closeModalAdd type="button" hidden class="ct_outline_btn ct_ff_Matter_Medium"
+                data-bs-dismiss="modal">
+            </button> -->
+        </p>
+    </form>
 </div>
+
 <!-- Sing as guest modal E -->
 
 <div class="ct_loader_main" *ngIf="loading">

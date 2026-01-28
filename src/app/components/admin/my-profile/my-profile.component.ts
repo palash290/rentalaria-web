@@ -73,7 +73,7 @@ export class MyProfileComponent {
         formURlData.append('profile_image', this.selectedFile);
       }
 
-      this.service.patch('user/profile', formURlData).subscribe({
+      this.service.post('user/profile', formURlData).subscribe({
         next: (resp: any) => {
           if (resp.success == true) {
             this.toastr.success(resp.message);

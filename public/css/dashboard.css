@@ -363,6 +363,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    align-items: start;
 }
 
 .ct_pe_30 {

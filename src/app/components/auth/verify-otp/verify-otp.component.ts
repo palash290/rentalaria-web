@@ -37,7 +37,17 @@ export class VerifyOtpComponent {
   }
 
   ngOnInit() {
-    this.userEmail = localStorage.getItem('userEmail');
+    this.service.forgot$.subscribe(data => {
+      if (data) {
+        this.userEmail = data.email;
+        // this.forgotCode = data.code;
+      }
+    });
+
+    if (!this.userEmail) {
+      this.userEmail = localStorage.getItem('userEmail') || '';
+      // this.forgotCode = localStorage.getItem('forgot_code');
+    }
   }
 
   onSubmit() {

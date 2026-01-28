@@ -3,10 +3,15 @@
         gap: 30px;
     }
 
-    .ct_login_main {
+    /* .ct_login_main {
         grid-template-columns: auto 400px;
-    }
+    } */
 
+
+
+    .ct_forgot_modal{
+         grid-template-columns: auto 400px;
+    }
     .swiper-pagination-bullet img,
     .swiper-pagination-bullet {
         width: 90px;
@@ -92,7 +97,10 @@
         color: #000;
     }
 
-    .ct_login_main {
+    /* .ct_login_main {
+        grid-template-columns: auto;
+    } */
+     .ct_forgot_modal {
         grid-template-columns: auto;
     }
 

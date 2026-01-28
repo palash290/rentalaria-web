@@ -14,7 +14,7 @@ declare var bootstrap: any;
 
 @Component({
   selector: 'app-log-in',
-  imports: [TranslateModule, ReactiveFormsModule, CommonModule, NzSelectModule, FormsModule, SignUpComponent, ForgotPasswordComponent],
+  imports: [TranslateModule, ReactiveFormsModule, CommonModule, NzSelectModule, FormsModule, ForgotPasswordComponent],
   templateUrl: './log-in.component.html',
   styleUrl: './log-in.component.css'
 })

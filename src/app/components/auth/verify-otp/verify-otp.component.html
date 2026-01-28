@@ -8,18 +8,20 @@
                     aria-label="Close"></button>
             </div>
             <div class="modal-body p-0">
-                <div class="ct_login_main">
+                <div class="ct_login_main ct_forgot_modal">
                     <form [formGroup]="Form">
                         <div class="ct_logo mx-auto mb-2">
                             <img src="img/logo.png" alt="" style="max-width: 276px;">
                         </div>
-                        <h2 class="ct_fs_24 text-center  ct_ff_ppneuemontreal-medium ct_mb_56">Otp Verification</h2>
-
-                        <nz-flex nzVertical [nzGap]="20">
+                        <h2 class="ct_fs_24 text-center  ct_ff_ppneuemontreal-medium mb-3">Otp Verification</h2>
+                        <p class="ct_text_op_07  mb-0 text-center">OTP is sent to
+                            <br> {{userEmail}}
+                        </p>
+                        <nz-flex nzVertical [nzGap]="20" class="mt-3">
                             <nz-flex nzVertical>
                                 <nz-input-otp formControlName="otp" [nzLength]="4" [nzSize]="'default'">
                                 </nz-input-otp>
-                                <span class="ct_text_red mt-2">
+                                <span class="ct_text_red mt-2 text-center">
                                     {{ validationErrorService.getErrorMessage('OTP', Form.get('otp')) }}
                                 </span>
                             </nz-flex>

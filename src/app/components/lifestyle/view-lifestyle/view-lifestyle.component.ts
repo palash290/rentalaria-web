@@ -7,7 +7,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-view-lifestyle',
-  imports: [RouterLink, TranslateModule, LifestyleSidebarComponent],
+  imports: [TranslateModule],
   templateUrl: './view-lifestyle.component.html',
   styleUrl: './view-lifestyle.component.css'
 })

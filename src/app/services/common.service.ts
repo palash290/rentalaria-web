@@ -74,12 +74,24 @@ export class CommonService {
     this.locationSource.next(data);
   }
 
-  
+
   private loginSource = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this.loginSource.asObservable();
 
   setLoginState(state: boolean) {
     this.loginSource.next(state);
+  }
+
+
+  private forgotSource = new BehaviorSubject<{
+    email: string;
+    code: any;
+  } | null>(null);
+
+  forgot$ = this.forgotSource.asObservable();
+
+  setForgotData(email: string, code: any) {
+    this.forgotSource.next({ email, code });
   }
 
 

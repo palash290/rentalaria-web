@@ -16,7 +16,7 @@ Swiper.use([Navigation]);
 
 @Component({
   selector: 'app-view-property',
-  imports: [RouterLink, CommonModule, NzImageModule, LogInComponent, SignUpComponent, ForgotPasswordComponent],
+  imports: [RouterLink, CommonModule, NzImageModule, ForgotPasswordComponent],
   templateUrl: './view-property.component.html',
   styleUrl: './view-property.component.css'
 })
