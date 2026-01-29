@@ -56,7 +56,7 @@ export class SignUpComponent {
               const tab = new window.bootstrap.Tab(signinTab);
               tab.show();
             }
-
+            this.Form.reset();
           } else {
             this.toastr.warning(resp.message);
             this.loading = false;
