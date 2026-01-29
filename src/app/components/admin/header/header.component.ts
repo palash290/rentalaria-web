@@ -2,10 +2,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonService } from '../../../services/common.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, TranslateModule],
+  imports: [RouterLink, TranslateModule, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -29,6 +30,28 @@ export class HeaderComponent {
     this.selectedLang = lang;
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
+  }
+
+  getLanguage(langCode: string) {
+    switch (langCode) {
+      case 'es':
+        return 'Spanish';
+      case 'en':
+        return 'English';
+      default:
+        return 'English';
+    }
+  }
+
+  getImage(langCode: string) {
+    switch (langCode) {
+      case 'es':
+        return 'img/spanish.png';
+      case 'en':
+        return 'img/USA.png';
+      default:
+        return 'img/USA.png';
+    }
   }
 
 

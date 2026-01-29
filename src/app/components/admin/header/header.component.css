@@ -1,3 +1,82 @@
 .ct_change {
     filter: unset !important;
 }
+.ct_dropdown_menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ct_dropdown_menu.show {
+    display: block;
+}
+
+.logo_image {
+    max-width: 198px;
+}
+
+
+.ct_language_select {
+    background-color: transparent;
+    border: 0px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    /* width: 7rem; */
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ct_language_select button.dropdown-toggle.py-2.mt-0 {
+    background-color: transparent;
+    border: 0;
+}
+
+.ct_outline_btn_white {
+    border-color: #fff;
+    color: #fff;
+    font-family: ppneuemontreal-book;
+    height: 44px;
+    border-radius: 5px;
+}
+
+/* .ct_logo img{
+    filter: unset !important;
+} */
+
+.ct_change {
+    filter: unset !important;
+}
+
+.ct_change_color {
+    color: #000000 !important;
+}
+
+.ct_change_clr {
+    color: #000000 !important;
+}
+
+.ct_change_bg {
+    border: 1px solid #e6e6e6;
+    color: #000;
+}
+
+.ct_change_bg:hover {
+    color: #fff;
+}
+
+.ct_language_select ul.dropdown-menu.show {
+    background-color: #ffffff54;
+    width: fit-content;
+    min-width: fit-content;
+    padding-inline: 10px;
+    transform: translate3d(0px, 42px, 0px) !important;
+    inset: 0px;
+    left: 0px;
+    top: 5px !important;
+}

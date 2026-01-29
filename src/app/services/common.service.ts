@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, signal, } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 @Injectable({
@@ -50,6 +50,11 @@ export class CommonService {
   );
 
   token$ = this.tokenSubject.asObservable();
+
+  // 🔥 ADD THIS
+isLoggedIns$ = this.token$.pipe(
+  map(token => !!token)
+);
 
   setToken(token: string) {
     localStorage.setItem('rentalToken', token);

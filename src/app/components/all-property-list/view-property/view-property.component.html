@@ -74,8 +74,8 @@
                     Shortlist
                 </p>
                 } @else{
-                <p class="mb-0 ct_fs_16 ct_ff_ppneuemontreal-medium ct_white_nowrap ct_cursor_pointer"
-                    (click)="openLoginModal()">
+                <p class="mb-0 ct_fs_16 ct_ff_ppneuemontreal-medium ct_white_nowrap ct_cursor_pointer" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                     <i class="fa-regular fa-heart me-1"></i>
                     Shortlist
                 </p>
@@ -274,7 +274,7 @@
                                 Enquiry</a>
                         </div>
                         } @else {
-                        <div (click)="openLoginModal()">
+                        <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                             <a class="ct_black_btn ct_h_48 ct_border_radius_5 w-100">Send
                                 Enquiry</a>
                         </div>
@@ -550,3 +550,30 @@
 <!-- <app-log-in></app-log-in>
 <app-sign-up></app-sign-up> -->
 <app-forgot-password></app-forgot-password>
+
+<div class="offcanvas offcanvas-end login-signupu-modal" data-bs-scroll="true" tabindex="-1"
+    id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="nav nav-tabs login-signup-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="signin-tab" data-bs-toggle="tab" data-bs-target="#signin"
+                    type="button" role="tab" aria-controls="signin" aria-selected="true">Login</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button"
+                    role="tab" aria-controls="signup" aria-selected="false">Signup</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
+                <app-log-in></app-log-in>
+            </div>
+            <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                <app-sign-up></app-sign-up>
+            </div>
+        </div>
+    </div>
+</div>

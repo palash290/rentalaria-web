@@ -8,18 +8,41 @@
     </div>
   </div>
 
-  <div class="dropdown ct_custom_dropdown">
-    <a class="d-flex align-items-center gap-2 text-dark" data-bs-toggle="dropdown">
-      <!-- <img src="img/user.jpg" class="ct_profile_img"> -->
-      <!-- <i class="fa-solid fa-angle-down"></i> -->
-    </a>
+  <div class="ct_right_menu_links">
 
-    <!-- <ul class="dropdown-menu dropdown-menu-end">
+    <!-- <div class="ct_language_select dropdown notranslate ct_change_bg">
+      <img [src]="getImage(selectedLang)" alt="" class="dropdown_img" style="width: 20px; margin-right: 5px" />
+      <button class="dropdown-toggle py-2 mt-0" data-bs-toggle="dropdown" aria-expanded="false">
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" (click)="onCustomLangChange('en')">
+            <img src="img/USA.png" alt="" style="width: 20px; margin-right: 5px" />
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" (click)="onCustomLangChange('es')">
+            <img src="img/spanish.png" alt="" style="width: 20px; margin-right: 5px" />
+          </a>
+        </li>
+      </ul>
+    </div> -->
+
+    <div class="dropdown ct_custom_dropdown">
+      <a class="d-flex align-items-center gap-2 text-dark" data-bs-toggle="dropdown">
+        <!-- <img src="img/user.jpg" class="ct_profile_img"> -->
+        <!-- <i class="fa-solid fa-angle-down"></i> -->
+      </a>
+
+      <!-- <ul class="dropdown-menu dropdown-menu-end">
       <li><a class="dropdown-item" routerLink="/admin/my-profile">Edit Profile</a></li>
       <li><a class="dropdown-item" routerLink="/admin/change-password">Change Password</a></li>
       <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#ct_logout_modal">Logout</a></li>
     </ul> -->
+    </div>
+
   </div>
+
 </header>
 
 <!-- <div class="modal fade" id="ct_logout_modal" tabindex="-1" aria-labelledby="ct_delete_postLabel" aria-hidden="true">

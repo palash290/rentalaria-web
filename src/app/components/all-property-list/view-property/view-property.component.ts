@@ -16,7 +16,7 @@ Swiper.use([Navigation]);
 
 @Component({
   selector: 'app-view-property',
-  imports: [RouterLink, CommonModule, NzImageModule, ForgotPasswordComponent],
+  imports: [RouterLink, CommonModule, NzImageModule, ForgotPasswordComponent, LogInComponent, SignUpComponent],
   templateUrl: './view-property.component.html',
   styleUrl: './view-property.component.css'
 })
@@ -36,7 +36,7 @@ export class ViewPropertyComponent {
   daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   calendarDays: any[] = [];
   mediaList: string[] = [];
-  isLogIn: boolean = false;
+  isLogIn: any;
 
   constructor(private modalService: ModalService, private service: CommonService, private route: ActivatedRoute, private toastr: NzMessageService) { }
 
@@ -45,16 +45,18 @@ export class ViewPropertyComponent {
       this.propertyId = params['propertyId'];
     });
 
-    if (this.service.getToken()) {
-      this.isLogIn = true;
-    }
 
-    // 🔥 instant updates
-    this.service.isLoggedIn$.subscribe(state => {
+    // initial login state
+    this.isLogIn = !!this.service.getToken();
+
+    // listen for login/logout
+    this.service.isLoggedIns$.subscribe(state => {
       this.isLogIn = state;
     });
 
+    // call API once
     this.getPropertyDetail();
+
   }
 
   openLoginModal() {
@@ -92,7 +94,8 @@ export class ViewPropertyComponent {
   }
   // getAllProperty/27'
   getPropertyDetail() {
-    this.service.get(`user/getAllProperty/${this.propertyId}`).subscribe({
+    debugger
+    this.service.get(this.isLogIn ? `user/getAllTokenProperty/${this.propertyId}` : `user/getAllProperty/${this.propertyId}`).subscribe({
       next: (resp: any) => {
         this.propertyDetails = resp.data;
 
