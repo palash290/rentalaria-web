@@ -48,14 +48,14 @@ export class SignUpComponent {
         next: (resp: any) => {
           if (resp.success == true) {
             // this.service.setToken(resp.data);
-            this.toastr.success(resp.message);
-            this.loading = false;
-            this.closeModalAdd.nativeElement.click();
             const signinTab = document.getElementById('signin-tab');
             if (signinTab) {
               const tab = new window.bootstrap.Tab(signinTab);
               tab.show();
             }
+            this.toastr.success(resp.message);
+            this.loading = false;
+            this.closeModalAdd.nativeElement.click();
             this.Form.reset();
           } else {
             this.toastr.warning(resp.message);
