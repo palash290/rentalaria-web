@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { CommonService } from '../../../services/common.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,7 +13,7 @@ export class SidebarComponent {
 
   @ViewChild('closeModalAdd') closeModalAdd!: ElementRef;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private service: CommonService) { }
 
   isActive(route: string): boolean {
     return this.router.isActive(route, true);
@@ -24,10 +25,18 @@ export class SidebarComponent {
     this.toggleEvent.emit(false);
   }
 
+  // logout() {
+  //   localStorage.clear();
+  //   this.closeModalAdd.nativeElement.click();
+  //   this.router.navigateByUrl('/')
+  // }
+
   logout() {
-    localStorage.clear();
+    this.service.clearToken();
+    this.router.navigateByUrl('/');
     this.closeModalAdd.nativeElement.click();
-    this.router.navigateByUrl('/')
+    this.service.setLoginState(false);
+    localStorage.removeItem('userEmail');
   }
 
 

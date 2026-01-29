@@ -3,10 +3,11 @@ import { ActivatedRoute, RouterLink } from "@angular/router";
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { CommonService } from '../../../../services/common.service';
 import { CommonModule } from '@angular/common';
+import { NzImageModule } from 'ng-zorro-antd/image';
 
 @Component({
   selector: 'app-my-property-details',
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, NzImageModule],
   templateUrl: './my-property-details.component.html',
   styleUrl: './my-property-details.component.css'
 })
@@ -17,6 +18,7 @@ export class MyPropertyDetailsComponent {
   houseRules: any;
   nearbyLocation: any;
   mediaList: string[] = [];
+  activeVideo: string | null = null;
 
   constructor(private service: CommonService, private route: ActivatedRoute, private toastr: NzMessageService) { }
 
@@ -30,7 +32,7 @@ export class MyPropertyDetailsComponent {
 
 
   getPropertyDetail() {
-    this.service.get(`user/getProperty/${this.property_id}`).subscribe({
+    this.service.get(`user/getAllTokenProperty/${this.property_id}`).subscribe({
       next: (resp: any) => {
         this.propertyDetails = resp.data;
 
@@ -58,6 +60,8 @@ export class MyPropertyDetailsComponent {
 
         // ✅ Merge images first, then videos
         this.mediaList = resp.data.images;
+
+        this.activeVideo = resp.data.videos[0];
 
       },
       error: (error) => {

@@ -20,10 +20,18 @@ export class HeaderComponent {
     this.translate.use(localStorage.getItem('lang') || 'en');
   }
 
+  // logout() {
+  //   localStorage.clear();
+  //   this.closeModalAdd.nativeElement.click();
+  //   this.router.navigateByUrl('/');
+  // }
+
   logout() {
-    localStorage.clear();
+    this.service.clearToken();
+    this.router.navigateByUrl('/');
     this.closeModalAdd.nativeElement.click();
-    this.router.navigateByUrl('/')
+    this.service.setLoginState(false);
+    localStorage.removeItem('userEmail');
   }
 
   onCustomLangChange(lang: string) {

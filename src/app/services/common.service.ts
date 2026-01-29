@@ -52,9 +52,9 @@ export class CommonService {
   token$ = this.tokenSubject.asObservable();
 
   // 🔥 ADD THIS
-isLoggedIns$ = this.token$.pipe(
-  map(token => !!token)
-);
+  isLoggedIns$ = this.token$.pipe(
+    map(token => !!token)
+  );
 
   setToken(token: string) {
     localStorage.setItem('rentalToken', token);

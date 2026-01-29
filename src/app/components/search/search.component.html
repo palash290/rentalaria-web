@@ -70,11 +70,10 @@
                         <label class="ct_fs_16 ct_ff_ppneuemontreal-medium"><img src="assets/img/calender_icon_11.svg"
                                 alt="" class="me-2">{{'CheckIn' | translate}}</label>
                         <input type="date" class="form-control px-0 pb-0 ct_input border-0 ct_ff_ppneuemontreal-book"
-                            placeholder="Enter Keywords" [min]="minDate" [(ngModel)]="checkIn">
+                            placeholder="Enter Keywords" [(ngModel)]="checkIn">
                     </div>
-
+                    <!-- [min]="minDate" -->
                 </div>
-
 
 
                 <div class="ct_date_wrapper" (click)="openCalendar()">
@@ -85,7 +84,6 @@
                             placeholder="Enter Keywords" [(ngModel)]="checkOut" [min]="checkIn">
                     </div>
                 </div>
-
 
 
             </div>

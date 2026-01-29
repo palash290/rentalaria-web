@@ -18,6 +18,7 @@ export class SendInqueryComponent {
   loading: boolean = false;
   propertyId: any;
   propertyDetails: any;
+  minDate: any;
 
   constructor(private fb: FormBuilder, private toastr: NzMessageService, private route: ActivatedRoute,
     private router: Router, private service: CommonService, private translate: TranslateService
@@ -34,12 +35,37 @@ export class SendInqueryComponent {
       moveInDate: ['', Validators.required],
       moveOutDate: ['', Validators.required],
       message: [''],
-    });
+    },
+      {
+        validators: this.dateRangeValidator as any,
+      }
+    );
     this.getPropertyDetail();
+    this.dateValidation();
+  }
+
+  dateValidation() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day = today.getDate().toString().padStart(2, '0');
+    this.minDate = `${year}-${month}-${day}`;
+  }
+
+
+  dateRangeValidator(group: FormGroup) {
+    const from = group.get('moveInDate')?.value;
+    const to = group.get('moveOutDate')?.value;
+
+    if (from && to && to < from) {
+      return { dateInvalid: true };
+    }
+
+    return null;
   }
 
   getPropertyDetail() {
-    this.service.get(`user/getProperty/${this.propertyId}`).subscribe({
+    this.service.get(`user/getAllTokenProperty/${this.propertyId}`).subscribe({
       next: (resp: any) => {
         this.propertyDetails = resp.data;
       },

@@ -24,6 +24,7 @@ export class HeaderComponent {
   token: any;
   userEmail: any;
   first_name: any;
+  isLogIn: any;
   profileImg: string | ArrayBuffer | null = null;
   malagaLocations: any[] = [
     {
@@ -104,12 +105,19 @@ export class HeaderComponent {
           url == '/send-inquery';
       }
     });
+
   }
 
   ngOnInit() {
-    this.service.token$.subscribe(token => {
-      this.token = token;
+    // this.service.token$.subscribe(token => {
+    //   this.token = token;
+    // });
+
+    this.service.isLoggedIn$.subscribe(state => {
+      this.isLogIn = state;
+      this.loadUserProfile();
     });
+
     this.loadUserProfile();
   }
 
@@ -196,6 +204,7 @@ export class HeaderComponent {
     this.closeModalAdd.nativeElement.click();
     // this.router.navigateByUrl('/');
     this.service.setLoginState(false);
+    localStorage.removeItem('userEmail');
   }
 
   selectedLocation: any = '';
@@ -217,7 +226,7 @@ export class HeaderComponent {
     this.service.setLocation({
       id: this.selectedLocationId,
       name: this.selectedLocation
-      
+
     });
 
     this.router.navigate(['/list-property'], {

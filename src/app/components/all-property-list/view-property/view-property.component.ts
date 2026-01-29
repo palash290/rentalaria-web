@@ -113,7 +113,7 @@ export class ViewPropertyComponent {
         // ✅ Parse house rules safely
         this.nearbyLocation = [];
 
-        if (resp.data.house_rules) {
+        if (resp.data.nearby_property_location) {
           try {
             this.nearbyLocation = JSON.parse(resp.data.nearby_property_location);
           } catch (e) {

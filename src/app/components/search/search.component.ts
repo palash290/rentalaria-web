@@ -58,26 +58,41 @@ export class SearchComponent {
   searchProperty(): void {
 
     const location = this.selectedLocationId;
-    const date = this.checkIn;
-    const date2 = this.checkOut;
+    const checkIn = this.checkIn;
+    const checkOut = this.checkOut;
 
     if (!location) {
       this.toastr.warning('Please enter location!');
       return;
     }
 
-    if (!date) {
+    if (!checkIn) {
       this.toastr.warning('Please enter check-in date!');
       return;
     }
 
-    if (!date2) {
+    if (!checkOut) {
       this.toastr.warning('Please select check-out date!');
       return;
     }
 
-    const formattedDate = this.formatDate(date);
-    const formattedDate2 = this.formatDate(date2);
+    // ✅ DATE COMPARISON VALIDATION
+const inDate = new Date(this.checkIn).setHours(0, 0, 0, 0);
+const outDate = new Date(this.checkOut).setHours(0, 0, 0, 0);
+
+// console.log('COMPARE:', inDate, outDate, inDate > outDate);
+
+if (inDate > outDate) {
+  this.toastr.warning(
+    'Check-in date cannot be later than Check-out date!'
+  );
+  return;
+}
+
+
+
+    const formattedDate = this.formatDate(checkIn);
+    const formattedDate2 = this.formatDate(checkOut);
 
     const queryParams: any = {
       location,

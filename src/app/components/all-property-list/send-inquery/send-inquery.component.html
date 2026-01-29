@@ -99,7 +99,7 @@
                                         <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Move-in Date <span
                                                 class="text-danger">*</span></label>
                                         <input type="date" class="form-control ct_input ct_border_radius_10"
-                                            formControlName="moveInDate">
+                                            formControlName="moveInDate" [min]="minDate">
                                         <div *ngIf="Form.controls['moveInDate'].invalid && Form.controls['moveInDate'].touched"
                                             class="err_msg">
                                             <div *ngIf="Form.controls['moveInDate'].errors?.['required']">Please enter
@@ -112,12 +112,18 @@
                                         <label for="" class="mb-2 ct_ff_ppneuemontreal-medium">Move-out Date <span
                                                 class="text-danger">*</span></label>
                                         <input type="date" class="form-control ct_input ct_border_radius_10"
-                                            formControlName="moveOutDate">
-                                        <div *ngIf="Form.controls['moveOutDate'].invalid && Form.controls['moveOutDate'].touched"
+                                            formControlName="moveOutDate" [min]="Form.get('moveInDate')?.value">
+                                        <!-- <div *ngIf="Form.controls['moveOutDate'].invalid && Form.controls['moveOutDate'].touched"
                                             class="err_msg">
                                             <div *ngIf="Form.controls['moveOutDate'].errors?.['required']">Please enter
                                                 move out date.</div>
+                                        </div> -->
+
+                                        <div class="err_msg"
+                                            *ngIf="Form.errors?.['dateInvalid'] && (Form.get('moveOutDate')?.touched || Form.get('startDate')?.touched)">
+                                            Move out date must be greater than Move in date.
                                         </div>
+
                                     </div>
                                 </div>
                                 <div class="col-md-12">

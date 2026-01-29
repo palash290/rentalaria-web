@@ -56,6 +56,20 @@ export class ListPropertyComponent {
   // }
 
   applyFilter() {
+    const minPrice = Number(this.priceRange[0]);
+    const maxPrice = Number(this.priceRange[1]);
+
+    // ✅ validation
+    if (
+      minPrice !== null &&
+      maxPrice !== null &&
+      minPrice > maxPrice
+    ) {
+      // show error (toast / alert / inline message)
+      this.toastr.error('Minimum Price cannot be greater than Maximum Price');
+      return; // ⛔ stop API call
+    }
+
     const params = new URLSearchParams({
       min_price: this.priceRange[0]?.toString() || '',
       max_price: this.priceRange[1]?.toString() || '',

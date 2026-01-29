@@ -92,7 +92,6 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="ct_fs_24 ct_ff_ppneuemontreal-medium ct_mb_15">{{propertyDetails?.property_name}}
                         </h4>
-
                         <div>
                             <button class="ct_show_all_images_btn me-2" data-bs-toggle="modal"
                                 data-bs-target="#imagePreviewModal">
@@ -271,12 +270,12 @@
                         @if (isLogIn) {
                         <div [routerLink]="['/send-inquery']" [queryParams]="{propertyId: propertyId}">
                             <a class="ct_black_btn ct_h_48 ct_border_radius_5 w-100">Send
-                                Enquiry</a>
+                                Inquiry</a>
                         </div>
                         } @else {
                         <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                             <a class="ct_black_btn ct_h_48 ct_border_radius_5 w-100">Send
-                                Enquiry</a>
+                                Inquiry</a>
                         </div>
                         }
                     </div>
@@ -358,7 +357,7 @@
                     </div>
                 </div>
 
-                <div class="ct_light_white_bg p-4 mt-4 pe-0" id="house-rules">
+                <div class="ct_light_white_bg p-4 mt-4 pe-0" id="house-rules" *ngIf="houseRules">
                     <h4 class="ct_fs_20 ct_ff_ppneuemontreal-medium ct_pe_30">House Rules</h4>
                     <div class="ct_mt_30">
                         <ul class="ct_para_scroll ct_custom_scroll ct_amenties_list mt-4 ct_pe_30">
@@ -421,7 +420,7 @@
                     </div>
                 </div>
 
-                <div class="ct_light_white_bg p-4 mt-4" id="getting-around" *ngif="nearbyLocation">
+                <div class="ct_light_white_bg p-4 mt-4" id="getting-around" *ngIf="nearbyLocation">
                     <h4 class="ct_fs_20 ct_ff_ppneuemontreal-medium ct_pe_30">Getting Around</h4>
                     <h6 class="ct_fs_16 ct_ff_ppneuemontreal-medium ct_pe_30 mt-3">
                         Stay connected to transport, shops, and city essentials with
@@ -539,7 +538,7 @@
             <div class="modal-body text-center position-relative p-0">
                 <button class="btn-close btn-close-white position-absolute video-cloe-btn"
                     data-bs-dismiss="modal"></button>
-                <video [src]="activeVideo" controls autoplay class="w-100 ct_border_radius_10"
+                <video [src]="activeVideo" controls class="w-100 ct_border_radius_10"
                     style="max-height:70vh; object-fit: cover;">
                 </video>
             </div>
