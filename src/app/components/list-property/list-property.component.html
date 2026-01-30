@@ -16,11 +16,11 @@
 
 <section class="mt-5">
   <div class="container">
-    <div class="row">
-      <div class="col-md-10">
-        <div class="d-flex align-items-center gap-3 ct_flex_col_767">
-          <app-search class="ct_w_100_575"></app-search>
-          <button class="ct_filter_btn ct_white_nowrap ct_ff_ppneuemontreal-book" data-bs-target="#ct_filter_modal"
+    <div class="row ct_w_100_991 ct_flex_col_991">
+      <div class="col-md-12">
+        <div class="d-flex align-items-center gap-3 ct_flex_col_991 ct_w_100_991">
+          <app-search class="ct_w_100_991"></app-search>
+          <button class="ct_filter_btn ct_white_nowrap ct_ff_ppneuemontreal-book ct_w_100_991" data-bs-target="#ct_filter_modal"
             data-bs-toggle="modal">
             <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -86,7 +86,7 @@
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title ct_fs_30 text-center ct_flex_1" id="ct_filter_modalLabel">
+        <h1 class="modal-title ct_fs_24 ct_ff_ppneuemontreal-medium text-center ct_flex_1" id="ct_filter_modalLabel">
           Filters
         </h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -95,7 +95,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group mb-4">
-              <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_22 d-flex align-items-center">
+              <label for="" class="mb-2 ct_ff_ppneuemontreal-medium ct_fs_18 d-flex align-items-center">
                 <span class="ct_num_count_22">1</span>Price Range</label>
               <div class="slider-container">
                 <nz-slider [nzTooltipVisible]="'never'" nzRange [nzStep]="1000" [nzMin]="0" [nzMax]="100000"
@@ -103,12 +103,12 @@
                 <div class="d-flex align-items-center justify-content-between mt-1 gap-3 mt-4">
                   <div class="form-group w-100">
                     <label for="" class="ct_fs_14 ct_text_929292 ct_ff_ppneuemontreal-book mb-1">Minimum Price</label>
-                    <input type="number" class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book"
+                    <input type="number" class="form-control ct_input ct_h_44   py-1 ct_ff_ppneuemontreal-book"
                       placeholder="Min" [(ngModel)]="priceRange[0]" [ngModelOptions]="{standalone: true}" />
                   </div>
                   <div class="form-group w-100">
                     <label for="" class="ct_fs_14 ct_text_929292 ct_ff_ppneuemontreal-book mb-1">Maximum Price</label>
-                    <input type="number" class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book"
+                    <input type="number" class="form-control ct_input ct_h_44  py-1 ct_ff_ppneuemontreal-book"
                       placeholder="Max" [(ngModel)]="priceRange[1]" [ngModelOptions]="{standalone: true}" />
                   </div>
                 </div>
@@ -117,12 +117,12 @@
           </div>
           <div class="col-md-6">
             <div class="form-group mb-4">
-              <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_22 d-flex align-items-center">
+              <label for="" class="mb-2 ct_ff_ppneuemontreal-medium ct_fs_18 d-flex align-items-center">
                 <span class="ct_num_count_22">2</span>Property Type</label>
-              <select class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book" [(ngModel)]="propertyId">
-                <option value="" disabled>Select Type</option>
-                <option value="">All</option>
-                <option *ngFor="let member of propertyTypes" [value]="member.property_type_id">
+              <select class="form-control ct_input ct_h_44 ct_fs_16  py-1 ct_ff_ppneuemontreal-book" [(ngModel)]="propertyId">
+                <option class="ct_ff_ppneuemontreal-book ct_fs_16" value="" disabled>Select Type</option>
+                <option class="ct_ff_ppneuemontreal-book ct_fs_16" value="">All</option>
+                <option class="ct_ff_ppneuemontreal-book ct_fs_16" *ngFor="let member of propertyTypes" [value]="member.property_type_id">
                   {{ member.name }}
                 </option>
               </select>
@@ -130,30 +130,30 @@
           </div>
           <div class="col-md-6">
             <div class="form-group mb-4">
-              <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_22 d-flex align-items-center">
+              <label for="" class="mb-2 ct_ff_ppneuemontreal-medium ct_fs_18 d-flex align-items-center">
                 <span class="ct_num_count_22">3</span>Bedrooms</label>
-              <select class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book" [(ngModel)]="noOfBedrooms">
-                <option value="1">1+</option>
-                <option value="2">2+</option>
-                <option value="3">3+</option>
+              <select class="form-control ct_input ct_h_44 ct_fs_16  py-1 ct_ff_ppneuemontreal-book" [(ngModel)]="noOfBedrooms">
+                <option class="ct_ff_ppneuemontreal-book" value="1">1+</option>
+                <option class="ct_ff_ppneuemontreal-book" value="2">2+</option>
+                <option class="ct_ff_ppneuemontreal-book" value="3">3+</option>
               </select>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group mb-4">
-              <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_22 d-flex align-items-center">
+              <label for="" class="mb-2 ct_ff_ppneuemontreal-medium ct_fs_18 d-flex align-items-center">
                 <span class="ct_num_count_22">4</span>Bathrooms</label>
-              <select class="form-control ct_input ct_h_35 py-1 ct_ff_ppneuemontreal-book" [(ngModel)]="noOfBathrooms">
-                <option value="1">1+</option>
-                <option value="2">2+</option>
-                <option value="3">3+</option>
+              <select class="form-control ct_input ct_h_44 ct_fs_16  py-1 ct_ff_ppneuemontreal-book" [(ngModel)]="noOfBathrooms">
+                <option class="ct_ff_ppneuemontreal-book" value="1">1+</option>
+                <option class="ct_ff_ppneuemontreal-book" value="2">2+</option>
+                <option class="ct_ff_ppneuemontreal-book" value="3">3+</option>
               </select>
             </div>
           </div>
 
           <div class="col-md-12">
             <div class="form-group mb-4">
-              <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_22 d-flex align-items-center">
+              <label for="" class="mb-0 ct_ff_ppneuemontreal-medium ct_fs_18 d-flex align-items-center">
                 <span class="ct_num_count_22">5</span>Ameneties</label>
               <ul class="ct_para_scroll ct_custom_scroll d-flex align-items-center flex-wrap" style="gap: 0px 20px">
                 <li class="ct_mt_15" *ngFor="let item of allAmenity;">
@@ -162,7 +162,7 @@
                     <input class="form-check-input" type="checkbox"
                       [checked]="selectedAmenityIds.includes(item.amenity_id)" [id]="'amenity_' + item.amenity_id"
                       (change)="onAmenityChange($event, item.amenity_id)" />
-                    <label class="ct_ff_ppneuemontreal-book ms-1" [for]="'amenity_' + item.amenity_id">
+                    <label class="ct_ff_ppneuemontreal-book ms-1 ct_fs_16" [for]="'amenity_' + item.amenity_id">
                       {{ item.name }}
                     </label>
                   </div>

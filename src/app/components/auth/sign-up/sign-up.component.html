@@ -1,8 +1,8 @@
 <div class="ct_login_main">
     <form [formGroup]="Form">
-        <div class="form-group ct_mb_30">
-            <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'FullNameLabel' |
-                translate}}</label>
+        <div class="form-group mb-3">
+            <!-- <label for="" class="mb-0 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'FullNameLabel' |
+                translate}}</label> -->
             <input type="text" placeholder="{{'FullNameLabel' | translate}}" class="form-control ct_input"
                 formControlName="name">
             <div *ngIf="Form.controls['name'].invalid && Form.controls['name'].touched" class="err_msg">
@@ -11,9 +11,9 @@
                 </div>
             </div>
         </div>
-        <div class="form-group ct_mb_30">
-            <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'Email' |
-                translate}}</label>
+        <div class="form-group mb-3">
+            <!-- <label for="" class="mb-0 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'Email' |
+                translate}}</label> -->
             <input type="email" placeholder="{{'Email' | translate}}" class="form-control ct_input"
                 formControlName="email">
             <div *ngIf="Form.controls['email'].invalid && Form.controls['email'].touched" class="err_msg">
@@ -27,12 +27,12 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="form-group ct_mb_30">
-                    <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">
-                        {{'PasswordLabel' | translate}}</label>
+                <div class="form-group mb-3">
+                    <!-- <label for="" class="mb-0 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">
+                        {{'PasswordLabel' | translate}}</label> -->
                     <div class="position-relative">
                         <input type="{{ isPasswordVisible2 ? 'text' : 'password' }}"
-                            class="form-control ct_input ct_input_pe_50 " placeholder="Enter password"
+                            class="form-control ct_input ct_input_pe_50 " placeholder="Password"
                             formControlName="new_password">
                         <i class="fa-regular ct_show_eye" [ngClass]="isPasswordVisible2 ? 'fa-eye' : 'fa-eye-slash' "
                             (click)="togglePasswordVisibility2()"></i>
@@ -52,11 +52,11 @@
             </div>
             <div class="col-md-12">
                 <div class="form-group mb-3">
-                    <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">Confirm
-                        Password</label>
+                    <!-- <label for="" class="mb-0 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">Confirm
+                        Password</label> -->
                     <div class="position-relative">
                         <input type="{{ isPasswordVisible3 ? 'text' : 'password' }}"
-                            class="form-control  ct_input  ct_input_pe_50 " placeholder="Enter confirm password"
+                            class="form-control  ct_input  ct_input_pe_50 " placeholder="Confirm Password"
                             formControlName="confirm_password">
                         <i class="fa-regular ct_show_eye" [ngClass]="isPasswordVisible3 ? 'fa-eye' : 'fa-eye-slash' "
                             (click)="togglePasswordVisibility3()"></i>

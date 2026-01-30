@@ -54,7 +54,12 @@
     .ct_w_100_991 {
         width: 100%;
     }
-
+    button.ct_filter_btn{
+        padding: 12px !important;
+    }
+.ct_serach_filter_flex .form-group:before{
+    display: none;
+}
     .ct_close_menu i {
         font-size: 16px;
     }
@@ -63,8 +68,10 @@
         color: #fff;
     }
 
-    .ct_navbar.show nav ul {
+      .ct_navbar.show nav ul {
         right: 0px;
+        align-items: start;
+        justify-content: start;
     }
 
     .ct_close_menu {
@@ -120,7 +127,11 @@
 
     .ct_serach_filter_flex {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 20px;
+    }
+    .ct_serach_filter_flex .form-group{
+        width: 100%;
     }
 
     .ct_search_sections_filter {
@@ -133,7 +144,7 @@
 
     .ct_serach_filter_flex .form-group {
         margin-right: 0px;
-        padding-right: 0px;
+        /* padding-right: 0px; */
         border-right: none;
     }
 

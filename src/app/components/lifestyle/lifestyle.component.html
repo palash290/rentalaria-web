@@ -23,8 +23,9 @@
     </div>
     <div class="row">
       <div class="col-lg-4 mb-4" *ngFor="let item of filteredData | paginate: { itemsPerPage: 10, currentPage: p }">
-        <figure class="ct_life_style_card">
-          <div class="ct_life_style_img">
+        <figure class="ct_life_style_card d-grid">
+            <div>
+              <div class="ct_life_style_img">
             <img [src]="item.cover_image" alt="">
           </div>
           <figcaption class="ct_mt_18">
@@ -33,10 +34,14 @@
             <h6 class="ct_fs_18 ct_ff_ppneuemontreal-medium mt-1">{{item.title}}</h6>
             <p class="ct_minimise_cnt ct_text_44525E ct_ff_ppneuemontreal-book ct_fs_14">{{item.short_description}}
             </p>
-            <a [routerLink]="['/view-lifestyle']" [queryParams]="{blog_id: item.blog_id}"
+          
+          </figcaption>
+            </div>
+           <div class="mt-auto">
+             <a [routerLink]="['/view-lifestyle']" [queryParams]="{blog_id: item.blog_id}"
               class="text-dark ct_ff_ppneuemontreal-medium ct_fs_14 d-flex align-items-center gap-2">Explore <i
                 class="fa-solid fa-arrow-right"></i></a>
-          </figcaption>
+           </div>
         </figure>
       </div>
       <div class="col-md-12">

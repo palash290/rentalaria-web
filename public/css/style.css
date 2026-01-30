@@ -38,16 +38,37 @@ body {
     color: #fff !important;
     transition: 0.4s ease all;
     font-family: ppneuemontreal-book;
+    font-size: 17px;
 }
 
 .ct_navbar ol li a {
     color: #000 !important;
 }
 
-.ct_navbar ul li a:hover,
+/* .ct_navbar ul li a:hover,
 .ct_navbar ul li a.active {
-    color: #000000 !important;
-}
+    color: #fff !important;
+    text-shadow: 0 0 #fff;
+} */
+ .ct_navbar ul li a{
+    position: relative;
+    padding-bottom: 3px;
+ }
+ .ct_navbar ul li a:after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    background-color: #fff;
+    height: 2px;
+    bottom: 0px;
+    width: 100%;
+    transform: scale(0);
+    transform-origin: left;
+    transition: 0.4s ease all;
+ }
+ .ct_navbar ul li a:hover:after, .ct_navbar ul li a.active:after{
+    transform: scale(1);
+ }
 
 .ct_hero_banner {
     background-image: url(../img/about_banner_bg.jpg);
@@ -190,7 +211,7 @@ header {
 
 .ct_welcome_to_rental_bg {
     padding: 110px 0px 112px;
-    background-color: hsl(0deg 0% 100% / 26%);
+    background-color: hsl(0deg 0% 100% / 100%);
 }
 
 .ct_logo_text_bigger h2 {
@@ -299,7 +320,7 @@ footer {
 }
 
 .ct_login_main form {
-    padding: 30px 37px;
+    padding: 30px 0px;
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -313,7 +334,7 @@ footer {
 }
 
 .second-section {
-    margin-top: 12em;
+    margin-top: 88px;
     margin-bottom: 5em;
 }
 
@@ -338,6 +359,7 @@ footer {
     background-color: white;
     padding: 100px 58px;
     border-radius: 40px;
+    margin-bottom: 60px;
 }
 
 
@@ -682,13 +704,13 @@ footer {
     background-color: transparent;
 }
 
-.ct_search_sections_filter {
+/* .ct_search_sections_filter {
     background-color: #fff;
     padding: 36px 72px;
     border-radius: 20px;
     box-shadow: 0px 10px 40px 0px #181A2012;
 
-}
+} */
 
 .ct_serach_filter_flex {
     display: grid;
@@ -699,7 +721,7 @@ footer {
 
 .ct_search_sections_filter {
     background-color: #fff;
-    padding: 10px 30px;
+    padding: 10px 0px;
     border-radius: 10px;
     box-shadow: 0px 10px 40px 0px #181A2012;
     display: grid;
@@ -715,8 +737,26 @@ footer {
 
 .ct_serach_filter_flex .form-group {
     border-right: 1px solid #DACEB680;
-    margin-right: 30px;
-    padding-right: 30px;
+    margin-right: 20px;
+    padding-inline: 15px;
+    /* z-index: 1; */
+    position: relative;
+    width: 141px;
+}
+.ct_serach_filter_flex .form-group:before {
+    content: "";
+    background: #ffffff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    transform: scaleY(0);
+    z-index: -1;
+    border-radius: 10px;
+    transition: 0.4s ease all;
+}
+.ct_serach_filter_flex .form-group:hover:before{
+      transform: scaleY(1.8);
 }
 
 .ct_testimonial_by_tabs {
@@ -1922,29 +1962,58 @@ button.ct_show_all_images_btn:hover {
 
 /* new css */
 .login-signupu-modal {
-    width: 650px !important;
+    width: 500px !important;
 }
 
 .login-signup-tabs li button {
     color: #929292;
     font-weight: 400;
     font-style: Italic;
-    font-size: 31px;
+    font-size: 25px;
+    border-bottom: 1px solid transparent !important;
 }
 
 .login-signup-tabs li button.active {
     color: #111;
     border: none;
+    border-bottom: 1px solid #000 !important;
 }
 
+
+.ct_login_main input.form-control {
+    border: 0px;
+    border-bottom: 1px solid #e6e6e6;
+    border-radius: 0px;
+    padding: 12px;
+}
+.ct_login_main input.form-control:focus{
+    border-bottom: 1px solid #000;
+}
 .login-signup-tabs li button:hover,
 .login-signup-tabs li button:focus {
     color: #111;
     border: none;
     outline: none;
-    box-shadow: none;
+    box-shadow: unset;
+     border-bottom: 1px solid #000 !important;
 }
+
 
 .login-signup-tabs {
     border: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-signup-tabs .nav-link{
+    border: 0px;
+    padding-inline: 0px;
+}
+
+.ct_search_dropdown {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    border: 1px solid #e6e6e6;
 }

@@ -2,8 +2,8 @@
 <div class="">
     <!-- Header -->
     <div class="d-flex justify-content-between align-items-center ct_mb_30 ct_flex_col_767 gap-3">
-        <h6 class="mb-0 ct_fs_28 ct_ff_PPEditorialNew_Regular">
-            <i class="fa-solid fa-chevron-left me-2" routerLink="/admin/my-inquires"></i>
+        <h6 class="mb-0 ct_fs_24 ct_ff_ppneuemontreal-medium">
+            <i class="fa-solid fa-chevron-left me-2 ct_fs_20" routerLink="/admin/my-inquires"></i>
             Inquiry Details
         </h6>
         <small class="ct_text_clr_6E6F76 ct_ff_ppneuemontreal-book ">
@@ -29,19 +29,19 @@
                     <img src="img/location_outline_icon.svg" alt="" class="me-1">
                     {{inquirieData?.address}}
                 </p>
-                <p class="text-muted ct_mb_10">
+                <p class="text-muted ct_mb_10 ct_ff_ppneuemontreal-book">
                     <img src="img/home_outline_icon.svg" alt="" class="me-1">
                     {{inquirieData?.property_type}}
                 </p>
 
                 <div class="d-flex gap-4 flex-wrap mt-2">
-                    <small class="ct_ff_ppneuemontreal-book d-flex align-items-center gap-1"> <img
+                    <small class="ct_ff_ppneuemontreal-book text-muted  ct_fs_14 d-flex align-items-center gap-1"> <img
                             src="img/bed_outline_icon.svg" alt="" class="me-1"> {{inquirieData?.total_bedrooms}}
                         Bed</small>
-                    <small class="ct_ff_ppneuemontreal-book d-flex align-items-center gap-1"> <img
+                    <small class="ct_ff_ppneuemontreal-book text-muted  ct_fs_14 d-flex align-items-center gap-1"> <img
                             src="img/squere_outline_icon.svg" alt="" class="me-1"> {{inquirieData?.square_footage}} sq.
                         ft</small>
-                    <small class="ct_ff_ppneuemontreal-book d-flex align-items-center gap-1"> <img
+                    <small class="ct_ff_ppneuemontreal-book text-muted  ct_fs_14 d-flex align-items-center gap-1"> <img
                             src="img/bath_outline_icon.svg" alt="" class="me-1"> {{inquirieData?.total_bathrooms}}
                         Bath</small>
                 </div>
