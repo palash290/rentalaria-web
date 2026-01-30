@@ -3,6 +3,10 @@
       color: rgb(180, 0, 0);
 }
 
+a {
+      cursor: pointer;
+}
+
 .err_msg {
       color: rgb(180, 0, 0);
 }
@@ -180,4 +184,15 @@ pagination-controls.ct_pagination_div {
 
 .cdk-overlay-container {
       z-index: 9999999999999 !important;
+}
+
+
+.slider-container .ant-slider-track {
+      background-color: #e6e6e6;
+}
+
+.slider-container .ant-slider-handle {
+      background-color: #2a2a2a !important;
+      box-shadow: unset !important;
+      border: 0px !important;
 }

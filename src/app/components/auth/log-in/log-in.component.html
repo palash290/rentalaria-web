@@ -1,8 +1,8 @@
 <div class="ct_login_main">
     <form [formGroup]="Form">
-        <div class="form-group ct_mb_30">
-            <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'EmailLabel' |
-                translate}}</label>
+        <div class="form-group mb-3">
+            <!-- <label for="" class="mb-0 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'EmailLabel' |
+                translate}}</label> -->
             <input type="email" placeholder="{{'EmailLabel' | translate}}" class="form-control ct_input"
                 formControlName="email">
             <div *ngIf="Form.controls['email'].invalid && Form.controls['email'].touched" class="err_msg">
@@ -15,11 +15,11 @@
             </div>
         </div>
         <div class="form-group mb-3">
-            <label for="" class="mb-2 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'PasswordLabel' |
-                translate}}</label>
+            <!-- <label for="" class="mb-0 ct_ff_ppneuemontreal-book ct_fs_16 ct_text_clr_4B5563">{{'PasswordLabel' |
+                translate}}</label> -->
             <div class="position-relative">
                 <input type="{{ isPasswordVisible ? 'text' : 'password' }}"
-                    placeholder="{{'PasswordLabel' | translate}}" class="form-control ct_input ct_input_pe_50"
+                    placeholder="{{'PasswordLabel' | translate}}" class="form-control ct_input  ct_input_pe_50"
                     formControlName="password">
                 <i class="fa-regular ct_show_eye" [ngClass]="isPasswordVisible ? 'fa-eye' : 'fa-eye-slash' "
                     (click)="togglePasswordVisibility()"></i>

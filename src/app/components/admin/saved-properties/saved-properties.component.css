@@ -15,3 +15,6 @@
 .heart-icon:active {
   transform: scale(1.15);
 }
+.ct_product_card{
+    height: 100%;
+}
