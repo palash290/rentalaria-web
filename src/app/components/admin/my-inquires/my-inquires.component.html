@@ -25,7 +25,7 @@
                     <th>Property Name</th>
                     <th>Location</th>
                     <th>Date</th>
-                    <th>Status</th>
+                    <!-- <th>Status</th> -->
                     <th>Action</th>
                 </tr>
             </thead>
@@ -37,9 +37,9 @@
                     </td>
                     <td><span class="ct_overlay_text">{{item.area_name}}</span></td>
                     <td>{{item.created_at | date:'dd-MMM-yyyy'}}</td>
-                    <td><span style="color: #B69515;">{{item.status}}</span>
-                        <!-- <td><span style="color: #008000;">Closed</span></td> -->
-                    </td>
+                    <!-- <td><span style="color: #B69515;">{{item.status}}</span>
+                        <td><span style="color: #008000;">Closed</span></td>
+                    </td> -->
                     <td>
                         <div class="d-flex align-items-center gap-3">
                             <a [routerLink]="['/admin/inquery-details']" [queryParams]="{inqueryId: item.inquiry_id}"

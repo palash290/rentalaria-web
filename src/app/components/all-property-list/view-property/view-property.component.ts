@@ -193,6 +193,7 @@ export class ViewPropertyComponent {
   }
 
   setAvailableFrom(apiDate: string) {
+    debugger
     const [year, month, day] = apiDate.split('-').map(Number);
 
     this.availableFrom = this.normalizeDate(

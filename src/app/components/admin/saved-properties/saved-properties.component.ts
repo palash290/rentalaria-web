@@ -46,6 +46,7 @@ export class SavedPropertiesComponent {
       .post(`user/create-Whislist`, formURlData.toString())
       .subscribe({
         next: (resp: any) => {
+          this.getmyproperties();
           this.toastr.success(resp.message);
         },
         error: (error) => {
