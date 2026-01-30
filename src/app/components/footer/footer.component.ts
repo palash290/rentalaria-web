@@ -18,7 +18,7 @@ export class FooterComponent {
   constructor(private translate: TranslateService, private service: CommonService) { }
 
   ngOnInit() {
-    this.service.isLoggedIn$.subscribe(state => {
+    this.service.isLoggedIns$.subscribe(state => {
       this.isLogIn = state;
     });
   }

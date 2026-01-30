@@ -113,7 +113,7 @@ export class HeaderComponent {
     //   this.token = token;
     // });
 
-    this.service.isLoggedIn$.subscribe(state => {
+    this.service.isLoggedIns$.subscribe(state => {
       this.isLogIn = state;
       this.loadUserProfile();
     });
